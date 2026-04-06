@@ -14,7 +14,7 @@
             sessionStorage.setItem('lang_redirected', 'true');
             const userLang = navigator.language || navigator.userLanguage;
             if (userLang.toLowerCase().includes('en')) {
-                window.location.href = '/dna-matches/en/';
+                window.location.href = 'en/';
             }
         }
     </script>
@@ -552,7 +552,7 @@
             
             <div class="lang-switch">
                 <a href="#" class="active-lang">DE</a>
-                <a href="/dna-matches/en/" class="inactive-lang">EN</a>
+                <a href="en/" class="inactive-lang">EN</a>
             </div>
         </nav>
     </header>
