@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DNA Matches Pilz - Autosomal Relationship Research between the Pilz and Zeisl Families">
+    <title>DNA Matches Pilz | Genealogical Research</title>
+
+    <link rel="alternate" hreflang="de" href="https://pilzchronik.github.io/dna-matches/" />
+    <link rel="alternate" hreflang="en" href="https://pilzchronik.github.io/dna-matches/en/" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent: #2a5d8f;
+            --warm: #c66a1e;
+            --light-blue: #f0f4f8;
+            --text: #333;
+            --border: #ddd;
+            --error-bg: #ffe6e6;
+        }
+
+        body {
+            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text);
+            background: white;
+            line-height: 1.6;
+        }
+
+        /* STICKY HEADER */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        nav a {
+            padding: 0.5rem 1rem;
+            background: var(--light-blue);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* SPRACHWECHSLER */
+        .lang-switch {
+            margin-left: auto;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .lang-switch a.active-lang {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .lang-switch a.inactive-lang {
+            background: transparent;
+            border-color: var(--accent);
+        }
+
+        /* MAIN CONTAINER */
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 100px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* FACT BOXES */
+        .fact-box {
+            border-left: 4px solid var(--accent);
+            border-radius: 0 4px 4px 0;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            background: rgba(42, 93, 143, 0.06);
+            line-height: 1.5;
+        }
+
+        .fact-box.warm {
+            border-left-color: var(--warm);
+            background: rgba(198, 106, 30, 0.06);
+        }
+
+        .fact-box.green {
+            border-left-color: #4caf50;
+            background: rgba(76, 175, 80, 0.06);
+        }
+
+        .fact-box.error {
+            border-left-color: #d32f2f;
+            background: var(--error-bg);
+        }
+
+        /* TABLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        table thead {
+            background: var(--light-blue);
+            border: 1px solid var(--border);
+        }
+
+        table th {
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--accent);
+            border: 1px solid var(--border);
+        }
+
+        table td {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+        }
+
+        table tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        table tbody tr.error-row {
+            background: var(--error-bg);
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            padding: 1.5rem 0 1.5rem 3rem;
+            margin: 1.5rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.75rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        .timeline-item.red::before {
+            background: #d32f2f;
+            box-shadow: 0 0 0 2px #d32f2f;
+        }
+
+        .timeline-item-year {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-item-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* FILTER BUTTONS */
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            background: var(--light-blue);
+            color: var(--accent);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: white;
+        }
+
+        button.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* MATCH CARDS */
+        .matches-container {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .match-card {
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        .match-card:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left-color: var(--warm);
+        }
+
+        .match-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.75rem;
+        }
+
+        .match-card-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--accent);
+        }
+
+        .match-card-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .badge.kontaktiert {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .badge.analysiert {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .badge.offen {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        .badge.triangle {
+            background: #f3e5f5;
+            color: #6a1b9a;
+        }
+
+        .match-card-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .match-card-note {
+            font-size: 0.9rem;
+            color: #555;
+            display: none;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .match-card.expanded .match-card-note {
+            display: block;
+        }
+
+        /* CHROMOSOME BAR */
+        .chromosome-bar {
+            background: #e0e0e0;
+            height: 30px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #666;
+        }
+
+        .chromosome-bar-label {
+            position: absolute;
+            left: 0;
+            padding: 0 0.5rem;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .chromosome-bar-label.right {
+            left: auto;
+            right: 0;
+        }
+
+        .chromosome-segment {
+            position: absolute;
+            height: 100%;
+            background: #d32f2f;
+            opacity: 0.7;
+        }
+
+        /* MEMBER BADGES */
+        .member-badges {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .member-badge {
+            display: inline-block;
+            padding: 0.5rem 0.75rem;
+            background: var(--light-blue);
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* STATUS LISTS */
+        .status-list {
+            margin: 1.5rem 0;
+        }
+
+        .status-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            align-items: flex-start;
+        }
+
+        .status-icon {
+            font-size: 1.2rem;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .status-text {
+            flex: 1;
+        }
+
+        /* WARM BOX FOR QUESTIONS */
+        .questions-box {
+            background: rgba(198, 106, 30, 0.08);
+            border: 1px solid rgba(198, 106, 30, 0.2);
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .questions-box ol {
+            margin-left: 1.5rem;
+        }
+
+        .questions-box li {
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .questions-box strong {
+            color: var(--warm);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--light-blue);
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            main {
+                padding: 0 1rem;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            nav {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
+            }
+            
+            .lang-switch {
+                width: 100%;
+                justify-content: flex-end;
+                margin-top: 0.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            table th, table td {
+                padding: 0.5rem;
+            }
+
+            .match-card-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .match-card-badges {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DNA Matches Pilz</h1>
+        <p>Autosomal Relationship Research — Research Status April 2026</p>
+        <nav>
+            <a href="#background">Background</a>
+            <a href="#theresia">Theresia</a>
+            <a href="#family-tree">Zeisl Family Tree</a>
+            <a href="#dna-results">DNA Results</a>
+            <a href="#triangulation">Triangulation</a>
+            <a href="#matches">Matches</a>
+            <a href="#places-of-origin">Places of Origin</a>
+            <a href="#fates">Fates</a>
+            <a href="#schoenberg">Schönberg</a>
+            <a href="#innsbruck">Innsbruck</a>
+            <a href="#research-status">Research Status</a>
+            <a href="#wanted">Wanted</a>
+            
+            <div class="lang-switch">
+                <a href="#" class="active-lang">EN</a>
+                <a href="/dna-matches/" class="inactive-lang">DE</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+                <section id="background">
+            <h2>1. Background</h2>
+
+            <p>The Pilz Chronicle documents the Pilz family over centuries based on written sources. One line leads to the Jewish community of Košová Hora (Amschelberg) in Bohemia: <strong>Theresia</strong>, Kekulé No. 69, converted from Judaism to Catholicism in 1768. Nothing was previously known about her Jewish family.</p>
+
+            <p>An autosomal DNA test (FamilyTreeDNA, Kit 330595) produced a strong match with the Zeisl family from Vienna for years. This match remained unprocessed for a long time. Only in 2026 did systematic analysis begin: On GEDmatch, Wolfgang Pilz and Walter Steven Zeisl share <strong>43 common matches</strong>. A single segment of 29.1 cM on Chromosome 9 confirms a real genealogical connection — not endogamy noise.</p>
+
+            <div class="fact-box">
+                <strong>The Core Puzzle:</strong> How are the Pilz and Zeisl families related? According to MRCA calculation (4.3 generations), the common ancestor likely lived between 1830 and 1870. The connection probably runs through relatives of Theresia who remained in Bohemia's Jewish marriage network after her conversion in 1768.
+            </div>
+        </section>
+        <section id="theresia">
+            <h2>2. Theresia — The Convert from Amschelberg</h2>
+
+            <h3>Names and Contexts</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Context</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jewish Name</td>
+                        <td><strong>Pessel aus Misskowitz (Myslkovice)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Baptismal Name 1768</td>
+                        <td>Theresia</td>
+                    </tr>
+                    <tr>
+                        <td>By Place of Origin</td>
+                        <td>Theresia Kosso-Horska</td>
+                    </tr>
+                    <tr>
+                        <td>Patronym (after Father)</td>
+                        <td>Theresia Kopidlansky</td>
+                    </tr>
+                    <tr>
+                        <td>After 1st Husband</td>
+                        <td>Apollonia Jablotzki</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Life Course</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-item-year">Unknown</div>
+                    <div class="timeline-item-desc"><strong>Origin:</strong> Myslkovice (Misskowitz), Bohemia. Birthplace and date unknown. Born as <strong>Pessel</strong> under Jewish faith.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-year">before 1764</div>
+                    <div class="timeline-item-desc">First marriage (Jewish) to Abraham Jablonsky — presumably in Myslkovice or Amschelberg (Košová Hora)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-year">1764–1768</div>
+                    <div class="timeline-item-desc">Flight and Preparation for Conversion — After four years of marriage, she fled her husband and requested admission to the Christian faith</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-year">October 12–14, 1768</div>
+                    <div class="timeline-item-desc">Consistorial Act in Prague — Legal clarification of the case "Pessel / Apollonia Jablonsky" before baptism</div>
+                </div>
+                <div class="timeline-item red">
+                    <div class="timeline-item-year">October 30, 1768</div>
+                    <div class="timeline-item-desc"><strong>Baptism — Conversion to Catholicism</strong> — Church of St. Bartholomew in Amschelberg. She received the Christian name <strong>Theresia</strong> and the surname Kosso-Horská. High-ranking nobility served as witnesses to secure her social status.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-year">October 22, 1769</div>
+                    <div class="timeline-item-desc">Marriage to Philipp Adam Bechinie (Huntsman) — Chlum near Nalžovice, Bohemia. <em>(Registered in the marriage register as "Rudolphiana" — origin of this name unclear)</em></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-year">August 31, 1770</div>
+                    <div class="timeline-item-desc">Birth of son Franz Adam Bechinie in Krchleby near Neveklov, Bohemia</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-year">1773</div>
+                    <div class="timeline-item-desc">Birth of daughter Anna Bechinie</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-year">1775</div>
+                    <div class="timeline-item-desc">Death of daughter Anna in Neustupov (child mortality)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-year">March 4, 1776</div>
+                    <div class="timeline-item-desc">Birth of son Josef Bechinie in Ratmerice (Radmierschitz), Bohemia. Josef later became a game warden.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-year">after 1776</div>
+                    <div class="timeline-item-desc"><strong>Death</strong> — Uncertain date. Her husband Philipp survived her by approximately 43 years.</div>
+                </div>
+                <div class="timeline-item highlight">
+                    <div class="timeline-item-year">February 1803</div>
+                    <div class="timeline-item-desc"><strong>Mention in the Marriage Register of Son Josef Bechinie</strong> — At the wedding of her son Josef, she is expressly registered as "<strong>Theresia born Kopidlansky from Košová Hora</strong>". This name is the key for further research. (Source: Duplicate of marriage register; original destroyed by fire.)</div>
+                </div>
+            </div>
+
+            <div class="fact-box warm">
+                <strong>Family Context:</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Father: Mosche (surname unknown)</li>
+                    <li>1st Husband: Abraham Jablonsky — Divorce October 1768</li>
+                    <li>2nd Husband: Philipp Adam Bechinie (Huntsman) — Marriage October 22, 1769 in Chlum</li>
+                    <li>Children with Philipp: Franz Adam (1770/71), Anna (1773–1775), Josef (1776), Mariana Maria</li>
+                </ul>
+            </div>
+
+            <p>The DNA connection to Zeisl probably does not run through Theresia herself (who converted in 1768 and thus withdrew from the Jewish marriage network), but through <strong>siblings, nieces, or nephews of Theresia</strong> who remained Jewish and continued to be active in Bohemia's marriage network.</p>
+</section>
+        <section id="family-tree">
+            <h2>3. Zeisl Family Tree — 6 Generations</h2>
+
+            <p>Walter Steven Zeisl's father was Wilhelm Zeisl (1907–1972), the youngest of four sons. The renowned composer <strong>Erich Zeisl</strong> (1905–1959) was Walter's uncle. Siegmund and Kamilla had four sons: Egon (1901), Walter (1902), Erich (1905), Wilhelm (1907).</p>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="gen1">Gen. 1</button>
+                <button class="filter-btn" data-filter="gen2">Gen. 2</button>
+                <button class="filter-btn" data-filter="gen3">Gen. 3</button>
+                <button class="filter-btn" data-filter="gen4">Gen. 4</button>
+                <button class="filter-btn" data-filter="gen5">Gen. 5</button>
+                <button class="filter-btn" data-filter="gen6">Gen. 6</button>
+            </div>
+
+            <table id="stammbaum-table">
+                <thead>
+                    <tr>
+                        <th>Gen</th>
+                        <th>Kekulé</th>
+                        <th>Person</th>
+                        <th>Life Dates</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="gen1">
+                        <td>1</td>
+                        <td>1</td>
+                        <td>Walter Steven Zeisl</td>
+                        <td>*July 5, 1949 Los Angeles</td>
+                        <td>DNA-Testperson, GEDmatch T405845</td>
+                    </tr>
+                    <tr class="gen2">
+                        <td>2</td>
+                        <td>2</td>
+                        <td>Wilhelm Zeisl</td>
+                        <td>*1907 Vienna, +1972</td>
+                        <td>Walters Vater. 4. Sohn von Siegmund & Kamilla.</td>
+                    </tr>
+                    <tr class="gen2">
+                        <td>2</td>
+                        <td>3</td>
+                        <td>Edith Aberbach</td>
+                        <td>*May 30, 1918 Vienna, +November 14, 1995 LA</td>
+                        <td>Walters Mutter.</td>
+                    </tr>
+                    <tr class="gen3 error-row">
+                        <td>3</td>
+                        <td>4</td>
+                        <td>Siegmund Zeisl</td>
+                        <td>*August 9, 1871, +after September 21, 1942</td>
+                        <td><strong>Ermordet. Treblinka (Transport Bp-547).</strong> Heiratete nach Kamillas Tod deren Schwester Malvine Feitler.</td>
+                    </tr>
+                    <tr class="gen3">
+                        <td>3</td>
+                        <td>5</td>
+                        <td>Kamilla Feitler</td>
+                        <td>*February 4, 1878 Budweis, +April 6, 1940 Vienna</td>
+                        <td>Starb 1940 an Krankheit (nicht deportiert).</td>
+                    </tr>
+                    <tr class="gen3 error-row">
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Oskar Osias Aberbach</td>
+                        <td>*December 6, 1880 Bolechow/Ukraine, +1942</td>
+                        <td><strong>Ermordet. Auschwitz.</strong> Ediths Vater (Walters Großvater mütterlicherseits).</td>
+                    </tr>
+                    <tr class="gen3 error-row">
+                        <td>3</td>
+                        <td>7</td>
+                        <td>Katharina Löwenhek</td>
+                        <td>*June 29, 1891 Vienna, +1943</td>
+                        <td><strong>Ermordet. Auschwitz.</strong> Ediths Mutter. Starb ein Jahr nach ihrem Mann.</td>
+                    </tr>
+                    <tr class="gen4">
+                        <td>4</td>
+                        <td>8</td>
+                        <td>Emanuel Moritz Zeisl</td>
+                        <td>*1840 Rozsochy, +1907 Vienna</td>
+                        <td>Original residence Rozsochy (Bohemia).</td>
+                    </tr>
+                    <tr class="gen4">
+                        <td>4</td>
+                        <td>9</td>
+                        <td>Rosalie Reichmann</td>
+                        <td>*1836 Pardubice, +1918 Vienna</td>
+                        <td>Parents: Samuel Reichmann (Raab) & Barbara Tausek (*1806 Lobkovice).</td>
+                    </tr>
+                    <tr class="gen4">
+                        <td>4</td>
+                        <td>10</td>
+                        <td>Michael Feitler</td>
+                        <td>*January 11, 1847 Rožmberk n. Vlt., +September 14, 1919 Vienna</td>
+                        <td>Parents: Josef Feitler & Barbara Steininger.</td>
+                    </tr>
+                    <tr class="gen4">
+                        <td>4</td>
+                        <td>11</td>
+                        <td>Rosalia Bloch</td>
+                        <td>*June 2, 1852 Čkyně/Prachatice, +April 29, 1921 Vienna</td>
+                        <td>Parents: Isak Bloch & Anna Stampfer.</td>
+                    </tr>
+                    <tr class="gen5">
+                        <td>5</td>
+                        <td>16</td>
+                        <td>Joachim Zeisel</td>
+                        <td>Rozsochy</td>
+                        <td>9 children with Franziska Beer.</td>
+                    </tr>
+                    <tr class="gen5">
+                        <td>5</td>
+                        <td>17</td>
+                        <td>Franziska Beer</td>
+                        <td>*1802, +June 19, 1881</td>
+                        <td>Daughter of Naftali Beer & Elisabeth.</td>
+                    </tr>
+                    <tr class="gen5">
+                        <td>5</td>
+                        <td>20</td>
+                        <td>Josef Feitler</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="gen5">
+                        <td>5</td>
+                        <td>21</td>
+                        <td>Barbara Steininger</td>
+                        <td></td>
+                        <td>Notably Christian name in Jewish pedigree.</td>
+                    </tr>
+                    <tr class="gen5">
+                        <td>5</td>
+                        <td>22</td>
+                        <td>Isak Bloch</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="gen5">
+                        <td>5</td>
+                        <td>23</td>
+                        <td>Anna Stampfer</td>
+                        <td></td>
+                        <td>Parents: Beniamen Stampfer & Rosalia Lewy (both from Koloděje).</td>
+                    </tr>
+                    <tr class="gen6">
+                        <td>6</td>
+                        <td>34</td>
+                        <td>Naftali Beer</td>
+                        <td>*1782 Mährisch Rothmühl, +May 14, 1856</td>
+                        <td>Oldest known ancestor of the Zeisl line.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="fact-box warm">
+                <strong>Malvine Feitler (1879–1942):</strong> Kamilla's sister. Siegmund married her after Kamilla's death in 1940. Both were deported together (Siegmund: Transport Bp-547, Malvine: Bp-548) and murdered in Treblinka after September 21, 1942. This second marriage doubles the Feitler-Zeisl connection and is genealogically significant.
+            </div>
+        </section>
+        <section id="dna-results">
+            <h2>4. DNA Results — GEDmatch One-to-One</h2>
+
+            <p><strong>Result from April 3, 2026.</strong> All segments are on Chromosome 9.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kit Wolfgang</td>
+                        <td>QU4148768 (FTDNA Upload)</td>
+                    </tr>
+                    <tr>
+                        <td>Kit Zeisl</td>
+                        <td>T405845 (Migration)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Large Segment</strong></td>
+                        <td><strong>Chr 9: 76,364,970–95,823,747 = 29.1 cM (4,843 SNPs)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Small Segment</td>
+                        <td>Chr 9: 2,746,548–5,317,534 = 7.5 cM (949 SNPs)</td>
+                    </tr>
+                    <tr>
+                        <td>Total Half-Match</td>
+                        <td>36.6 cM (1.019% of genome)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estimated Generations (MRCA)</strong></td>
+                        <td><strong>4.3 → common ancestor approx. 1830–1870</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="fact-box green">
+                <strong>Endogamy Hypothesis Refuted:</strong> A contiguous segment of 29.1 cM with 4,843 SNPs is well above the threshold for genuine kinship (from about 15 cM). Endogamy-related matches typically consist of many small segments (3–7 cM). Here we have a single large segment — <em>Identical by Descent (IBD)</em>, not population noise.
+            </div>
+        
+            <h3>Y-DNA of the Zeisl Family — A Conversion Finding</h3>
+
+            <p>Research by Zeisl descendants revealed another remarkable finding: Walter Steven Zeisl's Y-DNA shows a match with <strong>Peter Caizl in Brno</strong>, whose line traces back to a <strong>Zeisel who was already Catholic by the mid-18th century</strong>. Since the Y-DNA line is otherwise consistent with a deep Jewish background, a conversion from Judaism to Christianity must have taken place at that time.</p>
+
+            <div class="fact-box warm">
+                <strong>Significance for surname research:</strong> This finding proves that the surname Zeisel already existed as a Jewish name <em>before</em> the Tolerance Edict of Emperor Joseph II (1782) mandated the adoption of fixed surnames. A conversion in the mid-18th century falls in the same period as Theresia/Pessel's conversion from Judaism to Catholicism in 1768 — two independent conversions in the same Bohemian-Moravian region.
+            </div>
+
+            <p>The closest geographical reference point of the Zeisl family to Košová Hora is <strong>Koloděje nad Lužnicí</strong> (cf. Places of Origin, Section 7: Stampfer/Lewy family).</p>
+</section>
+        <section id="triangulation">
+            <h2>5. Triangulation Group Chromosome 9</h2>
+
+            <p>Triangulation is a method by which multiple relatives share the same DNA segment, thus identifying their common ancestor. The triangulation group on Chromosome 9 includes the following matches:</p>
+
+            <div class="chromosome-bar">
+                <div class="chromosome-bar-label">0M</div>
+                <div class="chromosome-segment" style="left: 2.2%; width: 3.8%;"></div>
+                <div class="chromosome-bar-label right">141M</div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Person</th>
+                        <th>Kit</th>
+                        <th>Segment on Chr 9</th>
+                        <th>cM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Wolfgang Pilz</td>
+                        <td>QU4148768</td>
+                        <td>2.622.278–5.317.534</td>
+                        <td>7,9–10,1</td>
+                    </tr>
+                    <tr>
+                        <td>Walter S. Zeisl</td>
+                        <td>T405845</td>
+                        <td>1.496.230–5.875.294</td>
+                        <td>7,2–12,4</td>
+                    </tr>
+                    <tr>
+                        <td>petctdoc</td>
+                        <td>T093054</td>
+                        <td>2.622.278–5.317.534</td>
+                        <td>7,9</td>
+                    </tr>
+                    <tr>
+                        <td>Reeva J. Kimble</td>
+                        <td>T286556</td>
+                        <td>2.994.084–5.610.381</td>
+                        <td>7,2</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="member-badges">
+                <div class="member-badge">Wolfgang Pilz</div>
+                <div class="member-badge">Walter S. Zeisl</div>
+                <div class="member-badge">petctdoc</div>
+                <div class="member-badge">Reeva J. Kimble</div>
+            </div>
+
+            <p><strong>Note:</strong> The large 29.1 cM segment (position 76M–96M on Chr 9) lies in a different section of the same chromosome. The triangulation group refers to the section around position 3M–5.9M.</p>
+        </section>
+        <section id="matches">
+            <h2>6. DNA Matches — Overview</h2>
+
+            <p>43 common matches with Zeisl on GEDmatch. So far 8 analyzed in detail. Zeisl shares an average of <strong>72.9 cM</strong> with the matches, Wolfgang only <strong>12.1 cM</strong> — Wolfgang is 1–2 generations more distantly related.</p>
+
+            <div class="filter-buttons">
+                <button class="match-filter active" data-filter="all">All</button>
+                <button class="match-filter" data-filter="contacted">Contacted</button>
+                <button class="match-filter" data-filter="analyzed">Analyzed</button>
+                <button class="match-filter" data-filter="open">Open</button>
+                <button class="match-filter" data-filter="chr9">Chr-9 Group</button>
+            </div>
+
+            <div class="matches-container" id="matches-container">
+                </div>
+        </section>
+        <section id="places-of-origin">
+            <h2>7. Places of Origin of Zeisl Ancestors</h2>
+
+            <p>The <strong>Familiants Laws</strong> (Familiantengesetze, 1726–1849) forced marriages between Jewish communities in Bohemia and Moravia. Family heads were allowed to marry only one child (usually the eldest son) in their ancestral community; other sons and daughters had to emigrate. This led to large-scale marriage networks.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Place</th>
+                        <th>Region</th>
+                        <th>Family</th>
+                        <th>Distance to Košová Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rozsochy</td>
+                        <td>Moravia (Žďár n. Sáz.)</td>
+                        <td>Zeisel/Beer</td>
+                        <td>~120 km east</td>
+                    </tr>
+                    <tr>
+                        <td>Pardubice</td>
+                        <td>East Bohemia</td>
+                        <td>Reichmann</td>
+                        <td>~130 km east</td>
+                    </tr>
+                    <tr>
+                        <td>Raab</td>
+                        <td>East Bohemia</td>
+                        <td>Reichmann (Samuel)</td>
+                        <td>~130 km east</td>
+                    </tr>
+                    <tr>
+                        <td>Lobkovice</td>
+                        <td>Central Bohemia</td>
+                        <td>Tausek</td>
+                        <td>~80 km north</td>
+                    </tr>
+                    <tr>
+                        <td>Rožmberk n. Vlt.</td>
+                        <td>South Bohemia</td>
+                        <td>Feitler</td>
+                        <td>~100 km south</td>
+                    </tr>
+                    <tr>
+                        <td>Čkyně / Prachatice</td>
+                        <td>South Bohemia</td>
+                        <td>Bloch</td>
+                        <td>~90 km southwest</td>
+                    </tr>
+                    <tr>
+                        <td>Budweis</td>
+                        <td>South Bohemia</td>
+                        <td>Feitler (Kamilla geb.)</td>
+                        <td>~80 km südlich</td>
+                    </tr>
+                    <tr>
+                        <td>Koloděje</td>
+                        <td>Bohemia</td>
+                        <td>Stampfer / Lewy</td>
+                        <td>unklar</td>
+                    </tr>
+                    <tr>
+                        <td>Mähr. Rothmühl</td>
+                        <td>Mähren</td>
+                        <td>Beer (Naftali)</td>
+                        <td>~150 km östlich</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Geographic Pattern:</strong> Two clusters observable — Central/East Bohemia (Zeisl/Reichmann around Rozsochy, Pardubice) and <strong>South Bohemia</strong> (Feitler/Bloch/Stampfer around Budweis, Rožmberk). The South Bohemia connection could explain the link to Košová Hora (northwest of Budweis).</p>
+        </section>
+        <section id="fates">
+            <h2>8. Historical Fate — Holocaust Victims</h2>
+
+            <div class="match-card" style="border-left-color: #d32f2f; background: var(--error-bg);">
+                <div class="match-card-header">
+                    <div class="match-card-name">Siegmund Zeisl</div>
+                    <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1871 — ermordet</span>
+                </div>
+                <div class="match-card-meta">Treblinka (Transport Bp-547) — after September 21, 1942</div>
+                <div class="match-card-note" style="display: block; margin-top: 0.75rem;">Über Theresienstadt deportiert. Heiratete nach Kamillas Tod (1940) deren Schwester Malvine Feitler und wurde mit ihr gemeinsam ermordet.</div>
+            </div>
+
+            <div class="match-card" style="border-left-color: #d32f2f; background: var(--error-bg);">
+                <div class="match-card-header">
+                    <div class="match-card-name">Malvine Zeisl née Feitler</div>
+                    <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1879 — ermordet 1942</span>
+                </div>
+                <div class="match-card-meta">Treblinka (Transport Bp-548)</div>
+                <div class="match-card-note" style="display: block; margin-top: 0.75rem;">Kamillas Schwester. Gemeinsam mit Siegmund deportiert. Die zweite Ehe nach Kamillas Tod verdoppelt die genealogische Relevanz der Feitler-Zeisl-Verknüpfung.</div>
+            </div>
+
+            <div class="match-card" style="border-left-color: #d32f2f; background: var(--error-bg);">
+                <div class="match-card-header">
+                    <div class="match-card-name">Oskar Osias Aberbach</div>
+                    <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1880 Bolechow — ermordet 1942</span>
+                </div>
+                <div class="match-card-meta">Auschwitz</div>
+                <div class="match-card-note" style="display: block; margin-top: 0.75rem;">Ediths Vater (Walters Großvater mütterlicherseits). Vater von Katharina Löwenhek.</div>
+            </div>
+
+            <div class="match-card" style="border-left-color: #d32f2f; background: var(--error-bg);">
+                <div class="match-card-header">
+                    <div class="match-card-name">Katharina Löwenhek</div>
+                    <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1891 Vienna — murdered 1943</span>
+                </div>
+                <div class="match-card-meta">Auschwitz</div>
+                <div class="match-card-note" style="display: block; margin-top: 0.75rem;">Edith's mother (Walter's paternal grandmother). Daughter of Oskar Osias Aberbach. Died a year after her husband.</div>
+            </div>
+
+            <div class="fact-box error">
+                <strong>Survivors:</strong> Kamilla Zeisl (née Feitler, *1878) died on <strong>April 6, 1940</strong> in Vienna from illness — she was not deported. Her sons (Wilhelm, Egon, Erich) were able to emigrate in time and survived: Wilhelm to USA, Erich to USA (Los Angeles), Egon to Great Britain.
+            </div>
+        </section>
+        <section id="schoenberg">
+            <h2>9. Excursus: Connection to Arnold Schönberg</h2>
+
+            <p>Erich Zeisl's daughter <strong>Barbara</strong> married Ronald Schönberg, son of composer <strong>Arnold Schönberg</strong> (1874–1951, founder of twelve-tone technique). Their son is <strong>E. Randol Schönberg</strong>, the internationally recognized attorney in the Klimt case ("Woman in Gold"). Randol Schönberg is active on Geni.com and co-founder of JewishGen Austria-Czech SIG.</p>
+
+            <div class="fact-box">
+                <strong>Erich Zeisl (1905–1959):</strong> The composer emigrated in 1938, first to London, then to Los Angeles. His work <em>Requiem Ebraico</em> is a classic of Jewish exile music. Archive: Exilarte.
+            </div>
+        
+            <p>In April 2026, the family confirmed their willingness to collaborate on researching the shared connection. A comparison of family trees is in preparation.</p>
+</section>
+        <section id="innsbruck">
+            <h2>10. Excursus: Hermine Dannhauser née Zeisl — Innsbruck</h2>
+
+            <p>Hermine Dannhauser (née Zeisl, *1875 Jungbunzlau / Juniper) and her daughter <strong>Philipine Dannhauser</strong> (*1903 Innsbruck) plus other family members were murdered in 1941 from Innsbruck to <strong>Sobibor</strong>.</p>
+
+            <p>The Dannhauser family was part of Innsbruck's Jewish community. Witness: Berta Dannhauser (98 years old) survived Kristallnacht on November 9, 1938.</p>
+
+            <p><strong>Research Note:</strong> This connection is a coincidence (the researcher lives in Innsbruck), not directly genealogically connected to the Pilz-Zeisl line. However, it illustrates the fate of the Bohemian Jewish diaspora.</p>
+
+            <p><strong>Source:</strong> Achrainer, <em>novemberpogrom1938.at</em></p>
+        </section>
+        <section id="research-status">
+            <h2>11. Research Status & Next Steps</h2>
+
+            <h3>Completed</h3>
+            <div class="status-list">
+                <div class="status-item">
+                    <div class="status-icon">✓</div>
+                    <div class="status-text">8 One-to-One comparisons performed on GEDmatch</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">✓</div>
+                    <div class="status-text">Triangulation group on Chromosome 9 confirmed (4 people)</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">✓</div>
+                    <div class="status-text">Messages sent to Zeisl, petctdoc, and Kimble (April 6, 2026)</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">✓</div>
+                    <div class="status-text">Inquiry submitted to Familia Austria mailing list</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">✓</div>
+                    <div class="status-text">Zeisl pedigree chart reconstructed over 6 generations</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">✓</div>
+                    <div class="status-text">Fact-check of Gemini report completed</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">✓</div>
+                    <div class="status-text">Eberstaller theory (maternal side) excluded by DNA analysis</div>
+                </div>
+            </div>
+
+            <h3>In Progress / Open</h3>
+            <div class="status-list">
+                <div class="status-item">
+                    <div class="status-icon">○</div>
+                    <div class="status-text">Waiting for replies from Zeisl, petctdoc, and Kimble</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">○</div>
+                    <div class="status-text">Test more of the 43 matches on Chr 9</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">○</div>
+                    <div class="status-text">Investigate Fischer line further (56 cM, Bohemian origin)</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">○</div>
+                    <div class="status-text">JewishGen Austria-Czech SIG — Submit inquiry</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">○</div>
+                    <div class="status-text">Search for siblings of Theresia Pessel in Jewish registers</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">○</div>
+                    <div class="status-text">Investigate Barbara Steininger — Christian name in Jewish Feitler pedigree</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">○</div>
+                    <div class="status-text">Hermine Dannhauser: Clarify relationship to Vienna Zeisl line</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">○</div>
+                    <div class="status-text">Clarify deportation date of Siegmund Zeisl (Transport Bp-547)</div>
+                </div>
+            </div>
+
+            <div class="fact-box warm">
+                <strong>Sources Already Searched (No Matches):</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>FamilySearch</li>
+                    <li>Geni.com ("Jewish Families from Košová Hora", 233 profiles)</li>
+                    <li>Holocaust.cz</li>
+                    <li>Familia Austria Gesamtsuche</li>
+                </ul>
+            </div>
+        </section>
+        <section id="wanted">
+            <h2>12. What We're Looking For — Tips Welcome</h2>
+
+            <div class="questions-box">
+                <ol>
+                    <li><strong>Connections between Košová Hora (Amschelberg) and South Bohemian communities</strong> (Rožmberk, Čkyně, Prachatice, Budweis) 1760–1870? Marriage networks related to Familiants Laws?</li>
+                    <li><strong>Kopidlansky / Mosche family</strong> in the Sedlčany / Příbram area? (Theresia's father and relatives)</li>
+                    <li><strong>Jewish families from Košová Hora</strong> who married into South Bohemia?</li>
+                    <li><strong>Surnames Zeisl, Reichmann, Feitler, Bloch, Stampfer, Steininger, Beer, Tausek</strong> in Bohemian/Moravian Jewish registers before 1850?</li>
+                </ol>
+            </div>
+
+            <div class="fact-box warm">
+                <strong>Contact:</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><strong>Email:</strong> pilz (at) gmx.at</li>
+                    <li><strong>GEDmatch:</strong> QU4148768</li>
+                    <li><strong>FamilyTreeDNA Kit:</strong> 330595</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+        <footer>
+        <p><strong>DNA Matches Pilz</strong> — Genealogical Research Documentation</p>
+        <p style="font-size: 0.85rem; margin-top: 1rem;">Sources: FamilyTreeDNA, GEDmatch, Geni.com, FamilySearch, Holocaust.cz, novemberpogrom1938.at, Exilarte</p>
+    </footer>
+    <script>
+        // FAMILY TREE TABLE FILTERING
+        const familyTreeFilters = document.querySelectorAll('.filter-btn');
+        familyTreeFilters.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+                familyTreeFilters.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const rows = document.querySelectorAll('#stammbaum-table tbody tr');
+                rows.forEach(row => {
+                    if (filter === 'all') {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = row.classList.contains(filter) ? '' : 'none';
+                    }
+                });
+            });
+        });
+
+        // MATCHES DATA
+        const matchesData = [
+            {
+                name: 'Walter Steven Zeisl',
+                kit: 'T405845',
+                cm: '29,1 (+7,5)',
+                chr: 'Chr 9',
+                status: 'contacted',
+                triangulation: true,
+                note: 'Strongest match. 43 common matches. Zeisl shares ⌀72.9 cM with matches, Wolfgang only 12.1 cM.'
+            },
+            {
+                name: 'petctdoc',
+                kit: 'T093054',
+                cm: '26,4',
+                chr: 'Chr 2/9',
+                status: 'contacted',
+                triangulation: true,
+                note: 'Email sent April 6, 2026. Part of Chr-9 triangulation group.'
+            },
+            {
+                name: 'Reeva J. Kimble',
+                kit: 'T286556',
+                cm: '17,2',
+                chr: 'Chr 2/9',
+                status: 'contacted',
+                triangulation: true,
+                note: 'Best family tree. Email sent April 6, 2026.'
+            },
+            {
+                name: 'Fischer',
+                kit: '—',
+                cm: '56,0',
+                chr: '—',
+                status: 'analyzed',
+                triangulation: false,
+                note: 'Strongest shared match besides Zeisl. Bohemian origin. To be investigated further.'
+            },
+            {
+                name: 'Strasburger',
+                kit: '—',
+                cm: '15,3',
+                chr: '—',
+                status: 'analyzed',
+                triangulation: false,
+                note: 'One-to-One performed.'
+            },
+            {
+                name: 'Laura Gold',
+                kit: 'A218894',
+                cm: '~9',
+                chr: '?',
+                status: 'open',
+                triangulation: false,
+                note: 'Still to be tested on Chr 9.'
+            },
+            {
+                name: 'Scott Kieserman',
+                kit: 'T545129',
+                cm: '~9',
+                chr: '?',
+                status: 'open',
+                triangulation: false,
+                note: 'Still to be tested on Chr 9.'
+            },
+            {
+                name: 'MJNathanson',
+                kit: 'A256024',
+                cm: '—',
+                chr: '—',
+                status: 'open',
+                triangulation: false,
+                note: 'Still to be tested.'
+            }
+        ];
+
+        // RENDER MATCH CARDS
+        function renderMatches(filter = 'all') {
+            const container = document.getElementById('matches-container');
+            container.innerHTML = '';
+
+            matchesData.forEach(match => {
+                const include =
+                    filter === 'all' ||
+                    filter === match.status ||
+                    (filter === 'chr9' && match.triangulation);
+
+                if (!include) return;
+
+                const card = document.createElement('div');
+                card.className = 'match-card';
+                card.innerHTML = `
+                    <div class="match-card-header">
+                        <div class="match-card-name">${match.name}</div>
+                        <div class="match-card-badges">
+                            ${match.status === 'contacted' ? '<span class="badge contacted">Contacted</span>' : ''}
+                            ${match.status === 'analyzed' ? '<span class="badge analyzed">Analyzed</span>' : ''}
+                            ${match.status === 'open' ? '<span class="badge open">Open</span>' : ''}
+                            ${match.triangulation ? '<span class="badge triangle">Triangulation</span>' : ''}
+                        </div>
+                    </div>
+                    <div class="match-card-meta">${match.kit} · ${match.cm} cM · ${match.chr}</div>
+                    <div class="match-card-note">${match.note}</div>
+                `;
+                card.addEventListener('click', function() {
+                    this.classList.toggle('expanded');
+                });
+                container.appendChild(card);
+            });
+        }
+
+        // MATCH FILTER BUTTONS
+        const match_filters = document.querySelectorAll('.match-filter');
+        match_filters.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+                match_filters.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                renderMatches(filter);
+            });
+        });
+
+        // SMOOTH SCROLL
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // INITIAL RENDER
+        renderMatches();
+    </script>
+</body>
+</html>
