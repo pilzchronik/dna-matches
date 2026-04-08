@@ -1,0 +1,19 @@
+title: DNA-Matches Pilz
+email: pilz@gmx.at
+description: >-
+  Autosomale Verwandtschaftsforschung zwischen den Familien Pilz und Zeisl.
+baseurl: "/dna-matches"
+url: "https://pilzchronik.github.io"
+
+# Kein Theme – eigenes Layout in _layouts/default.html
+# (Das Design bleibt exakt wie bisher)
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - "*.bak"
+  - .gitignore
