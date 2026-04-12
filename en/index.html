@@ -6,6 +6,83 @@ lang: en
 permalink: /en/
 ---
 
+    <style>
+        /* GLOSSARY TOOLTIPS */
+        .glossar-term {
+            border-bottom: 1px dotted var(--accent, #2a5d8f);
+            cursor: help;
+            position: relative;
+        }
+        .glossar-term:hover::after,
+        .glossar-term:focus::after {
+            content: attr(data-definition);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            width: max-content;
+            max-width: 320px;
+            z-index: 200;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+        .glossar-term:hover::before,
+        .glossar-term:focus::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            border: 6px solid transparent;
+            border-top-color: #333;
+            z-index: 201;
+            pointer-events: none;
+        }
+        /* GLOSSARY SECTION */
+        .glossar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .glossar-card {
+            background: var(--card-bg, #f8f9fa);
+            border: 1px solid var(--border, #e2e8f0);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+        }
+        .glossar-card dt {
+            font-weight: 600;
+            color: var(--accent, #2a5d8f);
+            margin-bottom: 0.25rem;
+        }
+        .glossar-card dd {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        details.glossar-toggle {
+            margin-top: 1rem;
+        }
+        details.glossar-toggle summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--accent, #2a5d8f);
+            padding: 0.5rem 0;
+            user-select: none;
+        }
+        details.glossar-toggle summary:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+
     <header>
         <h1>DNA Matches Pilz</h1>
         <p>Autosomal Relationship Research — Research Status April 2026</p>
@@ -24,6 +101,7 @@ permalink: /en/
             <a href="#research-status">Research Status</a>
             <a href="#wanted">Wanted</a>
             
+            <a href="#glossary">Glossary</a>
             <div class="lang-switch">
                 <a href="#" class="active-lang">EN</a>
                 <a href="{{ site.baseurl }}/" class="inactive-lang">DE</a>
@@ -40,11 +118,11 @@ permalink: /en/
                 <div>
                     <p>My name is Wolfgang Pilz. For years I have been researching the history of my family using traditional genealogical methods — church records, parish registers, archives. The Pilz Chronicle documents this work across centuries and multiple regions.</p>
 
-            <p>In 2019, I additionally took an autosomal DNA test and uploaded the results to GEDmatch to compare them against a broader database. The DNA confirmed much of what the paper sources already showed — and it revealed something that had become almost invisible in the church records: a component of Ashkenazi Jewish ancestry.</p>
+            <p>In 2019, I additionally took an <span class="glossar-term" data-definition="DNA from the 22 non-sex-determining chromosome pairs, inherited from both parents" tabindex="0">autosomal</span> DNA test and uploaded the results to GEDmatch to compare them against a broader database. The DNA confirmed much of what the paper sources already showed — and it revealed something that had become almost invisible in the church records: a component of Ashkenazi Jewish ancestry.</p>
                 </div>
             </div>
 
-            <p>This component has a name in my family tree: <strong>Theresia</strong> (Kekulé No. 69), born as Pessel in Myslkovice, Bohemia. She converted from Judaism to Catholicism in 1768 and thereby disappeared from the Jewish marriage network. Almost nothing was previously known about her Jewish family.</p>
+            <p>This component has a name in my family tree: <strong>Theresia</strong> (<span class="glossar-term" data-definition="Numbering system for ancestors: 1=proband, 2=father, 3=mother, etc." tabindex="0">Kekulé</span> No. 69), born as Pessel in Myslkovice, Bohemia. She converted from Judaism to Catholicism in 1768 and thereby disappeared from the Jewish marriage network. Almost nothing was previously known about her Jewish family.</p>
 
             <p>This is exactly where DNA comes in. Among my matches, one particularly strong hit stood out: the Zeisl family from Vienna — a Jewish family with roots in the same Bohemian region. The following chapters document the systematic analysis of this discovery — from the DNA results through the family trees to the open questions.</p>
         </section>
@@ -52,10 +130,10 @@ permalink: /en/
         <section id="background">
             <h2>1. Background — The Zeisl Match</h2>
 
-            <p>On GEDmatch, Wolfgang Pilz and Walter Steven Zeisl share <strong>43 common matches</strong>. A single segment of 29.1 cM on Chromosome 9 confirms a real genealogical connection — not endogamy noise.</p>
+            <p>On GEDmatch, Wolfgang Pilz and Walter Steven Zeisl share <strong>43 common matches</strong>. A single segment of 29.1 <span class="glossar-term" data-definition="centiMorgan — unit of genetic length. The more cM shared, the closer the relationship" tabindex="0">cM</span> on Chromosome 9 confirms a real genealogical connection — not <span class="glossar-term" data-definition="Marriage within a closed group — here the Jewish communities of Bohemia" tabindex="0">endogamy</span> noise.</p>
 
             <div class="fact-box">
-                <strong>The Core Puzzle:</strong> How are the Pilz and Zeisl families related? According to MRCA calculation (4.3 generations), the common ancestor likely lived between 1830 and 1870. The connection probably runs through relatives of Theresia who remained in Bohemia’s Jewish marriage network after her conversion in 1768.
+                <strong>The Core Puzzle:</strong> How are the Pilz and Zeisl families related? According to <span class="glossar-term" data-definition="Most Recent Common Ancestor — the closest shared ancestor of two people" tabindex="0">MRCA</span> calculation (4.3 generations), the common ancestor likely lived between 1830 and 1870. The connection probably runs through relatives of Theresia who remained in Bohemia’s Jewish marriage network after her conversion in 1768.
             </div>
         </section>
         <section id="theresia">
@@ -490,7 +568,7 @@ permalink: /en/
         <section id="places-of-origin">
             <h2>7. Places of Origin of Zeisl Ancestors</h2>
 
-            <p>The <strong>Familiants Laws</strong> (Familiantengesetze, 1726–1849) forced marriages between Jewish communities in Bohemia and Moravia. Family heads were allowed to marry only one child (usually the eldest son) in their ancestral community; other sons and daughters had to emigrate. This led to large-scale marriage networks.</p>
+            <p>The <strong><span class="glossar-term" data-definition="1726–1849: Only the eldest son inherited the right to reside; others had to emigrate — enforcing far-reaching marriage networks" tabindex="0">Familiants Laws</span></strong> (Familiantengesetze, 1726–1849) forced marriages between Jewish communities in Bohemia and Moravia. Family heads were allowed to marry only one child (usually the eldest son) in their ancestral community; other sons and daughters had to emigrate. This led to large-scale marriage networks.</p>
 
             <table>
                 <thead>
@@ -748,6 +826,69 @@ permalink: /en/
                 </ul>
             </div>
         </section>
+
+        <section id="glossary">
+            <h2>Glossary</h2>
+            <p>Key terms used on this page — for quick reference. In the text, explained terms are <span class="glossar-term" data-definition="This is what the explanations look like: just hover over the term." tabindex="0">underlined</span>.</p>
+
+            <details class="glossar-toggle" open>
+                <summary>Show / hide terms</summary>
+                <div class="glossar-grid">
+                    <div class="glossar-card"><dl>
+                        <dt>Autosomal</dt>
+                        <dd>DNA from the 22 non-sex-determining chromosome pairs. Inherited from both parents and the basis for most relationship tests.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>cM (centiMorgan)</dt>
+                        <dd>Unit of measurement for the genetic length of a DNA segment. The more cM two people share, the closer the relationship. A segment above ~7 cM is generally considered meaningful.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Endogamy</dt>
+                        <dd>Marriage within a closed group (here: the Ashkenazi Jewish communities of Bohemia). Causes distant relatives to share more DNA than usual in open populations — making analysis more difficult.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Familiants</dt>
+                        <dd>Under the Familiants Laws (1726–1849), only a limited number of Jewish families could settle in each Bohemian community. Only the eldest son inherited the right to reside; other sons had to emigrate. This enforced far-reaching marriage networks.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>GEDmatch</dt>
+                        <dd>A free online platform where raw DNA data from different testing companies can be uploaded and compared. Enables cross-provider comparisons.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>IBD (Identical by Descent)</dt>
+                        <dd>A DNA segment that two people inherited from a common ancestor — as opposed to random matches (IBS). Proving IBD is the goal of genetic genealogy.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Kekulé Number</dt>
+                        <dd>Numbering system for ancestors: Person 1 = proband, 2 = father, 3 = mother, 4–5 = paternal grandparents, etc. Each person has exactly one number; fathers are even, mothers are odd.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>MRCA</dt>
+                        <dd>Most Recent Common Ancestor — the closest shared ancestor of two people. GEDmatch estimates the number of generations to the MRCA based on the amount of shared DNA.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>One-to-One</dt>
+                        <dd>Pairwise DNA comparison on GEDmatch between two specific kits. Shows exactly on which chromosomes and at which positions the DNA matches.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Segment</dt>
+                        <dd>A contiguous stretch on a chromosome shared by two people. Defined by start and end position (in base pairs) and length (in cM).</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>SNP</dt>
+                        <dd>Single Nucleotide Polymorphism — a single position in the DNA where humans can differ. The more SNPs a segment contains, the more reliable the comparison.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Triangulation</dt>
+                        <dd>Three (or more) people share the same DNA segment on the same chromosome. This proves the segment was inherited from a common ancestor and is not a coincidental finding.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Y-DNA</dt>
+                        <dd>DNA of the Y chromosome, passed only from father to son. Traces the purely paternal line across many generations. The Y-DNA haplogroup reveals deep paternal origin.</dd>
+                    </dl></div>
+                </div>
+            </details>
+        </section>
     </main>
 
     <footer>

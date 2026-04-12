@@ -6,6 +6,82 @@ lang: de
 permalink: /
 ---
 
+    <style>
+        /* GLOSSAR TOOLTIPS */
+        .glossar-term {
+            border-bottom: 1px dotted var(--accent, #2a5d8f);
+            cursor: help;
+            position: relative;
+        }
+        .glossar-term:hover::after,
+        .glossar-term:focus::after {
+            content: attr(data-definition);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            width: max-content;
+            max-width: 320px;
+            z-index: 200;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+        .glossar-term:hover::before,
+        .glossar-term:focus::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            border: 6px solid transparent;
+            border-top-color: #333;
+            z-index: 201;
+            pointer-events: none;
+        }
+        /* GLOSSAR SECTION */
+        .glossar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .glossar-card {
+            background: var(--light-blue, #f0f4f8);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            border-left: 3px solid var(--accent, #2a5d8f);
+        }
+        .glossar-card dt {
+            font-weight: 600;
+            color: var(--accent, #2a5d8f);
+            margin-bottom: 0.25rem;
+        }
+        .glossar-card dd {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        details.glossar-toggle {
+            margin-top: 1.5rem;
+        }
+        details.glossar-toggle summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--accent, #2a5d8f);
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+        }
+        details.glossar-toggle summary:hover {
+            text-decoration: underline;
+        }
+    </style>
+
     <script>
         if (!sessionStorage.getItem('lang_redirected')) {
             sessionStorage.setItem('lang_redirected', 'true');
@@ -33,6 +109,7 @@ permalink: /
             <a href="#innsbruck">Innsbruck</a>
             <a href="#forschungsstand">Forschungsstand</a>
             <a href="#gesucht">Gesucht</a>
+            <a href="#glossar">Glossar</a>
             
             <div class="lang-switch">
                 <a href="#" class="active-lang">DE</a>
@@ -54,7 +131,7 @@ permalink: /
                 </div>
             </div>
 
-            <p>Dieser Anteil hat einen Namen in meinem Stammbaum: <strong>Theresia</strong> (Kekulé-Nr. 69), geboren als Pessel in Myslkovice, Böhmen. Sie konvertierte 1768 vom Judentum zum Katholizismus und verschwand damit aus dem jüdischen Heiratsnetzwerk. Über ihre jüdische Familie war bisher fast nichts bekannt.</p>
+            <p>Dieser Anteil hat einen Namen in meinem Stammbaum: <strong>Theresia</strong> (<span class="glossar-term" data-definition="Nummerierungssystem für Vorfahren: 1=Proband, 2=Vater, 3=Mutter usw." tabindex="0">Kekulé</span>-Nr. 69), geboren als Pessel in Myslkovice, Böhmen. Sie konvertierte 1768 vom Judentum zum Katholizismus und verschwand damit aus dem jüdischen Heiratsnetzwerk. Über ihre jüdische Familie war bisher fast nichts bekannt.</p>
 
             <p>Genau hier setzt die DNA an. Unter meinen Matches fand sich ein besonders starker Treffer: die Familie Zeisl aus Wien — eine jüdische Familie mit Wurzeln im selben böhmischen Raum. Die folgenden Kapitel dokumentieren die systematische Auswertung dieses Fundes — vom DNA-Befund über die Stammbäume bis zu den offenen Fragen.</p>
         </section>
@@ -62,10 +139,10 @@ permalink: /
         <section id="ausgangslage">
             <h2>1. Ausgangslage — Der Zeisl-Match</h2>
 
-            <p>Auf GEDmatch teilen Wolfgang Pilz und Walter Steven Zeisl <strong>43 gemeinsame Matches</strong>. Ein einzelnes Segment von 29,1 cM auf Chromosom 9 bestätigt eine reale genealogische Verbindung — kein Endogamie-Rauschen.</p>
+            <p>Auf GEDmatch teilen Wolfgang Pilz und Walter Steven Zeisl <strong>43 gemeinsame Matches</strong>. Ein einzelnes Segment von 29,1 cM auf Chromosom 9 bestätigt eine reale genealogische Verbindung — kein <span class="glossar-term" data-definition="Heirat innerhalb einer geschlossenen Gruppe — hier die jüdischen Gemeinden Böhmens" tabindex="0">Endogamie</span>-Rauschen.</p>
 
             <div class="fact-box">
-                <strong>Das Kernrätsel:</strong> Wie sind die Familien Pilz und Zeisl verwandt? Der gemeinsame Vorfahre lebte laut MRCA-Berechnung (4,3 Generationen) vermutlich zwischen 1830 und 1870. Die Verbindung läuft wahrscheinlich über Verwandte von Theresia, die nach deren Konversion 1768 im jüdischen Heiratsnetzwerk Böhmens verblieben.
+                <strong>Das Kernrätsel:</strong> Wie sind die Familien Pilz und Zeisl verwandt? Der gemeinsame Vorfahre lebte laut <span class="glossar-term" data-definition="Most Recent Common Ancestor — jüngster gemeinsamer Vorfahre" tabindex="0">MRCA</span>-Berechnung (4,3 Generationen) vermutlich zwischen 1830 und 1870. Die Verbindung läuft wahrscheinlich über Verwandte von Theresia, die nach deren Konversion 1768 im jüdischen Heiratsnetzwerk Böhmens verblieben.
             </div>
         </section>
         <section id="theresia">
@@ -327,7 +404,7 @@ permalink: /
             </div>
         </section>
         <section id="dna-befund">
-            <h2>4. DNA-Befund — GEDmatch One-to-One</h2>
+            <h2>4. DNA-Befund — GEDmatch <span class="glossar-term" data-definition="Paarweiser DNA-Vergleich zweier Kits auf GEDmatch" tabindex="0">One-to-One</span></h2>
 
             <p><strong>Ergebnis vom 3. April 2026.</strong> Alle Segmente liegen auf Chromosom 9.</p>
 
@@ -367,7 +444,7 @@ permalink: /
             </table>
 
             <div class="fact-box green">
-                <strong>Endogamie-Hypothese entkräftet:</strong> Ein zusammenhängendes Segment von 29,1 cM mit 4.843 SNPs liegt weit über der Schwelle für echte Verwandtschaft (ab ca. 15 cM). Endogamie-bedingte Matches bestehen typischerweise aus vielen kleinen Segmenten (3–7 cM). Hier liegt ein einzelnes großes Segment vor — <em>Identical by Descent (IBD)</em>, nicht Populationsrauschen.
+                <strong>Endogamie-Hypothese entkräftet:</strong> Ein zusammenhängendes Segment von 29,1 cM mit 4.843 SNPs liegt weit über der Schwelle für echte Verwandtschaft (ab ca. 15 cM). Endogamie-bedingte Matches bestehen typischerweise aus vielen kleinen Segmenten (3–7 cM). Hier liegt ein einzelnes großes Segment vor — <em>Identical by Descent (<span class="glossar-term" data-definition="Identical by Descent — echtes gemeinsames Erbgut von einem Vorfahren" tabindex="0">IBD</span>)</em>, nicht Populationsrauschen.
             </div>
 
             <h3>Y-DNA der Familie Zeisl — ein Konversionsbefund</h3>
@@ -381,7 +458,7 @@ permalink: /
             <p>Als nächster geographischer Bezugspunkt der Zeisl-Familie zu Košová Hora galt lange <strong>Koloděje nad Lužnicí</strong> (vgl. Herkunftsorte, Abschnitt 7: Familie Stampfer/Lewy). Seit der Entdeckung, dass auch in <strong>Miskowitz</strong> (Myslkovice, ~45 km südöstlich) eine Familie Zeisl nachweisbar ist, rückt dieser Ort als nächster Bezugspunkt in den Vordergrund (vgl. <a href="#herkunftsorte">Herkunftsorte, Abschnitt 7</a>).</p>
 </section>
         <section id="triangulation">
-            <h2>5. Triangulationsgruppe Chromosom 9</h2>
+            <h2>5. <span class="glossar-term" data-definition="Drei oder mehr Personen teilen denselben DNA-Abschnitt → Beweis für gemeinsamen Vorfahren" tabindex="0">Triangulationsgruppe</span> Chromosom 9</h2>
 
             <p>Triangulation ist ein Verfahren, bei dem mehrere Verwandte das gleiche DNA-Segment teilen und somit deren gemeinsamer Vorfahre identifiziert werden kann. Die Triangulationsgruppe auf Chromosom 9 umfasst folgende Matches:</p>
 
@@ -500,7 +577,7 @@ permalink: /
         <section id="herkunftsorte">
             <h2>7. Herkunftsorte der Zeisl-Vorfahren</h2>
 
-            <p>Die <strong>Familiantengesetze</strong> (1726–1849) zwangen Heiraten zwischen Jüdischen Gemeinden Böhmens und Mährens. Familienoberhäupter durften nur ein Kind (meist den ältesten Sohn) in der angestammten Gemeinde verheiraten; weitere Söhne und Töchter mussten auswandern. Dies führte zu großräumigen Heiratsnetzwerken.</p>
+            <p>Die <strong><span class="glossar-term" data-definition="Jüdisches Siedlungsrecht in Böhmen (1726–1849): Nur ein Sohn pro Familie durfte bleiben" tabindex="0">Familiantengesetze</span></strong> (1726–1849) zwangen Heiraten zwischen Jüdischen Gemeinden Böhmens und Mährens. Familienoberhäupter durften nur ein Kind (meist den ältesten Sohn) in der angestammten Gemeinde verheiraten; weitere Söhne und Töchter mussten auswandern. Dies führte zu großräumigen Heiratsnetzwerken.</p>
 
             <table>
                 <thead>
@@ -758,6 +835,69 @@ permalink: /
                 </ul>
             </div>
         </section>
+
+        <section id="glossar">
+            <h2>Glossar</h2>
+            <p>Die wichtigsten Fachbegriffe dieser Seite — zum Nachschlagen. Im Text sind erklärte Begriffe <span class="glossar-term" data-definition="So sehen die Erklärungen aus: Einfach mit der Maus darüberfahren." tabindex="0">unterstrichen</span>.</p>
+
+            <details class="glossar-toggle" open>
+                <summary>Begriffe einblenden / ausblenden</summary>
+                <div class="glossar-grid">
+                    <div class="glossar-card"><dl>
+                        <dt>Autosomal</dt>
+                        <dd>DNA der 22 nicht-geschlechtsbestimmenden Chromosomenpaare. Wird von beiden Eltern vererbt und ist die Grundlage der meisten Verwandtschaftstests.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>cM (centiMorgan)</dt>
+                        <dd>Maßeinheit für die genetische Länge eines DNA-Abschnitts. Je mehr cM zwei Personen teilen, desto enger die Verwandtschaft. Ab ca. 7 cM gilt ein Segment als aussagekräftig.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Endogamie</dt>
+                        <dd>Heirat innerhalb einer geschlossenen Gruppe (hier: der aschkenasisch-jüdischen Gemeinden Böhmens). Führt dazu, dass entfernte Verwandte mehr DNA teilen als in offenen Populationen üblich — was die Auswertung erschwert.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Familianten</dt>
+                        <dd>Durch die Familiantengesetze (1726–1849) durfte in jeder jüdischen Gemeinde Böhmens nur eine begrenzte Zahl von Familien leben. Nur der älteste Sohn erbte das Niederlassungsrecht; andere Söhne mussten auswandern. Dies erzwang weiträumige Heiratsnetzwerke.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>GEDmatch</dt>
+                        <dd>Kostenlose Online-Plattform, auf der DNA-Rohdaten verschiedener Testanbieter hochgeladen und verglichen werden können. Ermöglicht anbieterübergreifende Vergleiche.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>IBD (Identical by Descent)</dt>
+                        <dd>Ein DNA-Abschnitt, den zwei Personen von einem gemeinsamen Vorfahren geerbt haben — im Gegensatz zu zufälligen Übereinstimmungen (IBS). Der Nachweis von IBD ist das Ziel der genetischen Genealogie.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Kekulé-Nummer</dt>
+                        <dd>Nummerierungssystem für Vorfahren: Person 1 = Proband, 2 = Vater, 3 = Mutter, 4–5 = Großeltern väterlicherseits usw. Jede Person hat genau eine Nummer; Väter sind gerade, Mütter ungerade.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>MRCA</dt>
+                        <dd>Most Recent Common Ancestor — der jüngste gemeinsame Vorfahre zweier Personen. GEDmatch schätzt die Generationenzahl zum MRCA anhand der geteilten DNA-Menge.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>One-to-One</dt>
+                        <dd>Paarweiser DNA-Vergleich auf GEDmatch zwischen zwei bestimmten Kits. Zeigt genau, auf welchen Chromosomen und an welchen Positionen die DNA übereinstimmt.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Segment</dt>
+                        <dd>Zusammenhängender Abschnitt auf einem Chromosom, den zwei Personen teilen. Definiert durch Start- und Endposition (in Basenpaaren) und Länge (in cM).</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>SNP</dt>
+                        <dd>Single Nucleotide Polymorphism — eine einzelne Stelle in der DNA, an der sich Menschen unterscheiden können. Je mehr SNPs ein Segment enthält, desto zuverlässiger ist der Vergleich.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Triangulation</dt>
+                        <dd>Drei (oder mehr) Personen teilen denselben DNA-Abschnitt auf demselben Chromosom. Dies beweist, dass das Segment von einem gemeinsamen Vorfahren stammt und kein Zufallsbefund ist.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Y-DNA</dt>
+                        <dd>DNA des Y-Chromosoms, die nur vom Vater an Söhne weitergegeben wird. Verfolgt die rein männliche Linie über viele Generationen. Die Y-DNA-Haplogruppe gibt Auskunft über die tiefe väterliche Herkunft.</dd>
+                    </dl></div>
+                </div>
+            </details>
+        </section>
     </main>
 
     <footer>
