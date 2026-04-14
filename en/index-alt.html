@@ -1,528 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DNA Matches Pilz - Autosomal Relationship Research between the Pilz and Zeisl Families">
-    <title>DNA Matches Pilz | Genealogical Research</title>
-
-    <link rel="alternate" hreflang="de" href="https://pilzchronik.github.io/dna-matches/" />
-    <link rel="alternate" hreflang="en" href="https://pilzchronik.github.io/dna-matches/en/" />
+---
+layout: default
+title: "DNA Matches Pilz | Genealogical Research"
+description: "DNA Matches Pilz - Autosomal Relationship Research between the Pilz and Zeisl Families"
+lang: en
+permalink: /en/
+---
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* GLOSSARY TOOLTIPS */
+        .glossar-term {
+            border-bottom: 1px dotted var(--accent, #2a5d8f);
+            cursor: help;
+            position: relative;
         }
-
-        :root {
-            --accent: #2a5d8f;
-            --warm: #c66a1e;
-            --light-blue: #f0f4f8;
-            --text: #333;
-            --border: #ddd;
-            --error-bg: #ffe6e6;
-        }
-
-        body {
-            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
-            color: var(--text);
-            background: white;
-            line-height: 1.6;
-        }
-
-        /* STICKY HEADER */
-        header {
-            background: white;
-            border-bottom: 1px solid var(--border);
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        header h1 {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-        }
-
-        header p {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        nav {
-            display: flex;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        nav a {
-            padding: 0.5rem 1rem;
-            background: var(--light-blue);
-            color: var(--accent);
-            text-decoration: none;
-            border-radius: 20px;
+        .glossar-term:hover::after,
+        .glossar-term:focus::after {
+            content: attr(data-definition);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
             font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid transparent;
-            transition: all 0.2s;
+            line-height: 1.4;
+            width: max-content;
+            max-width: 320px;
+            z-index: 200;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            pointer-events: none;
         }
-
-        nav a:hover {
-            background: var(--accent);
-            color: white;
-        }
-
-        /* SPRACHWECHSLER */
-        .lang-switch {
-            margin-left: auto;
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .lang-switch a.active-lang {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        .lang-switch a.inactive-lang {
-            background: transparent;
-            border-color: var(--accent);
-        }
-
-        /* MAIN CONTAINER */
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            margin-bottom: 3rem;
-            scroll-margin-top: 100px;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-            color: var(--accent);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        h3 {
-            font-size: 1.1rem;
-            color: var(--accent);
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-
-        /* FACT BOXES */
-        .fact-box {
-            border-left: 4px solid var(--accent);
-            border-radius: 0 4px 4px 0;
-            padding: 1.25rem;
-            margin: 1.5rem 0;
-            background: rgba(42, 93, 143, 0.06);
-            line-height: 1.5;
-        }
-
-        .fact-box.warm {
-            border-left-color: var(--warm);
-            background: rgba(198, 106, 30, 0.06);
-        }
-
-        .fact-box.green {
-            border-left-color: #4caf50;
-            background: rgba(76, 175, 80, 0.06);
-        }
-
-        .fact-box.error {
-            border-left-color: #d32f2f;
-            background: var(--error-bg);
-        }
-
-        /* TABLES */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: 0.95rem;
-        }
-
-        table thead {
-            background: var(--light-blue);
-            border: 1px solid var(--border);
-        }
-
-        table th {
-            padding: 0.75rem;
-            text-align: left;
-            font-weight: 600;
-            color: var(--accent);
-            border: 1px solid var(--border);
-        }
-
-        table td {
-            padding: 0.75rem;
-            border: 1px solid var(--border);
-        }
-
-        table tbody tr:nth-child(even) {
-            background: #f9f9f9;
-        }
-
-        table tbody tr.error-row {
-            background: var(--error-bg);
-        }
-
-        /* TIMELINE */
-        .timeline {
-            position: relative;
-            padding: 1.5rem 0 1.5rem 3rem;
-            margin: 1.5rem 0;
-        }
-
-        .timeline::before {
-            content: '';
+        .glossar-term:hover::before,
+        .glossar-term:focus::before {
+            content: "";
             position: absolute;
-            left: 0.75rem;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--accent);
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            border: 6px solid transparent;
+            border-top-color: #333;
+            z-index: 201;
+            pointer-events: none;
         }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 1.5rem;
+        /* GLOSSARY SECTION */
+        .glossar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
         }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.75rem;
-            top: 0.5rem;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent);
-            border: 3px solid white;
-            box-shadow: 0 0 0 2px var(--accent);
+        .glossar-card {
+            background: var(--card-bg, #f8f9fa);
+            border: 1px solid var(--border, #e2e8f0);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
         }
-
-        .timeline-item.red::before {
-            background: #d32f2f;
-            box-shadow: 0 0 0 2px #d32f2f;
-        }
-
-        .timeline-item-year {
+        .glossar-card dt {
             font-weight: 600;
-            color: var(--accent);
+            color: var(--accent, #2a5d8f);
             margin-bottom: 0.25rem;
         }
-
-        .timeline-item-desc {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* FILTER BUTTONS */
-        .filter-buttons {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-        }
-
-        button {
-            padding: 0.5rem 1rem;
-            background: var(--light-blue);
-            color: var(--accent);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        button:hover {
-            border-color: var(--accent);
-            background: var(--accent);
-            color: white;
-        }
-
-        button.active {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        /* MATCH CARDS */
-        .matches-container {
-            display: grid;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .match-card {
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--accent);
-            padding: 1.25rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            background: white;
-        }
-
-        .match-card:hover {
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-left-color: var(--warm);
-        }
-
-        .match-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 0.75rem;
-        }
-
-        .match-card-name {
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--accent);
-        }
-
-        .match-card-badges {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-
-        .badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-
-        .badge.kontaktiert {
-            background: #e8f5e9;
-            color: #2e7d32;
-        }
-
-        .badge.analysiert {
-            background: #e3f2fd;
-            color: #1565c0;
-        }
-
-        .badge.offen {
-            background: #fff3e0;
-            color: #e65100;
-        }
-
-        .badge.triangle {
-            background: #f3e5f5;
-            color: #6a1b9a;
-        }
-
-        .match-card-meta {
+        .glossar-card dd {
+            margin: 0;
             font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-
-        .match-card-note {
-            font-size: 0.9rem;
-            color: #555;
-            display: none;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .match-card.expanded .match-card-note {
-            display: block;
-        }
-
-        /* CHROMOSOME BAR */
-        .chromosome-bar {
-            background: #e0e0e0;
-            height: 30px;
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-            margin: 1.5rem 0;
-            font-size: 0.75rem;
-            display: flex;
-            align-items: center;
-            font-weight: 500;
-            color: #666;
-        }
-
-        .chromosome-bar-label {
-            position: absolute;
-            left: 0;
-            padding: 0 0.5rem;
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        .chromosome-bar-label.right {
-            left: auto;
-            right: 0;
-        }
-
-        .chromosome-segment {
-            position: absolute;
-            height: 100%;
-            background: #d32f2f;
-            opacity: 0.7;
-        }
-
-        /* MEMBER BADGES */
-        .member-badges {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-        }
-
-        .member-badge {
-            display: inline-block;
-            padding: 0.5rem 0.75rem;
-            background: var(--light-blue);
-            border: 1px solid var(--accent);
-            border-radius: 4px;
-            font-size: 0.85rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        /* STATUS LISTS */
-        .status-list {
-            margin: 1.5rem 0;
-        }
-
-        .status-item {
-            display: flex;
-            gap: 1rem;
-            padding: 0.75rem 0;
-            align-items: flex-start;
-        }
-
-        .status-icon {
-            font-size: 1.2rem;
-            min-width: 24px;
-            text-align: center;
-        }
-
-        .status-text {
-            flex: 1;
-        }
-
-        /* WARM BOX FOR QUESTIONS */
-        .questions-box {
-            background: rgba(198, 106, 30, 0.08);
-            border: 1px solid rgba(198, 106, 30, 0.2);
-            border-radius: 4px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .questions-box ol {
-            margin-left: 1.5rem;
-        }
-
-        .questions-box li {
-            margin-bottom: 1rem;
             line-height: 1.5;
         }
-
-        .questions-box strong {
-            color: var(--warm);
+        details.glossar-toggle {
+            margin-top: 1rem;
         }
-
-        /* FOOTER */
-        footer {
-            background: var(--light-blue);
-            padding: 2rem;
-            margin-top: 3rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            border-top: 1px solid var(--border);
+        details.glossar-toggle summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--accent, #2a5d8f);
+            padding: 0.5rem 0;
+            user-select: none;
         }
-
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            main {
-                padding: 0 1rem;
-            }
-
-            header {
-                padding: 1rem;
-            }
-
-            nav {
-                gap: 0.5rem;
-            }
-
-            nav a {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.75rem;
-            }
-            
-            .lang-switch {
-                width: 100%;
-                justify-content: flex-end;
-                margin-top: 0.5rem;
-            }
-
-            h2 {
-                font-size: 1.2rem;
-            }
-
-            table {
-                font-size: 0.85rem;
-            }
-
-            table th, table td {
-                padding: 0.5rem;
-            }
-
-            .match-card-header {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .match-card-badges {
-                justify-content: flex-start;
-            }
+        details.glossar-toggle summary:hover {
+            text-decoration: underline;
         }
     </style>
-</head>
-<body>
+
+
     <header>
         <h1>DNA Matches Pilz</h1>
         <p>Autosomal Relationship Research — Research Status April 2026</p>
@@ -541,9 +101,10 @@
             <a href="#research-status">Research Status</a>
             <a href="#wanted">Wanted</a>
             
+            <a href="#glossary">Glossary</a>
             <div class="lang-switch">
                 <a href="#" class="active-lang">EN</a>
-                <a href="../" class="inactive-lang">DE</a>
+                <a href="{{ site.baseurl }}/" class="inactive-lang">DE</a>
             </div>
         </nav>
     </header>
@@ -552,11 +113,16 @@
         <section id="introduction">
             <h2>Why This Page Exists</h2>
 
-            <p>My name is Wolfgang Pilz. For years I have been researching the history of my family using traditional genealogical methods — church records, parish registers, archives. The Pilz Chronicle documents this work across centuries and multiple regions.</p>
+            <div class="autor-intro">
+                <img src="{{ '/assets/images/autor.jpg' | relative_url }}" alt="Wolfgang Pilz" class="autor-foto">
+                <div>
+                    <p>My name is Wolfgang Pilz. For years I have been researching the history of my family using traditional genealogical methods — church records, parish registers, archives. The Pilz Chronicle documents this work across centuries and multiple regions.</p>
 
-            <p>In 2019, I additionally took an autosomal DNA test and uploaded the results to GEDmatch to compare them against a broader database. The DNA confirmed much of what the paper sources already showed — and it revealed something that had become almost invisible in the church records: a component of Ashkenazi Jewish ancestry.</p>
+            <p>In 2019, I additionally took an <span class="glossar-term" data-definition="DNA from the 22 non-sex-determining chromosome pairs, inherited from both parents" tabindex="0">autosomal</span> DNA test and uploaded the results to GEDmatch to compare them against a broader database. The DNA confirmed much of what the paper sources already showed — and it revealed something that had become almost invisible in the church records: a component of Ashkenazi Jewish ancestry.</p>
+                </div>
+            </div>
 
-            <p>This component has a name in my family tree: <strong>Theresia</strong> (Kekulé No. 69), born as Pessel in Myslkovice, Bohemia. She converted from Judaism to Catholicism in 1768 and thereby disappeared from the Jewish marriage network. Almost nothing was previously known about her Jewish family.</p>
+            <p>This component has a name in my family tree: <strong>Theresia</strong> (<span class="glossar-term" data-definition="Numbering system for ancestors: 1=proband, 2=father, 3=mother, etc." tabindex="0">Kekulé</span> No. 69), born as Pessel in Myslkovice, Bohemia. She converted from Judaism to Catholicism in 1768 and thereby disappeared from the Jewish marriage network. Almost nothing was previously known about her Jewish family.</p>
 
             <p>This is exactly where DNA comes in. Among my matches, one particularly strong hit stood out: the Zeisl family from Vienna — a Jewish family with roots in the same Bohemian region. The following chapters document the systematic analysis of this discovery — from the DNA results through the family trees to the open questions.</p>
         </section>
@@ -564,13 +130,12 @@
         <section id="background">
             <h2>1. Background — The Zeisl Match</h2>
 
-            <p>On GEDmatch, Wolfgang Pilz and Walter Steven Zeisl share <strong>43 common matches</strong>. A single segment of 29.1 cM on Chromosome 9 confirms a real genealogical connection — not endogamy noise.</p>
+            <p>On GEDmatch, Wolfgang Pilz and Walter Steven Zeisl share <strong>43 common matches</strong>. A single segment of 29.1 <span class="glossar-term" data-definition="centiMorgan — unit of genetic length. The more cM shared, the closer the relationship" tabindex="0">cM</span> on Chromosome 9 confirms a real genealogical connection — not <span class="glossar-term" data-definition="Marriage within a closed group — here the Jewish communities of Bohemia" tabindex="0">endogamy</span> noise.</p>
 
             <div class="fact-box">
-                <strong>The Core Puzzle:</strong> How are the Pilz and Zeisl families related? According to MRCA calculation (4.3 generations), the common ancestor likely lived between 1830 and 1870. The connection probably runs through relatives of Theresia who remained in Bohemia's Jewish marriage network after her conversion in 1768.
+                <strong>The Core Puzzle:</strong> How are the Pilz and Zeisl families related? According to <span class="glossar-term" data-definition="Most Recent Common Ancestor — the closest shared ancestor of two people" tabindex="0">MRCA</span> calculation (4.3 generations), the common ancestor likely lived between 1830 and 1870. The connection probably runs through relatives of Theresia who remained in Bohemia’s Jewish marriage network after her conversion in 1768.
             </div>
         </section>
-
         <section id="theresia">
             <h2>2. Theresia — The Convert from Amschelberg</h2>
 
@@ -630,7 +195,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-item-year">October 22, 1769</div>
-                    <div class="timeline-item-desc">Marriage to Philipp Adam Bechinie (Huntsman) — Chlum near Nalžovice, Bohemia. <em>(Registered in the marriage register as "Rudolphiana" — a Jewish Familiant surname: Bunzlau Circle 1793 Pos. 19 lists Veith Rudolph as a Jewish Familiant.)</em></div>
+                    <div class="timeline-item-desc">Marriage to Philipp Adam Bechinie (Huntsman) — Chlum near Nalžovice, Bohemia. <em>(Registered in the marriage register as "Rudolphiana" — origin of this name unclear)</em></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-item-year">August 31, 1770</div>
@@ -669,11 +234,6 @@
             </div>
 
             <p>The DNA connection to Zeisl probably does not run through Theresia herself (who converted in 1768 and thus withdrew from the Jewish marriage network), but through <strong>siblings, nieces, or nephews of Theresia</strong> who remained Jewish and continued to be active in Bohemia's marriage network.</p>
-
-            <div class="fact-box warm">
-                <strong>Hypothesis (open, status 4/2026) — Fischer-Moshe:</strong><br>
-                Hantschel Joachim Fischer (†before 2/1793, Stránov/Mladá Boleslav) may have been a brother of Pessel — both children of a Moshe. Clue: Myslkovice cemetery register Nos. 080/081 (Matana 2017) lists two children of a Moše SG"L (Levite), one † 1756. Onomastically coherent (Hantschel's sons are named Moyses, Enoch), geographically open (Myslkovice ↔ Stránov ~130 km). Verification via HBMa death records and a photo of the Myslkovice tombstone pending.
-            </div>
 </section>
         <section id="family-tree">
             <h2>3. Zeisl Family Tree — 6 Generations</h2>
@@ -706,49 +266,49 @@
                         <td>1</td>
                         <td>Walter Steven Zeisl</td>
                         <td>*July 5, 1949 Los Angeles</td>
-                        <td>DNA-Testperson, GEDmatch T405845</td>
+                        <td>DNA test person, GEDmatch T405845</td>
                     </tr>
                     <tr class="gen2">
                         <td>2</td>
                         <td>2</td>
                         <td>Wilhelm Zeisl</td>
                         <td>*1907 Vienna, +1972</td>
-                        <td>Walters Vater. 4. Sohn von Siegmund & Kamilla.</td>
+                        <td>Walter's father. 4th son of Siegmund & Kamilla.</td>
                     </tr>
                     <tr class="gen2">
                         <td>2</td>
                         <td>3</td>
                         <td>Edith Aberbach</td>
                         <td>*May 30, 1918 Vienna, +November 14, 1995 LA</td>
-                        <td>Walters Mutter.</td>
+                        <td>Walter's mother.</td>
                     </tr>
                     <tr class="gen3 error-row">
                         <td>3</td>
                         <td>4</td>
                         <td>Siegmund Zeisl</td>
                         <td>*August 9, 1871, +after September 21, 1942</td>
-                        <td><strong>Ermordet. Treblinka (Transport Bp-547).</strong> Heiratete nach Kamillas Tod deren Schwester Malvine Feitler.</td>
+                        <td><strong>Murdered. Treblinka (Transport Bp-547).</strong> After Kamilla's death, he married her sister Malvine Feitler.</td>
                     </tr>
                     <tr class="gen3">
                         <td>3</td>
                         <td>5</td>
                         <td>Kamilla Feitler</td>
                         <td>*February 4, 1878 Budweis, +April 6, 1940 Vienna</td>
-                        <td>Starb 1940 an Krankheit (nicht deportiert).</td>
+                        <td>Died 1940 of illness (not deported).</td>
                     </tr>
                     <tr class="gen3 error-row">
                         <td>3</td>
                         <td>6</td>
                         <td>Oskar Osias Aberbach</td>
                         <td>*December 6, 1880 Bolechow/Ukraine, +1942</td>
-                        <td><strong>Ermordet. Auschwitz.</strong> Ediths Vater (Walters Großvater mütterlicherseits).</td>
+                        <td><strong>Murdered. Auschwitz.</strong> Edith's father (Walter's maternal grandfather).</td>
                     </tr>
                     <tr class="gen3 error-row">
                         <td>3</td>
                         <td>7</td>
                         <td>Katharina Löwenhek</td>
                         <td>*June 29, 1891 Vienna, +1943</td>
-                        <td><strong>Ermordet. Auschwitz.</strong> Ediths Mutter. Starb ein Jahr nach ihrem Mann.</td>
+                        <td><strong>Murdered. Auschwitz.</strong> Edith's mother. Died one year after her husband.</td>
                     </tr>
                     <tr class="gen4">
                         <td>4</td>
@@ -824,7 +384,7 @@
                         <td>6</td>
                         <td>34</td>
                         <td>Naftali Beer</td>
-                        <td>*1782 Mährisch Rothmühl, +May 14, 1856</td>
+                        <td>*1782 Moravian Rothmühl, +May 14, 1856</td>
                         <td>Oldest known ancestor of the Zeisl line.</td>
                     </tr>
                 </tbody>
@@ -869,12 +429,10 @@
                     </tr>
                     <tr>
                         <td><strong>Estimated Generations (MRCA)</strong></td>
-                        <td><strong>4.3 gen. (Zeisl pair) — cluster overall 4.0–5.1 gen., approx. 1780–1870</strong></td>
+                        <td><strong>4.3 → common ancestor approx. 1830–1870</strong></td>
                     </tr>
                 </tbody>
             </table>
-
-            <p><strong>Update April 14, 2026 — Fischer within the cluster:</strong> At SNP threshold 300, Zeisl↔Fisher verifies at 163.6 cM across 31 segments (MRCA ~3.0 gen.). This qualitatively moves Fisher's position forward within the cluster.</p>
 
             <div class="fact-box green">
                 <strong>Endogamy Hypothesis Refuted:</strong> A contiguous segment of 29.1 cM with 4,843 SNPs is well above the threshold for genuine kinship (from about 15 cM). Endogamy-related matches typically consist of many small segments (3–7 cM). Here we have a single large segment — <em>Identical by Descent (IBD)</em>, not population noise.
@@ -894,8 +452,6 @@
             <h2>5. Triangulation Group Chromosome 9</h2>
 
             <p>Triangulation is a method by which multiple relatives share the same DNA segment, thus identifying their common ancestor. The triangulation group on Chromosome 9 includes the following matches:</p>
-
-            <p><strong>Status April 14, 2026:</strong> 12 members identified, 5 of them verified by One-to-One on the small segment (6 incl. Wolfgang). Herbert E. Fisher's One-to-One with Zeisl lies outside the group at approx. 136 Mb. MRCA range 4.0–5.1 generations (approx. 1780–1870).</p>
 
             <div class="chromosome-bar">
                 <div class="chromosome-bar-label">0M</div>
@@ -934,77 +490,64 @@
                     <tr>
                         <td>Reeva J. Kimble</td>
                         <td>T286556</td>
-                        <td>2.994.084–5.610.381</td>
-                        <td>7,2</td>
+                        <td>2.013.962–5.317.534</td>
+                        <td>10,1</td>
                     </tr>
                     <tr>
-                        <td>Herbert E. Fisher</td>
-                        <td>T725386</td>
-                        <td colspan="2"><em>Chr 9 at approx. 136 Mb confirmed with Zeisl (region outside the group); small segment only visible at reduced SNP threshold, verification pending</em></td>
-                    </tr>
-                    <tr>
-                        <td>Renee Fisher</td>
-                        <td>—</td>
-                        <td colspan="2"><em>One-to-One available — segment data pending</em></td>
-                    </tr>
-                    <tr>
-                        <td>Victor Neumann</td>
-                        <td>T080523</td>
-                        <td>1.866.537–7.375.925</td>
-                        <td>12,7 (2,075 SNPs)</td>
-                    </tr>
-                    <tr>
-                        <td>Irving Greene</td>
-                        <td>—</td>
-                        <td colspan="2"><em>Within the Tier-1 cluster, One-to-One pending</em></td>
-                    </tr>
-                    <tr>
-                        <td>Aaron Oscar Knopf</td>
-                        <td>—</td>
-                        <td colspan="2"><em>Within the Tier-1 cluster, One-to-One pending</em></td>
-                    </tr>
-                    <tr>
-                        <td>Pearl Friedman</td>
-                        <td>—</td>
-                        <td colspan="2"><em>Within the Tier-1 cluster, One-to-One pending</em></td>
-                    </tr>
-                    <tr>
-                        <td>Judy Adler Reiff</td>
-                        <td>—</td>
-                        <td colspan="2"><em>Within the Tier-1 cluster, One-to-One pending</em></td>
-                    </tr>
-                    <tr>
-                        <td>Mark Kolber</td>
-                        <td>—</td>
-                        <td colspan="2"><em>Within the Tier-1 cluster, One-to-One pending</em></td>
-                    </tr>
-                    <tr>
-                        <td>Shoshanna Agrest</td>
-                        <td>—</td>
-                        <td colspan="2"><em>Within the Tier-1 cluster, One-to-One pending</em></td>
+                        <td><strong>Renee Fisher</strong> <span style="color: var(--warm); font-size: 0.85em;">NEW Apr 12</span></td>
+                        <td>M524793</td>
+                        <td>1.355.061–7.787.532</td>
+                        <td>10.2–15.3</td>
                     </tr>
                 </tbody>
             </table>
-
-            <p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;"><strong>Background Victor Neumann:</strong> Managed by Vivian (Neumann) Kahn, JewishGen Hungarian SIG Director. Neumann line: Ung county (Sobrance/Szeretva, Eastern Slovakia), Y-DNA confirmed Levite (Segal/haLevi).</p>
 
             <div class="member-badges">
                 <div class="member-badge">Wolfgang Pilz</div>
                 <div class="member-badge">Walter S. Zeisl</div>
                 <div class="member-badge">petctdoc</div>
                 <div class="member-badge">Reeva J. Kimble</div>
-                <div class="member-badge">Herbert E. Fisher</div>
-                <div class="member-badge">Renee Fisher</div>
-                <div class="member-badge">Victor Neumann</div>
-                <div class="member-badge">Irving Greene</div>
-                <div class="member-badge">Aaron Oscar Knopf</div>
-                <div class="member-badge">Pearl Friedman</div>
-                <div class="member-badge">Judy Adler Reiff</div>
-                <div class="member-badge">Mark Kolber</div>
-                <div class="member-badge">Shoshanna Agrest</div>
+                <div class="member-badge" style="border-color: var(--warm);">Renee Fisher <span style="font-size: 0.8em; color: var(--warm);">NEW</span></div>
             </div>
 
-            <p><strong>Note:</strong> The large 29.1 cM segment (position 76M–96M on Chr 9) lies in a different section of the same chromosome. The triangulation group refers to the section around position 3M–5.9M.</p>
+            <p><strong>Note:</strong> The table above refers to the <strong>small segment</strong> (position 1M–7.8M on Chr 9). Renee Fisher was confirmed as the 5th member on April 12, 2026 — all three cross-comparisons (Renee↔Zeisl, Renee↔petctdoc, Renee↔Kimble) show overlap on Chr 9.</p>
+
+            <h3>Large Segment (76M–96M) — Triangulation Confirmed <span style="color: var(--warm);">NEW Apr 12, 2026</span></h3>
+
+            <p>The large 29.1 cM segment (position 76M–96M on Chr 9) lies in a different section of the same chromosome. On April 12, 2026, One-to-One comparisons of Zeisl against three other matches confirmed that this is a <strong>real IBD segment</strong> — not endogamy artifacts:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Comparison</th>
+                        <th>Total cM</th>
+                        <th>Chr 9 Segment</th>
+                        <th>cM on Chr 9</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Zeisl ↔ Sean Greer</td>
+                        <td>12.5</td>
+                        <td>79.2M–88.6M</td>
+                        <td>12.5</td>
+                    </tr>
+                    <tr>
+                        <td>Zeisl ↔ Jacqueline Jovings</td>
+                        <td>48.5 (5 seg.)</td>
+                        <td>84.1M–92.9M</td>
+                        <td>14.2</td>
+                    </tr>
+                    <tr>
+                        <td>Zeisl ↔ Robert Cohen</td>
+                        <td>35.4 (3 seg.)</td>
+                        <td>87.5M–99.0M</td>
+                        <td>16.2</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Common overlap core: approx. <strong>87.5M–88.6M</strong>. Only Zeisl matches on <em>both</em> Chr 9 segments (small + large) — the two segments represent separate inheritance events.</p>
         </section>
         <section id="matches">
             <h2>6. DNA Matches — Overview</h2>
@@ -1025,7 +568,7 @@
         <section id="places-of-origin">
             <h2>7. Places of Origin of Zeisl Ancestors</h2>
 
-            <p>The <strong>Familiants Laws</strong> (Familiantengesetze, 1726–1849) forced marriages between Jewish communities in Bohemia and Moravia. Family heads were allowed to marry only one child (usually the eldest son) in their ancestral community; other sons and daughters had to emigrate. This led to large-scale marriage networks.</p>
+            <p>The <strong><span class="glossar-term" data-definition="1726–1849: Only the eldest son inherited the right to reside; others had to emigrate — enforcing far-reaching marriage networks" tabindex="0">Familiants Laws</span></strong> (Familiantengesetze, 1726–1849) forced marriages between Jewish communities in Bohemia and Moravia. Family heads were allowed to marry only one child (usually the eldest son) in their ancestral community; other sons and daughters had to emigrate. This led to large-scale marriage networks.</p>
 
             <table>
                 <thead>
@@ -1076,20 +619,20 @@
                     <tr>
                         <td>Budweis</td>
                         <td>South Bohemia</td>
-                        <td>Feitler (Kamilla geb.)</td>
-                        <td>~80 km südlich</td>
+                        <td>Feitler (Kamilla née)</td>
+                        <td>~80 km south</td>
                     </tr>
                     <tr>
                         <td>Koloděje</td>
                         <td>Bohemia</td>
                         <td>Stampfer / Lewy</td>
-                        <td>unklar</td>
+                        <td>unclear</td>
                     </tr>
                     <tr>
-                        <td>Mähr. Rothmühl</td>
-                        <td>Mähren</td>
+                        <td>Moravian Rothmühl</td>
+                        <td>Moravia</td>
                         <td>Beer (Naftali)</td>
-                        <td>~150 km östlich</td>
+                        <td>~150 km east</td>
                     </tr>
                     <tr>
                         <td><strong>Miskowitz</strong> / Myslkovice</td>
@@ -1119,28 +662,28 @@
             <div class="match-card" style="border-left-color: #d32f2f; background: var(--error-bg);">
                 <div class="match-card-header">
                     <div class="match-card-name">Siegmund Zeisl</div>
-                    <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1871 — ermordet</span>
+                    <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1871 — murdered</span>
                 </div>
                 <div class="match-card-meta">Treblinka (Transport Bp-547) — after September 21, 1942</div>
-                <div class="match-card-note" style="display: block; margin-top: 0.75rem;">Über Theresienstadt deportiert. Heiratete nach Kamillas Tod (1940) deren Schwester Malvine Feitler und wurde mit ihr gemeinsam ermordet.</div>
+                <div class="match-card-note" style="display: block; margin-top: 0.75rem;">Deported via Theresienstadt. After Kamilla's death (1940), he married her sister Malvine Feitler and was murdered together with her.</div>
             </div>
 
             <div class="match-card" style="border-left-color: #d32f2f; background: var(--error-bg);">
                 <div class="match-card-header">
                     <div class="match-card-name">Malvine Zeisl née Feitler</div>
-                    <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1879 — ermordet 1942</span>
+                    <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1879 — murdered 1942</span>
                 </div>
                 <div class="match-card-meta">Treblinka (Transport Bp-548)</div>
-                <div class="match-card-note" style="display: block; margin-top: 0.75rem;">Kamillas Schwester. Gemeinsam mit Siegmund deportiert. Die zweite Ehe nach Kamillas Tod verdoppelt die genealogische Relevanz der Feitler-Zeisl-Verknüpfung.</div>
+                <div class="match-card-note" style="display: block; margin-top: 0.75rem;">Kamilla's sister. Deported together with Siegmund. The second marriage after Kamilla's death doubles the genealogical relevance of the Feitler-Zeisl connection.</div>
             </div>
 
             <div class="match-card" style="border-left-color: #d32f2f; background: var(--error-bg);">
                 <div class="match-card-header">
                     <div class="match-card-name">Oskar Osias Aberbach</div>
-                    <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1880 Bolechow — ermordet 1942</span>
+                    <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1880 Bolechow — murdered 1942</span>
                 </div>
                 <div class="match-card-meta">Auschwitz</div>
-                <div class="match-card-note" style="display: block; margin-top: 0.75rem;">Ediths Vater (Walters Großvater mütterlicherseits). Vater von Katharina Löwenhek.</div>
+                <div class="match-card-note" style="display: block; margin-top: 0.75rem;">Edith's father (Walter's maternal grandfather). Father of Katharina Löwenhek.</div>
             </div>
 
             <div class="match-card" style="border-left-color: #d32f2f; background: var(--error-bg);">
@@ -1170,7 +713,7 @@
         <section id="innsbruck">
             <h2>10. Excursus: Hermine Dannhauser née Zeisl — Innsbruck</h2>
 
-            <p>Hermine Dannhauser (née Zeisl, *1875 Jungbunzlau / Juniper) and her daughter <strong>Philipine Dannhauser</strong> (*1903 Innsbruck) plus other family members were murdered in 1941 from Innsbruck to <strong>Sobibor</strong>.</p>
+            <p>Hermine Dannhauser (née Zeisl, *1875 Jungbunzlau / Juniper) and her daughter <strong>Philipine Dannhauser</strong> (*1903 Innsbruck) plus other family members were deported from Innsbruck to Sobibor in 1941 and <strong>murdered</strong> there.</p>
 
             <p>The Dannhauser family was part of Innsbruck's Jewish community. Witness: Berta Dannhauser (98 years old) survived Kristallnacht on November 9, 1938.</p>
 
@@ -1185,15 +728,15 @@
             <div class="status-list">
                 <div class="status-item">
                     <div class="status-icon">✓</div>
-                    <div class="status-text">8 One-to-One comparisons performed on GEDmatch</div>
+                    <div class="status-text">15+ One-to-One comparisons performed on GEDmatch</div>
                 </div>
                 <div class="status-item">
                     <div class="status-icon">✓</div>
-                    <div class="status-text">Triangulation group on Chromosome 9 confirmed (12 people, 6 verified by One-to-One)</div>
+                    <div class="status-text">Triangulation group on Chromosome 9 confirmed (5 people, incl. Renee Fisher since Apr 12, 2026)</div>
                 </div>
                 <div class="status-item">
                     <div class="status-icon">✓</div>
-                    <div class="status-text">Messages sent to Zeisl, petctdoc, and Kimble (April 6, 2026)</div>
+                    <div class="status-text">Messages sent to Zeisl, petctdoc, and Kimble (April 6, 2026). Messages sent to Greer, Jovings, Cohen, and Renee Fisher (April 12, 2026)</div>
                 </div>
                 <div class="status-item">
                     <div class="status-icon">✓</div>
@@ -1211,33 +754,21 @@
                     <div class="status-icon">✓</div>
                     <div class="status-text">Eberstaller theory (maternal side) excluded by DNA analysis</div>
                 </div>
-            <div class="status-item">
-                <div class="status-icon">✓</div>
-                <div class="status-text">Replies received: Zeisl, petctdoc, Herbert Fisher/Susan Boyer (April 13, 2026), Vivian Kahn for Victor Neumann (April 14, 2026), Greer, Jovings, Cohen</div>
-            </div>
-            <div class="status-item">
-                <div class="status-icon">✓</div>
-                <div class="status-text">One-to-One Victor Neumann (T080523) — Chr 9, 12.7 cM, MRCA 5.1 gen. (April 14, 2026)</div>
-            </div>
-            <div class="status-item">
-                <div class="status-icon">✓</div>
-                <div class="status-text">Fischer/Zeisl verified at SNP-300: 163.6 cM / 31 segments / MRCA ~3.0 gen.</div>
-            </div>
             </div>
 
             <h3>In Progress / Open</h3>
             <div class="status-list">
                 <div class="status-item">
                     <div class="status-icon">○</div>
-                    <div class="status-text">Still open: Renee Fisher, Greene, Adler Reiff, Knopf, Shoshanna Agrest, Kolber, Nance, Caldwell, Friedman, Keating</div>
+                    <div class="status-text">Waiting for reply from petctdoc (Zeisl answered via Schoenberg on April 6, 2026; Kimble answered on April 10, 2026)</div>
                 </div>
                 <div class="status-item">
                     <div class="status-icon">○</div>
                     <div class="status-text">Test more of the 43 matches on Chr 9</div>
                 </div>
                 <div class="status-item">
-                    <div class="status-icon">○</div>
-                    <div class="status-text">Investigate Fischer line further (56 cM, Bohemian origin)</div>
+                    <div class="status-icon">✓</div>
+                    <div class="status-text">Fisher verification completed (Apr 12, 2026): Zeisl↔Fisher at lowered threshold (300 SNPs) yields <strong>163.6 cM across 31 segments</strong>, MRCA ~3.0 gen. — far exceeding the 83.3 cM from the match list</div>
                 </div>
                 <div class="status-item">
                     <div class="status-icon">○</div>
@@ -1281,7 +812,7 @@
                     <li><strong>Family Kopidlansky / Mosche</strong> in the Sedlčany / Příbram area? (Theresia’s father and relatives)</li>
                     <li><strong>Jewish families from Košová Hora</strong> who married into South Bohemia?<br>
                     <em style="color: #2a5d8f;">Clue: Pessel/Theresia went the opposite direction — from Miskowitz (South Bohemia) to Košová Hora (Central Bohemia). Whether families from Košová Hora also married into South Bohemia remains open.</em></li>
-                    <li><strong>Surnames Zeisl, Reichmann, Feitler, Bloch, Stampfer, Steininger, Beer, Tausek, Fürth, Jablonsky, Kopidlansky, Rudolph, Fischer</strong> in Bohemian/Moravian Jewish registers before 1850?<br>
+                    <li><strong>Surnames Zeisl, Reichmann, Feitler, Bloch, Stampfer, Steininger, Beer, Tausek</strong> in Bohemian/Moravian Jewish registers before 1850?<br>
                     <em style="color: #2a5d8f;">Clue: Zeisl and Bloch are documented in the 1869 census in Miskowitz. The Bloch name also appears in the Zeisl pedigree (Rosalia Bloch, *1852 Čkyně). Whether the Miskowitz Blochs are related to the Čkyně Blochs is still open.</em></li>
                 </ol>
             </div>
@@ -1295,12 +826,76 @@
                 </ul>
             </div>
         </section>
+
+        <section id="glossary">
+            <h2>Glossary</h2>
+            <p>Key terms used on this page — for quick reference. In the text, explained terms are <span class="glossar-term" data-definition="This is what the explanations look like: just hover over the term." tabindex="0">underlined</span>.</p>
+
+            <details class="glossar-toggle" open>
+                <summary>Show / hide terms</summary>
+                <div class="glossar-grid">
+                    <div class="glossar-card"><dl>
+                        <dt>Autosomal</dt>
+                        <dd>DNA from the 22 non-sex-determining chromosome pairs. Inherited from both parents and the basis for most relationship tests.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>cM (centiMorgan)</dt>
+                        <dd>Unit of measurement for the genetic length of a DNA segment. The more cM two people share, the closer the relationship. A segment above ~7 cM is generally considered meaningful.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Endogamy</dt>
+                        <dd>Marriage within a closed group (here: the Ashkenazi Jewish communities of Bohemia). Causes distant relatives to share more DNA than usual in open populations — making analysis more difficult.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Familiants</dt>
+                        <dd>Under the Familiants Laws (1726–1849), only a limited number of Jewish families could settle in each Bohemian community. Only the eldest son inherited the right to reside; other sons had to emigrate. This enforced far-reaching marriage networks.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>GEDmatch</dt>
+                        <dd>A free online platform where raw DNA data from different testing companies can be uploaded and compared. Enables cross-provider comparisons.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>IBD (Identical by Descent)</dt>
+                        <dd>A DNA segment that two people inherited from a common ancestor — as opposed to random matches (IBS). Proving IBD is the goal of genetic genealogy.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Kekulé Number</dt>
+                        <dd>Numbering system for ancestors: Person 1 = proband, 2 = father, 3 = mother, 4–5 = paternal grandparents, etc. Each person has exactly one number; fathers are even, mothers are odd.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>MRCA</dt>
+                        <dd>Most Recent Common Ancestor — the closest shared ancestor of two people. GEDmatch estimates the number of generations to the MRCA based on the amount of shared DNA.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>One-to-One</dt>
+                        <dd>Pairwise DNA comparison on GEDmatch between two specific kits. Shows exactly on which chromosomes and at which positions the DNA matches.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Segment</dt>
+                        <dd>A contiguous stretch on a chromosome shared by two people. Defined by start and end position (in base pairs) and length (in cM).</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>SNP</dt>
+                        <dd>Single Nucleotide Polymorphism — a single position in the DNA where humans can differ. The more SNPs a segment contains, the more reliable the comparison.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Triangulation</dt>
+                        <dd>Three (or more) people share the same DNA segment on the same chromosome. This proves the segment was inherited from a common ancestor and is not a coincidental finding.</dd>
+                    </dl></div>
+                    <div class="glossar-card"><dl>
+                        <dt>Y-DNA</dt>
+                        <dd>DNA of the Y chromosome, passed only from father to son. Traces the purely paternal line across many generations. The Y-DNA haplogroup reveals deep paternal origin.</dd>
+                    </dl></div>
+                </div>
+            </details>
+        </section>
     </main>
 
-        <footer>
+    <footer>
         <p><strong>DNA Matches Pilz</strong> — Genealogical Research Documentation</p>
         <p style="font-size: 0.85rem; margin-top: 1rem;">Sources: FamilyTreeDNA, GEDmatch, Geni.com, FamilySearch, Holocaust.cz, novemberpogrom1938.at, Exilarte</p>
     </footer>
+
     <script>
         // FAMILY TREE TABLE FILTERING
         const familyTreeFilters = document.querySelectorAll('.filter-btn');
@@ -1351,13 +946,13 @@
                 note: 'Best family tree. Email sent April 6, 2026.'
             },
             {
-                name: 'Fischer',
-                kit: '—',
-                cm: '56,0',
-                chr: '—',
+                name: 'Herbert E. Fisher',
+                kit: 'T725386',
+                cm: 'W 10.3 (OtO) · Z 56.0 (OtO) / 83.3 (list)',
+                chr: '13 (W) / 2,3,9,10,12,14 (Z)',
                 status: 'analyzed',
                 triangulation: false,
-                note: 'Strongest common match besides Zeisl. Bohemian origin. At SNP threshold 300: 163.6 cM across 31 segments, MRCA ~3.0 gen. (verified April 14, 2026).'
+                note: 'Wolfgang↔Fisher 10.3 cM GEDmatch One-to-One on Chr 13 (segment 92.9–97.6 M). Zeisl↔Fisher has two values, both real: 56.0 cM One-to-One across 6 segments and 83.3 cM from the match list (different tools, not cumulative). Bohemian-Moravian family tree (Fischer/Vodicka/Koscherak). Three related kits via ann.fuller@oberlin.edu.'
             },
             {
                 name: 'Strasburger',
@@ -1394,33 +989,6 @@
                 status: 'open',
                 triangulation: false,
                 note: 'Still to be tested.'
-            },
-            {
-                name: 'Jeanette Stein',
-                kit: 'FTDNA',
-                cm: '—',
-                chr: '—',
-                status: 'contacted',
-                triangulation: false,
-                note: 'Bridge match Myslkovice+Fürth confirmed via ADSA. Pessel\'s husband Abraham Jablonsky appears in the Bohemian Familiant registers as „Seligmann Fürth, also Abraham Jablonsky". Contacted April 13, 2026.'
-            },
-            {
-                name: 'Victor Neumann',
-                kit: 'T080523',
-                cm: '12,7',
-                chr: 'Chr 9',
-                status: 'contacted',
-                triangulation: true,
-                note: 'One-to-One April 14, 2026: Chr 9 1.866.537–7.375.925, 2,075 SNPs, MRCA 5.1 gen. Managed by Vivian (Neumann) Kahn. Neumann line: Ung county (Sobrance/Szeretva), Y-DNA confirmed Levite.'
-            },
-            {
-                name: 'Herbert E. Fisher',
-                kit: 'T725386',
-                cm: '—',
-                chr: 'Chr 9',
-                status: 'contacted',
-                triangulation: true,
-                note: 'One-to-One with Zeisl at approx. 136 Mb on Chr 9 (outside the small group); small segment only visible at reduced SNP threshold, verification pending. Contact via Susan Fisher Boyer, reply April 13, 2026.'
             }
         ];
 
@@ -1470,19 +1038,6 @@
             });
         });
 
-        // SMOOTH SCROLL
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
         // INITIAL RENDER
         renderMatches();
     </script>
-</body>
-</html>
