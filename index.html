@@ -351,6 +351,26 @@
             color: #6a1b9a;
         }
 
+        .badge.linie-a {
+            background: #e0f7fa;
+            color: #00695c;
+        }
+
+        .badge.linie-b {
+            background: #fff8e1;
+            color: #8d6e63;
+        }
+
+        .badge.linie-c {
+            background: #fce4ec;
+            color: #ad1457;
+        }
+
+        .badge.gross9 {
+            background: #ede7f6;
+            color: #4527a0;
+        }
+
         .match-card-meta {
             font-size: 0.9rem;
             color: #666;
@@ -561,6 +581,11 @@
     <main>
         <section id="einleitung">
             <h2>Warum diese Seite existiert</h2>
+
+            <figure style="float:right;margin:0 0 0.8em 1.2em;max-width:140px;text-align:center;font-size:0.85em;color:#666;">
+                <img src="assets/images/autor.jpg" alt="Wolfgang Pilz" style="width:100%;border-radius:6px;display:block;">
+                <figcaption style="margin-top:0.3em;">Wolfgang Pilz</figcaption>
+            </figure>
 
             <p>Mein Name ist Wolfgang Pilz. Seit Jahren erforsche ich die Geschichte meiner Familie mit klassischen genealogischen Methoden — Kirchenbücher, Matriken, Archive. Die Pilz-Chronik dokumentiert diese Arbeit über Jahrhunderte und mehrere Regionen hinweg.</p>
 
@@ -884,7 +909,7 @@
                 </tbody>
             </table>
 
-            <p><strong>Ergänzung 14.4.2026 — Fischer im Cluster:</strong> Bei SNP-Schwelle 300 verifiziert sich Zeisl↔Fisher mit 163,6 cM auf 31 Segmenten (MRCA ~3,0 Gen.). Das verschiebt Fishers Position im Cluster qualitativ nach vorn.</p>
+            <p><strong>Stand Fischer-Linie (13.4.2026):</strong> Zeisl↔Fisher teilt nach bisherigem Stand <strong>56 cM auf 6 Segmenten</strong> (Statusblatt Ahnenforschung, 13.4.2026). Die Zuordnung zur Chr-9-Kleinsegmentgruppe bleibt unbelegt — ein One-to-One mit abgesenkter SNP-Schwelle wurde erwähnt, liegt aber nicht als Belegdatei im Projektordner vor.</p>
 
             <div class="fact-box green">
                 <strong>Endogamie-Hypothese entkräftet:</strong> Ein zusammenhängendes Segment von 29,1 cM mit 4.843 SNPs liegt weit über der Schwelle für echte Verwandtschaft (ab ca. 15 cM). Endogamie-bedingte Matches bestehen typischerweise aus vielen kleinen Segmenten (3–7 cM). Hier liegt ein einzelnes großes Segment vor — <em>Identical by Descent (IBD)</em>, nicht Populationsrauschen.
@@ -901,11 +926,15 @@
             <p>Als nächster geographischer Bezugspunkt der Zeisl-Familie zu Košová Hora galt lange <strong>Koloděje nad Lužnicí</strong> (vgl. Herkunftsorte, Abschnitt 7: Familie Stampfer/Lewy). Seit der Entdeckung, dass auch in <strong>Miskowitz</strong> (Myslkovice, ~45 km südöstlich) eine Familie Zeisl nachweisbar ist, rückt dieser Ort als nächster Bezugspunkt in den Vordergrund (vgl. <a href="#herkunftsorte">Herkunftsorte, Abschnitt 7</a>).</p>
 </section>
         <section id="triangulation">
-            <h2>5. Triangulationsgruppe Chromosom 9</h2>
+            <h2>5. Triangulationscluster — drei Ahnenlinien</h2>
 
-            <p>Triangulation ist ein Verfahren, bei dem mehrere Verwandte das gleiche DNA-Segment teilen und somit deren gemeinsamer Vorfahre identifiziert werden kann. Die Triangulationsgruppe auf Chromosom 9 umfasst folgende Matches:</p>
+            <p>Triangulation ist ein Verfahren, bei dem mehrere Verwandte dasselbe DNA-Segment teilen und somit auf einen gemeinsamen Vorfahren zurückgehen. Die bisher 43 gemeinsamen Matches Wolfgang↔Zeisl zerfallen nach der Tier-1-Triangulation vom 12.4.2026 (12.136 Zeilen, Source-Kit T405845 Zeisl) in <strong>drei voneinander unabhängige Ahnenlinien</strong> sowie einen separaten Grosssegment-Cluster auf Chromosom 9.</p>
 
-            <p><strong>Stand 14.4.2026:</strong> 12 Mitglieder identifiziert, davon 5 im kleinen Segment per One-to-One verifiziert (6 inkl. Wolfgang). Herbert E. Fishers One-to-One mit Zeisl liegt ausserhalb der Gruppe bei ca. 136 Mb. MRCA-Spannweite 4,0–5,1 Generationen (ca. 1780–1870).</p>
+            <p><strong>Stand 14.4.2026:</strong> Grundlage ist die GEDmatch Tier-1-Triangulation vom 12.4.2026. MRCA-Spannweite der Chr-9-Kleinsegmentgruppe 4,0–5,1 Generationen (ca. 1780–1870).</p>
+
+            <h3>5.1 Chr-9-Kleinsegmentgruppe (Position 3–5,9 Mb)</h3>
+
+            <p>Kanonische Triangulationsgruppe auf Chromosom 9, kleiner Abschnitt. 12 Mitglieder identifiziert, davon 5 im kleinen Segment per One-to-One verifiziert (6 inkl. Wolfgang).</p>
 
             <div class="chromosome-bar">
                 <div class="chromosome-bar-label">0M</div>
@@ -947,10 +976,10 @@
                         <td>2.994.084–5.610.381</td>
                         <td>7,2</td>
                     </tr>
-                    <tr>
+                    <tr class="error-row">
                         <td>Herbert E. Fisher</td>
                         <td>T725386</td>
-                        <td colspan="2"><em>Chr 9 bei ca. 136 Mb mit Zeisl nachgewiesen (Bereich ausserhalb der Gruppe); kleines Segment nur bei abgesenkter SNP-Schwelle sichtbar, Verifikation ausstehend</em></td>
+                        <td colspan="2"><strong>Verifikation ausstehend</strong> — Fisher erscheint in den Tier-1-Rohdaten auf Chr 9 ausschliesslich bei ca. 136 Mb, nicht in dieser Gruppe. Der frühere Eintrag stützte sich auf einen One-to-One-Lauf mit abgesenkter SNP-Schwelle, für den keine Belegdatei im Projektordner vorliegt.</td>
                     </tr>
                     <tr>
                         <td>Renee Fisher</td>
@@ -1014,7 +1043,72 @@
                 <div class="member-badge">Shoshanna Agrest</div>
             </div>
 
-            <p><strong>Anmerkung:</strong> Das große 29,1-cM-Segment (Position 76M–96M auf Chr 9) liegt in einem anderen Abschnitt desselben Chromosoms. Die Triangulationsgruppe bezieht sich auf den Abschnitt um Position 3M–5,9M.</p>
+            <h3>5.2 Die drei Linien im Überblick</h3>
+
+            <p>Die Tier-1-Auswertung zeigt, dass die 43 gemeinsamen Matches auf <strong>drei unabhängige Linien</strong> zurückgehen — erkennbar daran, dass die Mitglieder jeder Linie untereinander triangulieren, zwischen den Linien aber nicht. Das spricht für drei getrennte Vererbungswege, nicht für eine einzige Grossfamilie.</p>
+
+            <div class="fact-box">
+                <strong>Linie A — petctdoc-Cluster</strong> (Chr 2: 7–12 Mb · Chr 8: 3–5 Mb · Chr 9: 2–7 Mb)<br>
+                petctdoc ist in allen drei Segmenten präsent, Kimble in zweien. Weitere Mitglieder: yaronk, Rebecca Gerard, Irving Greene, Pearl Friedman. Überschneidet sich im Chr-9-Teilsegment mit der Kleinsegmentgruppe aus 5.1.<br>
+                <em>Stand 15.4.2026:</em> petctdoc hat geantwortet — sein Paper-Trail zeigt 4–5 Generationen rückwärts Minsk/Grodno (Belarus) und Talne/Uman (Ukraine), keine bekannten Böhmen-Verwandten. Die genealogische Zuordnung der Linie ist damit offen.
+            </div>
+
+            <div class="fact-box">
+                <strong>Linie B — Gold/Nathanson</strong> (Chr 2: 13–24 Mb)<br>
+                Laura Gold, MJNathanson. Liegt geografisch auf Chromosom 2 direkt neben Segment A1 (Chr 2: 7–12 Mb), überlappt aber nicht — eigener Vererbungsweg.
+            </div>
+
+            <div class="fact-box">
+                <strong>Linie C — Kieserman</strong> (Chr 14: 90–96 Mb)<br>
+                Scott Kieserman, peter weiskopf, Sally Strasburger Stephenson, Esther Reynga. Alle sechs Paar-Kombinationen triangulieren untereinander — kompletter Verwandtschaftsblock.<br>
+                <strong style="color: #c66a1e;">Kontaktpriorität:</strong> Keines der vier Mitglieder wurde bisher angeschrieben.
+            </div>
+
+            <div class="fact-box warm">
+                <strong>Zwei Lesarten der Linie A (Stand 15.4.2026)</strong><br>
+                Nach der Antwort von petctdoc bleiben zwei konkurrierende Interpretationen bestehen, die beide sachlich vertretbar sind:
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><strong>Lesart A — tiefer MRCA:</strong> Der gemeinsame Vorfahre liegt vor der dokumentierten Belarus/Ukraine-Ansiedlung von petctdocs Linien. Aschkenasische Mobilität zwischen Böhmen und Litauen/Ukraine im 17./18. Jh. ist belegt. Die Drei-Segment-Triangulation mit Zeisl und Kimble ist durch Endogamie allein schwer zu erklären und bleibt ein echtes Signal.</li>
+                    <li><strong>Lesart B — Endogamie-Echo:</strong> Das, was hier als "Linie A" erscheint, ist ein aschkenasisches Populationssignal, das zufällig mehrere Segmente trifft. Dann verliert petctdocs Zentralstellung ihre Bedeutung, und <strong>Linie C (Kieserman)</strong> wird relativ wichtiger — dort triangulieren vier Matches ohne aschkenasischen Endogamie-Verdacht.</li>
+                </ul>
+            </div>
+
+            <h3>5.3 Grosssegment Chr 9 (Position 76–92 Mb)</h3>
+
+            <p>Das grosse 29,1-cM-Segment des Zeisl↔Wolfgang-One-to-One liegt im Abschnitt 76–96 Mb auf Chromosom 9 — also in einem anderen Bereich als die Kleinsegmentgruppe aus 5.1 (dort ca. 3–6 Mb). In diesem Grosssegment-Bereich triangulieren in den Tier-1-Daten zwei weitere Matches mit Zeisl:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Person</th>
+                        <th>Kit</th>
+                        <th>Segment auf Chr 9</th>
+                        <th>cM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Walter S. Zeisl</td>
+                        <td>T405845</td>
+                        <td>76.364.970–95.823.747</td>
+                        <td>29,1</td>
+                    </tr>
+                    <tr>
+                        <td>Sean Greer</td>
+                        <td>M484701</td>
+                        <td>79,2–88,0 Mb</td>
+                        <td>11,4</td>
+                    </tr>
+                    <tr>
+                        <td>DT8121664 <span style="font-size: 0.85rem; color: #666;">(naubort27@gmail.com)</span></td>
+                        <td>DT8121664</td>
+                        <td>84,4–92,5 Mb</td>
+                        <td>12,8</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;"><strong>Abgrenzung zu Jovings/Cohen:</strong> Jacqueline Jovings und Meredith/Robert Cohen wurden zwar kontaktiert, ihre Triangulationsbelege passen aber nicht in diesen Cluster — Jovings hat keine Segmentdaten hinterlegt, Cohens 160 Tier-1-Zeilen liegen sämtlich auf Chromosom 14, nicht auf Chromosom 9. Daher hier nicht aufgenommen.</p>
         </section>
         <section id="matches">
             <h2>6. DNA-Matches — Übersicht</h2>
@@ -1027,6 +1121,9 @@
                 <button class="match-filter" data-filter="analysiert">Analysiert</button>
                 <button class="match-filter" data-filter="offen">Offen</button>
                 <button class="match-filter" data-filter="chr9">Chr-9-Gruppe</button>
+                <button class="match-filter" data-filter="linie-a">Linie A</button>
+                <button class="match-filter" data-filter="linie-b">Linie B</button>
+                <button class="match-filter" data-filter="linie-c">Linie C</button>
             </div>
 
             <div class="matches-container" id="matches-container">
@@ -1223,7 +1320,7 @@
                 </div>
             <div class="status-item">
                 <div class="status-icon">✓</div>
-                <div class="status-text">Antworten erhalten: Zeisl, petctdoc, Herbert Fisher/Susan Boyer (13.4.2026), Vivian Kahn für Victor Neumann (14.4.2026), Greer, Jovings, Cohen</div>
+                <div class="status-text">Antworten erhalten: Zeisl, petctdoc, Herbert Fisher/Susan Boyer (13.4.2026), Vivian Kahn für Victor Neumann (14.4.2026), Sean Greer, Jacqueline Jovings, Meredith/Robert Cohen. <em>Hinweis:</em> Greer hat belegbares Triangulationssegment auf Chr 9 (79–88 Mb); Jovings hat keine Segmentdaten hinterlegt; Cohens Tier-1-Zeilen liegen ausschliesslich auf Chr 14 — keine Chr-9-Triangulation.</div>
             </div>
             <div class="status-item">
                 <div class="status-icon">✓</div>
@@ -1231,8 +1328,20 @@
             </div>
             <div class="status-item">
                 <div class="status-icon">✓</div>
-                <div class="status-text">Fischer/Zeisl bei SNP-300 verifiziert: 163,6 cM / 31 Segmente / MRCA ~3,0 Gen.</div>
+                <div class="status-text">Fischer-Linie: Zeisl↔Fisher 56 cM auf 6 Segmenten dokumentiert (Stand 13.4.2026). SNP-300-One-to-One ohne Belegdatei — Zuordnung zur Chr-9-Kleinsegmentgruppe offen.</div>
             </div>
+            <div class="status-item">
+                <div class="status-icon">✓</div>
+                <div class="status-text">Tier-1-Triangulation Zeisl (T405845) vom 12.4.2026 ausgewertet (12.136 Zeilen)</div>
+            </div>
+            <div class="status-item">
+                <div class="status-icon">✓</div>
+                <div class="status-text">Cluster-Analyse 14.4.2026: Drei Ahnenlinien (A petctdoc-Kern, B Gold/Nathanson, C Kieserman) plus Grosssegment Chr 9 (76–92 Mb) mit Greer und DT8121664</div>
+            </div>
+            <div class="status-item">
+                <div class="status-icon">✓</div>
+                <div class="status-text">Antwort petctdoc (15.4.2026): Paper-Trail Belarus (Minsk/Grodno) und Ukraine (Talne/Uman) 4–5 Gen. rückwärts, keine bekannten Böhmen-Verwandten. Linie A bleibt Triangulationscluster, genealogische Zuordnung offen.</div>
+            </div>
             </div>
 
             <h3>In Arbeit / Offen</h3>
@@ -1241,6 +1350,10 @@
                     <div class="status-icon">○</div>
                     <div class="status-text">Weiterhin offen: Renee Fisher, Greene, Adler Reiff, Knopf, Shoshanna Agrest, Kolber, Nance, Caldwell, Friedman, Keating</div>
                 </div>
+                <div class="status-item">
+                    <div class="status-icon">○</div>
+                    <div class="status-text"><strong>Kontaktpriorität Linie C:</strong> Scott Kieserman, peter weiskopf, Sally Strasburger Stephenson, Esther Reynga — noch niemand gefragt.</div>
+                </div>
                 <div class="status-item">
                     <div class="status-icon">○</div>
                     <div class="status-text">Weitere der 43 Matches auf Chr 9 testen</div>
@@ -1349,7 +1462,8 @@
                 chr: 'Chr 2/9',
                 status: 'kontaktiert',
                 triangulation: true,
-                note: 'Email 6. April 2026 versendet. Teil der Chr-9-Triangulationsgruppe.'
+                linie: 'A',
+                note: 'Email 6. April 2026 versendet, Antwort 15.4.2026 eingegangen. Kern des Clusters Linie A (Chr 2/8/9). Paper-Trail zeigt Belarus (Minsk/Grodno) und Ukraine (Talne/Uman) 4–5 Generationen rückwärts — keine bekannten Böhmen-Verwandten. FTDNA-Werte abweichend (18 cM total / 9 cM longest) — plattformtypische Differenz zu GEDmatch 26,4 cM.'
             },
             {
                 name: 'Reeva J. Kimble',
@@ -1358,7 +1472,8 @@
                 chr: 'Chr 2/9',
                 status: 'kontaktiert',
                 triangulation: true,
-                note: 'Bester Stammbaum. Email 6. April 2026 versendet.'
+                linie: 'A',
+                note: 'Bester Stammbaum. Email 6. April 2026 versendet. Linie A (zwei der drei Segmente).'
             },
             {
                 name: 'Fischer',
@@ -1367,7 +1482,7 @@
                 chr: '—',
                 status: 'analysiert',
                 triangulation: false,
-                note: 'Stärkster gemeinsamer Match neben Zeisl. Böhmische Herkunft. Bei SNP-Schwelle 300: 163,6 cM auf 31 Segmenten, MRCA ~3,0 Gen. (verifiziert 14.4.2026).'
+                note: 'Starker gemeinsamer Match neben Zeisl (Zeisl↔Fisher 56 cM auf 6 Segmenten, Stand 13.4.2026). Böhmische Herkunft. Zuordnung zur Chr-9-Kleinsegmentgruppe unbelegt — der erwähnte One-to-One mit abgesenkter SNP-Schwelle liegt nicht als Belegdatei vor.'
             },
             {
                 name: 'Strasburger',
@@ -1376,34 +1491,38 @@
                 chr: '—',
                 status: 'analysiert',
                 triangulation: false,
-                note: 'One-to-One durchgeführt.'
+                linie: 'C',
+                note: 'One-to-One durchgeführt. Linie C — Chr 14 (90–96 Mb) — trianguliert mit Kieserman, Weiskopf, Reynga.'
             },
             {
                 name: 'Laura Gold',
                 kit: 'A218894',
                 cm: '~9',
-                chr: '?',
+                chr: 'Chr 2',
                 status: 'offen',
                 triangulation: false,
-                note: 'Noch auf Chr 9 zu testen.'
+                linie: 'B',
+                note: 'Linie B (Chr 2: 13–24 Mb) — trianguliert mit MJNathanson, liegt neben Segment A1 aber überlappt nicht.'
             },
             {
                 name: 'Scott Kieserman',
                 kit: 'T545129',
                 cm: '~9',
-                chr: '?',
+                chr: 'Chr 14',
                 status: 'offen',
                 triangulation: false,
-                note: 'Noch auf Chr 9 zu testen.'
+                linie: 'C',
+                note: 'Linie C (Chr 14: 90–96 Mb) — trianguliert mit Weiskopf, Strasburger Stephenson, Reynga (alle sechs Paar-Kombinationen).'
             },
             {
                 name: 'MJNathanson',
                 kit: 'A256024',
                 cm: '—',
-                chr: '—',
+                chr: 'Chr 2',
                 status: 'offen',
                 triangulation: false,
-                note: 'Noch zu testen.'
+                linie: 'B',
+                note: 'Linie B (Chr 2: 13–24 Mb) — trianguliert mit Laura Gold.'
             },
             {
                 name: 'Jeanette Stein',
@@ -1443,7 +1562,10 @@
                 const include =
                     filter === 'alle' ||
                     filter === match.status ||
-                    (filter === 'chr9' && match.triangulation);
+                    (filter === 'chr9' && match.triangulation) ||
+                    (filter === 'linie-a' && match.linie === 'A') ||
+                    (filter === 'linie-b' && match.linie === 'B') ||
+                    (filter === 'linie-c' && match.linie === 'C');
 
                 if (!include) return;
 
@@ -1457,6 +1579,10 @@
                             ${match.status === 'analysiert' ? '<span class="badge analysiert">Analysiert</span>' : ''}
                             ${match.status === 'offen' ? '<span class="badge offen">Offen</span>' : ''}
                             ${match.triangulation ? '<span class="badge triangle">Triangulation</span>' : ''}
+                            ${match.linie === 'A' ? '<span class="badge linie-a">Linie A</span>' : ''}
+                            ${match.linie === 'B' ? '<span class="badge linie-b">Linie B</span>' : ''}
+                            ${match.linie === 'C' ? '<span class="badge linie-c">Linie C</span>' : ''}
+                            ${match.linie === 'G' ? '<span class="badge gross9">Grosssegment Chr 9</span>' : ''}
                         </div>
                     </div>
                     <div class="match-card-meta">${match.kit} · ${match.cm} cM · ${match.chr}</div>
