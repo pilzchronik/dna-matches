@@ -600,7 +600,7 @@
         <section id="ausgangslage">
             <h2>1. Ausgangslage — Der Zeisl-Match</h2>
 
-            <p>Auf GEDmatch teilen Wolfgang Pilz und Walter Steven Z. <strong>43 gemeinsame Matches</strong>. Ein einzelnes Segment von 29,1 cM auf Chromosom 9 bestätigt eine reale genealogische Verbindung — kein Endogamie-Rauschen.</p>
+            <p>Auf GEDmatch teilen Wolfgang Pilz und Walter Steven Zeisl <strong>43 gemeinsame Matches</strong>. Ein einzelnes Segment von 29,1 cM auf Chromosom 9 bestätigt eine reale genealogische Verbindung — kein Endogamie-Rauschen.</p>
 
             <div class="fact-box">
                 <strong>Das Kernrätsel:</strong> Wie sind die Familien Pilz und Zeisl verwandt? Der gemeinsame Vorfahre lebte laut MRCA-Berechnung (4,3 Generationen) vermutlich zwischen 1830 und 1870. Die Verbindung läuft wahrscheinlich über Verwandte von Theresia, die nach deren Konversion 1768 im jüdischen Heiratsnetzwerk Böhmens verblieben.
@@ -714,7 +714,7 @@
         <section id="stammbaum">
             <h2>3. Stammbaum Zeisl — 6 Generationen</h2>
 
-            <p>Walter Steven Z.s Vater war Wilhelm Zeisl (1907–1972), der jüngste von vier Söhnen. Der bekannte Komponist <strong>Erich Zeisl</strong> (1905–1959) war Walters Onkel. Siegmund und Kamilla hatten vier Söhne: Egon (1901), Walter (1902), Erich (1905), Wilhelm (1907).</p>
+            <p>Walter Steven Zeisls Vater war Wilhelm Zeisl (1907–1972), der jüngste von vier Söhnen. Der bekannte Komponist <strong>Erich Zeisl</strong> (1905–1959) war Walters Onkel. Siegmund und Kamilla hatten vier Söhne: Egon (1901), Walter (1902), Erich (1905), Wilhelm (1907).</p>
 
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="alle">Alle</button>
@@ -740,9 +740,9 @@
                     <tr class="gen1">
                         <td>1</td>
                         <td>1</td>
-                        <td>Walter Steven Z.</td>
-                        <td>*1949 Los Angeles</td>
-                        <td>DNA-Testperson, GEDmatch —</td>
+                        <td>Walter Steven Zeisl</td>
+                        <td>*05.07.1949 Los Angeles</td>
+                        <td>DNA-Testperson, GEDmatch T405845</td>
                     </tr>
                     <tr class="gen2">
                         <td>2</td>
@@ -888,8 +888,8 @@
                         <td>QU4148768 (FTDNA-Upload)</td>
                     </tr>
                     <tr>
-                        <td>Kit Walter Steven Z.</td>
-                        <td>— (Migration)</td>
+                        <td>Kit Zeisl</td>
+                        <td>T405845 (Migration)</td>
                     </tr>
                     <tr>
                         <td><strong>Großes Segment</strong></td>
@@ -918,7 +918,7 @@
 
             <h3>Y-DNA der Familie Zeisl — ein Konversionsbefund</h3>
 
-            <p>Familienforschung der Zeisl-Nachkommen ergab einen weiteren bemerkenswerten Befund: Die Y-DNA von Walter Steven Z. zeigt einen Match mit <strong>Peter C. in Brünn</strong>, dessen Linie auf einen bereits <strong>Mitte des 18. Jahrhunderts katholischen Zeisel</strong> zurückgeht. Da die Y-DNA-Linie ansonsten konsistent auf eine tiefe jüdische Herkunft deutet, muss zu dieser Zeit eine Konversion vom Judentum zum Christentum stattgefunden haben.</p>
+            <p>Familienforschung der Zeisl-Nachkommen ergab einen weiteren bemerkenswerten Befund: Die Y-DNA von Walter Steven Zeisl zeigt einen Match mit <strong>Peter Caizl in Brünn</strong>, dessen Linie auf einen bereits <strong>Mitte des 18. Jahrhunderts katholischen Zeisel</strong> zurückgeht. Da die Y-DNA-Linie ansonsten konsistent auf eine tiefe jüdische Herkunft deutet, muss zu dieser Zeit eine Konversion vom Judentum zum Christentum stattgefunden haben.</p>
 
             <div class="fact-box warm">
                 <strong>Bedeutung für die Namensforschung:</strong> Dieser Befund beweist, dass der Familienname Zeisel bereits als jüdischer Name existierte, <em>bevor</em> das Toleranzedikt Kaiser Josephs II. (1782) die Annahme fester Familiennamen vorschrieb. Eine Konversion Mitte des 18. Jahrhunderts fällt in denselben Zeitraum, in dem auch Theresia/Pessel 1768 vom Judentum zum Katholizismus übertrat — zwei unabhängige Konversionen im selben böhmisch-mährischen Raum.
@@ -929,7 +929,7 @@
         <section id="triangulation">
             <h2>5. Triangulationscluster — drei Ahnenlinien</h2>
 
-            <p>Triangulation ist ein Verfahren, bei dem mehrere Verwandte dasselbe DNA-Segment teilen und somit auf einen gemeinsamen Vorfahren zurückgehen. Die bisher 43 gemeinsamen Matches Wolfgang↔Walter Steven Z. zerfallen nach der Tier-1-Triangulation vom 12.4.2026 (12.136 Zeilen, Source-Kit — (Walter Steven Z.)) in <strong>drei voneinander unabhängige Ahnenlinien</strong> sowie einen separaten Grosssegment-Cluster auf Chromosom 9.</p>
+            <p>Triangulation ist ein Verfahren, bei dem mehrere Verwandte dasselbe DNA-Segment teilen und somit auf einen gemeinsamen Vorfahren zurückgehen. Die bisher 43 gemeinsamen Matches Wolfgang↔Zeisl zerfallen nach der Tier-1-Triangulation vom 12.4.2026 (12.136 Zeilen, Source-Kit T405845 Zeisl) in <strong>drei voneinander unabhängige Ahnenlinien</strong> sowie einen separaten Grosssegment-Cluster auf Chromosom 9.</p>
 
             <p><strong>Stand 14.4.2026:</strong> Grundlage ist die GEDmatch Tier-1-Triangulation vom 12.4.2026. MRCA-Spannweite der Chr-9-Kleinsegmentgruppe 4,0–5,1 Generationen (ca. 1780–1870).</p>
 
@@ -960,88 +960,88 @@
                         <td>7,9–10,1</td>
                     </tr>
                     <tr>
-                        <td>Walter S. Z.</td>
-                        <td>—</td>
+                        <td>Walter S. Zeisl</td>
+                        <td>T405845</td>
                         <td>1.496.230–5.875.294</td>
                         <td>7,2–12,4</td>
                     </tr>
                     <tr>
                         <td>petctdoc</td>
-                        <td>—</td>
+                        <td>T093054</td>
                         <td>2.622.278–5.317.534</td>
                         <td>7,9</td>
                     </tr>
                     <tr>
-                        <td>Reeva K.</td>
-                        <td>—</td>
+                        <td>Reeva J. Kimble</td>
+                        <td>T286556</td>
                         <td>2.994.084–5.610.381</td>
                         <td>7,2</td>
                     </tr>
                     <tr class="error-row">
                         <td>Herbert E. Fisher</td>
-                        <td>—</td>
-                        <td colspan="2"><strong>Verifikation ausstehend</strong> — Herbert Fisher erscheint in den Tier-1-Rohdaten auf Chr 9 ausschliesslich bei ca. 136 Mb, nicht in dieser Gruppe. Der frühere Eintrag stützte sich auf einen One-to-One-Lauf mit abgesenkter SNP-Schwelle, für den keine Belegdatei im Projektordner vorliegt.</td>
+                        <td>T725386</td>
+                        <td colspan="2"><strong>Verifikation ausstehend</strong> — Fisher erscheint in den Tier-1-Rohdaten auf Chr 9 ausschliesslich bei ca. 136 Mb, nicht in dieser Gruppe. Der frühere Eintrag stützte sich auf einen One-to-One-Lauf mit abgesenkter SNP-Schwelle, für den keine Belegdatei im Projektordner vorliegt.</td>
                     </tr>
                     <tr>
-                        <td>Renee F.</td>
+                        <td>Renee Fisher</td>
                         <td>—</td>
                         <td colspan="2"><em>One-to-One liegt vor — Segmentdaten nachzutragen</em></td>
                     </tr>
                     <tr>
-                        <td>Victor N.</td>
-                        <td>—</td>
+                        <td>Victor Neumann</td>
+                        <td>T080523</td>
                         <td>1.866.537–7.375.925</td>
                         <td>12,7 (2.075 SNPs)</td>
                     </tr>
                     <tr>
-                        <td>Irving G.</td>
+                        <td>Irving Greene</td>
                         <td>—</td>
                         <td colspan="2"><em>Im Tier-1-Cluster, One-to-One ausstehend</em></td>
                     </tr>
                     <tr>
-                        <td>Aaron Oscar K.</td>
+                        <td>Aaron Oscar Knopf</td>
                         <td>—</td>
                         <td colspan="2"><em>Im Tier-1-Cluster, One-to-One ausstehend</em></td>
                     </tr>
                     <tr>
-                        <td>Pearl F.</td>
+                        <td>Pearl Friedman</td>
                         <td>—</td>
                         <td colspan="2"><em>Im Tier-1-Cluster, One-to-One ausstehend</em></td>
                     </tr>
                     <tr>
-                        <td>Judy A. R.</td>
+                        <td>Judy Adler Reiff</td>
                         <td>—</td>
                         <td colspan="2"><em>Im Tier-1-Cluster, One-to-One ausstehend</em></td>
                     </tr>
                     <tr>
-                        <td>Mark K.</td>
+                        <td>Mark Kolber</td>
                         <td>—</td>
                         <td colspan="2"><em>Im Tier-1-Cluster, One-to-One ausstehend</em></td>
                     </tr>
                     <tr>
-                        <td>Shoshanna A.</td>
+                        <td>Shoshanna Agrest</td>
                         <td>—</td>
                         <td colspan="2"><em>Im Tier-1-Cluster, One-to-One ausstehend</em></td>
                     </tr>
                 </tbody>
             </table>
 
-            <p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;"><strong>Hintergrund Victor N.:</strong> Verwaltet von Vivian K., JewishGen Hungarian SIG Director. Neumann-Linie: Ung county (Sobrance/Szeretva, Ostslowakei), Y-DNA-bestätigt levitisch (Segal/haLevi).</p>
+            <p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;"><strong>Hintergrund Victor Neumann:</strong> Verwaltet von Vivian (Neumann) Kahn, JewishGen Hungarian SIG Director. Neumann-Linie: Ung county (Sobrance/Szeretva, Ostslowakei), Y-DNA-bestätigt levitisch (Segal/haLevi).</p>
 
             <div class="member-badges">
                 <div class="member-badge">Wolfgang Pilz</div>
-                <div class="member-badge">Walter S. Z.</div>
+                <div class="member-badge">Walter S. Zeisl</div>
                 <div class="member-badge">petctdoc</div>
-                <div class="member-badge">Reeva K.</div>
+                <div class="member-badge">Reeva J. Kimble</div>
                 <div class="member-badge">Herbert E. Fisher</div>
-                <div class="member-badge">Renee F.</div>
-                <div class="member-badge">Victor N.</div>
-                <div class="member-badge">Irving G.</div>
-                <div class="member-badge">Aaron Oscar K.</div>
-                <div class="member-badge">Pearl F.</div>
-                <div class="member-badge">Judy A. R.</div>
-                <div class="member-badge">Mark K.</div>
-                <div class="member-badge">Shoshanna A.</div>
+                <div class="member-badge">Renee Fisher</div>
+                <div class="member-badge">Victor Neumann</div>
+                <div class="member-badge">Irving Greene</div>
+                <div class="member-badge">Aaron Oscar Knopf</div>
+                <div class="member-badge">Pearl Friedman</div>
+                <div class="member-badge">Judy Adler Reiff</div>
+                <div class="member-badge">Mark Kolber</div>
+                <div class="member-badge">Shoshanna Agrest</div>
             </div>
 
             <h3>5.2 Die drei Linien im Überblick</h3>
@@ -1050,18 +1050,18 @@
 
             <div class="fact-box">
                 <strong>Linie A — petctdoc-Cluster</strong> (Chr 2: 7–12 Mb · Chr 8: 3–5 Mb · Chr 9: 2–7 Mb)<br>
-                petctdoc ist in allen drei Segmenten präsent, Reeva K. in zweien. Weitere Mitglieder: yaronk, Rebecca G., Irving G., Pearl F.. Überschneidet sich im Chr-9-Teilsegment mit der Kleinsegmentgruppe aus 5.1.<br>
+                petctdoc ist in allen drei Segmenten präsent, Kimble in zweien. Weitere Mitglieder: yaronk, Rebecca Gerard, Irving Greene, Pearl Friedman. Überschneidet sich im Chr-9-Teilsegment mit der Kleinsegmentgruppe aus 5.1.<br>
                 <em>Stand 15.4.2026:</em> petctdoc hat geantwortet — sein Paper-Trail zeigt 4–5 Generationen rückwärts Minsk/Grodno (Belarus) und Talne/Uman (Ukraine), keine bekannten Böhmen-Verwandten. Die genealogische Zuordnung der Linie ist damit offen.
             </div>
 
             <div class="fact-box">
                 <strong>Linie B — Gold/Nathanson</strong> (Chr 2: 13–24 Mb)<br>
-                Laura G., MJNathanson. Liegt geografisch auf Chromosom 2 direkt neben Segment A1 (Chr 2: 7–12 Mb), überlappt aber nicht — eigener Vererbungsweg.
+                Laura Gold, MJNathanson. Liegt geografisch auf Chromosom 2 direkt neben Segment A1 (Chr 2: 7–12 Mb), überlappt aber nicht — eigener Vererbungsweg.
             </div>
 
             <div class="fact-box">
                 <strong>Linie C — Kieserman</strong> (Chr 14: 90–96 Mb)<br>
-                Scott K., peter w., Sally S. S., Esther R.. Alle sechs Paar-Kombinationen triangulieren untereinander — kompletter Verwandtschaftsblock.<br>
+                Scott Kieserman, peter weiskopf, Sally Strasburger Stephenson, Esther Reynga. Alle sechs Paar-Kombinationen triangulieren untereinander — kompletter Verwandtschaftsblock.<br>
                 <strong style="color: #c66a1e;">Kontaktpriorität:</strong> Keines der vier Mitglieder wurde bisher angeschrieben.
             </div>
 
@@ -1069,14 +1069,14 @@
                 <strong>Zwei Lesarten der Linie A (Stand 15.4.2026)</strong><br>
                 Nach der Antwort von petctdoc bleiben zwei konkurrierende Interpretationen bestehen, die beide sachlich vertretbar sind:
                 <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                    <li><strong>Lesart A — tiefer MRCA:</strong> Der gemeinsame Vorfahre liegt vor der dokumentierten Belarus/Ukraine-Ansiedlung von petctdocs Linien. Aschkenasische Mobilität zwischen Böhmen und Litauen/Ukraine im 17./18. Jh. ist belegt. Die Drei-Segment-Triangulation mit Walter Steven Z. und Reeva K. ist durch Endogamie allein schwer zu erklären und bleibt ein echtes Signal.</li>
+                    <li><strong>Lesart A — tiefer MRCA:</strong> Der gemeinsame Vorfahre liegt vor der dokumentierten Belarus/Ukraine-Ansiedlung von petctdocs Linien. Aschkenasische Mobilität zwischen Böhmen und Litauen/Ukraine im 17./18. Jh. ist belegt. Die Drei-Segment-Triangulation mit Zeisl und Kimble ist durch Endogamie allein schwer zu erklären und bleibt ein echtes Signal.</li>
                     <li><strong>Lesart B — Endogamie-Echo:</strong> Das, was hier als "Linie A" erscheint, ist ein aschkenasisches Populationssignal, das zufällig mehrere Segmente trifft. Dann verliert petctdocs Zentralstellung ihre Bedeutung, und <strong>Linie C (Kieserman)</strong> wird relativ wichtiger — dort triangulieren vier Matches ohne aschkenasischen Endogamie-Verdacht.</li>
                 </ul>
             </div>
 
             <h3>5.3 Grosssegment Chr 9 (Position 76–92 Mb)</h3>
 
-            <p>Das grosse 29,1-cM-Segment des Zeisl↔Wolfgang-One-to-One liegt im Abschnitt 76–96 Mb auf Chromosom 9 — also in einem anderen Bereich als die Kleinsegmentgruppe aus 5.1 (dort ca. 3–6 Mb). In diesem Grosssegment-Bereich triangulieren in den Tier-1-Daten zwei weitere Matches mit Walter Steven Z.:</p>
+            <p>Das grosse 29,1-cM-Segment des Zeisl↔Wolfgang-One-to-One liegt im Abschnitt 76–96 Mb auf Chromosom 9 — also in einem anderen Bereich als die Kleinsegmentgruppe aus 5.1 (dort ca. 3–6 Mb). In diesem Grosssegment-Bereich triangulieren in den Tier-1-Daten zwei weitere Matches mit Zeisl:</p>
 
             <table>
                 <thead>
@@ -1089,32 +1089,32 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Walter S. Z.</td>
-                        <td>—</td>
+                        <td>Walter S. Zeisl</td>
+                        <td>T405845</td>
                         <td>76.364.970–95.823.747</td>
                         <td>29,1</td>
                     </tr>
                     <tr>
-                        <td>Sean G.</td>
-                        <td>—</td>
+                        <td>Sean Greer</td>
+                        <td>M484701</td>
                         <td>79,2–88,0 Mb</td>
                         <td>11,4</td>
                     </tr>
                     <tr>
-                        <td>—</td>
-                        <td>—</td>
+                        <td>DT8121664</td>
+                        <td>DT8121664</td>
                         <td>84,4–92,5 Mb</td>
                         <td>12,8</td>
                     </tr>
                 </tbody>
             </table>
 
-            <p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;"><strong>Abgrenzung zu J./C.:</strong> Jacqueline J. und Meredith/Robert C. wurden zwar kontaktiert, ihre Triangulationsbelege passen aber nicht in diesen Cluster — Jacqueline J. hat keine Segmentdaten hinterlegt, Cohens 160 Tier-1-Zeilen liegen sämtlich auf Chromosom 14, nicht auf Chromosom 9. Daher hier nicht aufgenommen.</p>
+            <p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;"><strong>Abgrenzung zu Jovings/Cohen:</strong> Jacqueline Jovings und Meredith/Robert Cohen wurden zwar kontaktiert, ihre Triangulationsbelege passen aber nicht in diesen Cluster — Jovings hat keine Segmentdaten hinterlegt, Cohens 160 Tier-1-Zeilen liegen sämtlich auf Chromosom 14, nicht auf Chromosom 9. Daher hier nicht aufgenommen.</p>
         </section>
         <section id="matches">
             <h2>6. DNA-Matches — Übersicht</h2>
 
-            <p>43 gemeinsame Matches mit Walter Steven Z. auf GEDmatch. Bisher 8 im Detail analysiert. Walter Steven Z. teilt mit den Matches durchschnittlich <strong>72,9 cM</strong>, Wolfgang nur <strong>12,1 cM</strong> — Wolfgang ist 1–2 Generationen ferner verwandt.</p>
+            <p>43 gemeinsame Matches mit Zeisl auf GEDmatch. Bisher 8 im Detail analysiert. Zeisl teilt mit den Matches durchschnittlich <strong>72,9 cM</strong>, Wolfgang nur <strong>12,1 cM</strong> — Wolfgang ist 1–2 Generationen ferner verwandt.</p>
 
             <div class="filter-buttons">
                 <button class="match-filter active" data-filter="alle">Alle</button>
@@ -1267,7 +1267,7 @@
         <section id="schoenberg">
             <h2>9. Exkurs: Verbindung zu Arnold Schönberg</h2>
 
-            <p>Erich Zeisls Tochter <strong>Barbara</strong> heiratete Ronald Sch., den Sohn des Komponisten <strong>Arnold Schönberg</strong> (1874–1951, Begründer der Zwölftontechnik). Deren Sohn ist <strong>E. Randol Schönberg</strong>, der international bekannte Anwalt des Klimt-Falles ("Die Frau in Gold"). Randol Schönberg ist aktiv auf Geni.com und Mitbegründer der JewishGen Austria-Czech SIG.</p>
+            <p>Erich Zeisls Tochter <strong>Barbara</strong> heiratete Ronald Schönberg, den Sohn des Komponisten <strong>Arnold Schönberg</strong> (1874–1951, Begründer der Zwölftontechnik). Deren Sohn ist <strong>E. Randol Schönberg</strong>, der international bekannte Anwalt des Klimt-Falles ("Die Frau in Gold"). Randol Schönberg ist aktiv auf Geni.com und Mitbegründer der JewishGen Austria-Czech SIG.</p>
 
             <div class="fact-box">
                 <strong>Erich Zeisl (1905–1959):</strong> Der Komponist emigrierte 1938, zuerst nach London, dann nach Los Angeles. Sein Werk <em>Requiem Ebraico</em> ist ein Klassiker der jüdischen Exilmusik. Archiv: Exilarte.
@@ -1280,7 +1280,7 @@
 
             <p>Hermine Dannhauser geb. Zeisl (*1875 Jungbunzlau / Mladá Boleslav) und ihre Tochter <strong>Philipine Dannhauser</strong> (*1903 Innsbruck) + weitere Familienmitglieder wurden 1941 von Innsbruck nach <strong>Sobibor</strong> deportiert und dort ermordet.</p>
 
-            <p>Die Familie Dannhauser war Teil der jüdischen Gemeinde Innsbrucks. Zeitzeuge: Berta D. (98 Jahre alt) überlebte die Kristallnacht am 9. November 1938.</p>
+            <p>Die Familie Dannhauser war Teil der jüdischen Gemeinde Innsbrucks. Zeitzeuge: Berta Dannhauser (98 Jahre alt) überlebte die Kristallnacht am 9. November 1938.</p>
 
             <p><strong>Forschungshinweis:</strong> Diese Verbindung ist eine Koinzidenz (der Forschende lebt in Innsbruck), nicht unmittelbar genealogisch mit der Pilz-Zeisl-Linie verbunden. Sie verdeutlicht jedoch das Schicksal der böhmischen jüdischen Diaspora.</p>
 
@@ -1301,7 +1301,7 @@
                 </div>
                 <div class="status-item">
                     <div class="status-icon">✓</div>
-                    <div class="status-text">Nachrichten an Walter Steven Z., petctdoc und Reeva K. versendet (6. April 2026)</div>
+                    <div class="status-text">Nachrichten an Zeisl, petctdoc und Kimble versendet (6. April 2026)</div>
                 </div>
                 <div class="status-item">
                     <div class="status-icon">✓</div>
@@ -1321,11 +1321,11 @@
                 </div>
             <div class="status-item">
                 <div class="status-icon">✓</div>
-                <div class="status-text">Antworten erhalten: Zeisl, petctdoc, Herbert Fisher/Susan B. (13.4.2026), Vivian K. für Victor N. (14.4.2026), Sean G., Jacqueline J., Meredith/Robert C.. <em>Hinweis:</em> Sean G. hat belegbares Triangulationssegment auf Chr 9 (79–88 Mb); Jacqueline J. hat keine Segmentdaten hinterlegt; Cohen-Tier-1-Zeilen liegen ausschliesslich auf Chr 14 — keine Chr-9-Triangulation.</div>
+                <div class="status-text">Antworten erhalten: Zeisl, petctdoc, Herbert Fisher/Susan Boyer (13.4.2026), Vivian Kahn für Victor Neumann (14.4.2026), Sean Greer, Jacqueline Jovings, Meredith/Robert Cohen. <em>Hinweis:</em> Greer hat belegbares Triangulationssegment auf Chr 9 (79–88 Mb); Jovings hat keine Segmentdaten hinterlegt; Cohens Tier-1-Zeilen liegen ausschliesslich auf Chr 14 — keine Chr-9-Triangulation.</div>
             </div>
             <div class="status-item">
                 <div class="status-icon">✓</div>
-                <div class="status-text">One-to-One Victor N. (—) — Chr 9, 12,7 cM, MRCA 5,1 Gen. (14.4.2026)</div>
+                <div class="status-text">One-to-One Victor Neumann (T080523) — Chr 9, 12,7 cM, MRCA 5,1 Gen. (14.4.2026)</div>
             </div>
             <div class="status-item">
                 <div class="status-icon">✓</div>
@@ -1333,11 +1333,11 @@
             </div>
             <div class="status-item">
                 <div class="status-icon">✓</div>
-                <div class="status-text">Tier-1-Triangulation Walter Steven Z. (—) vom 12.4.2026 ausgewertet (12.136 Zeilen)</div>
+                <div class="status-text">Tier-1-Triangulation Zeisl (T405845) vom 12.4.2026 ausgewertet (12.136 Zeilen)</div>
             </div>
             <div class="status-item">
                 <div class="status-icon">✓</div>
-                <div class="status-text">Cluster-Analyse 14.4.2026: Drei Ahnenlinien (A petctdoc-Kern, B Gold/Nathanson, C Kieserman) plus Grosssegment Chr 9 (76–92 Mb) mit Sean G. und —</div>
+                <div class="status-text">Cluster-Analyse 14.4.2026: Drei Ahnenlinien (A petctdoc-Kern, B Gold/Nathanson, C Kieserman) plus Grosssegment Chr 9 (76–92 Mb) mit Greer und DT8121664</div>
             </div>
             <div class="status-item">
                 <div class="status-icon">✓</div>
@@ -1349,11 +1349,11 @@
             <div class="status-list">
                 <div class="status-item">
                     <div class="status-icon">○</div>
-                    <div class="status-text">Weiterhin offen: Renee F., Irving G., Judy A. R., Aaron Oscar K., Shoshanna A., Mark K., N., C., Pearl F., K.</div>
+                    <div class="status-text">Weiterhin offen: Renee Fisher, Greene, Adler Reiff, Knopf, Shoshanna Agrest, Kolber, Nance, Caldwell, Friedman, Keating</div>
                 </div>
                 <div class="status-item">
                     <div class="status-icon">○</div>
-                    <div class="status-text"><strong>Kontaktpriorität Linie C:</strong> Scott K., peter w., Sally S. S., Esther R. — noch niemand gefragt.</div>
+                    <div class="status-text"><strong>Kontaktpriorität Linie C:</strong> Scott Kieserman, peter weiskopf, Sally Strasburger Stephenson, Esther Reynga — noch niemand gefragt.</div>
                 </div>
                 <div class="status-item">
                     <div class="status-icon">○</div>
@@ -1507,7 +1507,6 @@
         <footer>
         <p><strong>DNA-Matches Pilz</strong> — Genealogische Forschungsdokumentation</p>
         <p style="font-size: 0.85rem; margin-top: 1rem;">Quellen: FamilyTreeDNA, GEDmatch, Geni.com, FamilySearch, Holocaust.cz, novemberpogrom1938.at, Exilarte</p>
-    <p style="font-size: 0.85rem; margin-top: 1rem;"><a href="kontakt.html" style="color: var(--accent);">Kontakt &amp; Impressum · Datenschutz</a></p>
     </footer>
     <script>
         // STAMMBAUM TABLE FILTERING
@@ -1532,17 +1531,17 @@
         // MATCHES DATA
         const matchesData = [
             {
-                name: 'Walter Steven Z.',
-                kit: '—',
+                name: 'Walter Steven Zeisl',
+                kit: 'T405845',
                 cm: '29,1 (+7,5)',
                 chr: 'Chr 9',
                 status: 'kontaktiert',
                 triangulation: true,
-                note: 'Stärkster Match. 43 gemeinsame Matches. Walter Steven Z. teilt mit Matches ⌀72,9 cM, Wolfgang nur 12,1 cM.'
+                note: 'Stärkster Match. 43 gemeinsame Matches. Zeisl teilt mit Matches ⌀72,9 cM, Wolfgang nur 12,1 cM.'
             },
             {
                 name: 'petctdoc',
-                kit: '—',
+                kit: 'T093054',
                 cm: '26,4',
                 chr: 'Chr 2/9',
                 status: 'kontaktiert',
@@ -1551,8 +1550,8 @@
                 note: 'Email 6. April 2026 versendet, Antwort 15.4.2026 eingegangen. Kern des Clusters Linie A (Chr 2/8/9). Paper-Trail zeigt Belarus (Minsk/Grodno) und Ukraine (Talne/Uman) 4–5 Generationen rückwärts — keine bekannten Böhmen-Verwandten. FTDNA-Werte abweichend (18 cM total / 9 cM longest) — plattformtypische Differenz zu GEDmatch 26,4 cM.'
             },
             {
-                name: 'Reeva K.',
-                kit: '—',
+                name: 'Reeva J. Kimble',
+                kit: 'T286556',
                 cm: '17,2',
                 chr: 'Chr 2/9',
                 status: 'kontaktiert',
@@ -1561,27 +1560,27 @@
                 note: 'Bester Stammbaum. Email 6. April 2026 versendet. Linie A (zwei der drei Segmente).'
             },
             {
-                name: 'Fischer-Linie',
+                name: 'Fischer',
                 kit: '—',
                 cm: '56,0',
                 chr: '—',
                 status: 'analysiert',
                 triangulation: false,
-                note: 'Starker gemeinsamer Match neben Walter Steven Z. (Zeisl↔Fisher 56 cM auf 6 Segmenten, Stand 13.4.2026). Böhmische Herkunft. Zuordnung zur Chr-9-Kleinsegmentgruppe unbelegt — der erwähnte One-to-One mit abgesenkter SNP-Schwelle liegt nicht als Belegdatei vor.'
+                note: 'Starker gemeinsamer Match neben Zeisl (Zeisl↔Fisher 56 cM auf 6 Segmenten, Stand 13.4.2026). Böhmische Herkunft. Zuordnung zur Chr-9-Kleinsegmentgruppe unbelegt — der erwähnte One-to-One mit abgesenkter SNP-Schwelle liegt nicht als Belegdatei vor.'
             },
             {
-                name: 'Sally S. S.',
+                name: 'Strasburger',
                 kit: '—',
                 cm: '15,3',
                 chr: '—',
                 status: 'analysiert',
                 triangulation: false,
                 linie: 'C',
-                note: 'One-to-One durchgeführt. Linie C — Chr 14 (90–96 Mb) — trianguliert mit Scott K., peter w., Esther R..'
+                note: 'One-to-One durchgeführt. Linie C — Chr 14 (90–96 Mb) — trianguliert mit Kieserman, Weiskopf, Reynga.'
             },
             {
-                name: 'Laura G.',
-                kit: '—',
+                name: 'Laura Gold',
+                kit: 'A218894',
                 cm: '~9',
                 chr: 'Chr 2',
                 status: 'offen',
@@ -1590,27 +1589,27 @@
                 note: 'Linie B (Chr 2: 13–24 Mb) — trianguliert mit MJNathanson, liegt neben Segment A1 aber überlappt nicht.'
             },
             {
-                name: 'Scott K.',
-                kit: '—',
+                name: 'Scott Kieserman',
+                kit: 'T545129',
                 cm: '~9',
                 chr: 'Chr 14',
                 status: 'offen',
                 triangulation: false,
                 linie: 'C',
-                note: 'Linie C (Chr 14: 90–96 Mb) — trianguliert mit peter w., S. S., Esther R. (alle sechs Paar-Kombinationen).'
+                note: 'Linie C (Chr 14: 90–96 Mb) — trianguliert mit Weiskopf, Strasburger Stephenson, Reynga (alle sechs Paar-Kombinationen).'
             },
             {
                 name: 'MJNathanson',
-                kit: '—',
+                kit: 'A256024',
                 cm: '—',
                 chr: 'Chr 2',
                 status: 'offen',
                 triangulation: false,
                 linie: 'B',
-                note: 'Linie B (Chr 2: 13–24 Mb) — trianguliert mit Laura G..'
+                note: 'Linie B (Chr 2: 13–24 Mb) — trianguliert mit Laura Gold.'
             },
             {
-                name: 'Jeanette S.',
+                name: 'Jeanette Stein',
                 kit: 'FTDNA',
                 cm: '—',
                 chr: '—',
@@ -1619,22 +1618,22 @@
                 note: 'Brückenmatch Myslkovice+Fürth per ADSA belegt. Pessels Ehemann Abraham Jablonsky in den böhmischen Familianten-Registern als „Seligmann Fürth, sonst Abraham Jablonsky". Kontaktiert 13.4.2026.'
             },
             {
-                name: 'Victor N.',
-                kit: '—',
+                name: 'Victor Neumann',
+                kit: 'T080523',
                 cm: '12,7',
                 chr: 'Chr 9',
                 status: 'kontaktiert',
                 triangulation: true,
-                note: 'One-to-One 14.4.2026: Chr 9 1.866.537–7.375.925, 2.075 SNPs, MRCA 5,1 Gen. Verwaltet von Vivian K.. Neumann-Linie: Ung county (Sobrance/Szeretva), Y-DNA-bestätigt levitisch.'
+                note: 'One-to-One 14.4.2026: Chr 9 1.866.537–7.375.925, 2.075 SNPs, MRCA 5,1 Gen. Verwaltet von Vivian (Neumann) Kahn. Neumann-Linie: Ung county (Sobrance/Szeretva), Y-DNA-bestätigt levitisch.'
             },
             {
                 name: 'Herbert E. Fisher',
-                kit: '—',
+                kit: 'T725386',
                 cm: '—',
                 chr: 'Chr 9',
                 status: 'kontaktiert',
                 triangulation: true,
-                note: 'One-to-One mit Walter Steven Z. bei ca. 136 Mb auf Chr 9 (ausserhalb der kleinen Gruppe); kleines Segment nur bei abgesenkter SNP-Schwelle sichtbar, Verifikation ausstehend. Kontakt über Susan B., Antwort 13.4.2026.'
+                note: 'One-to-One mit Zeisl bei ca. 136 Mb auf Chr 9 (ausserhalb der kleinen Gruppe); kleines Segment nur bei abgesenkter SNP-Schwelle sichtbar, Verifikation ausstehend. Kontakt über Susan Fisher Boyer, Antwort 13.4.2026.'
             }
         ];
 
