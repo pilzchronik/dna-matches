@@ -366,6 +366,11 @@
             color: #ad1457;
         }
 
+        .badge.linie-c-strich {
+            background: #e8eaf6;
+            color: #283593;
+        }
+
         .badge.gross9 {
             background: #ede7f6;
             color: #4527a0;
@@ -607,7 +612,7 @@
             <p>Auf GEDmatch teile ich mit Walter Steven Z. <strong>43 gemeinsame Matches</strong>. Ein einzelnes Segment von 29,1 cM auf Chromosom 9 bestätigt eine reale genealogische Verbindung — kein Endogamie-Rauschen.</p>
 
             <div class="fact-box">
-                <strong>Das Kernrätsel:</strong> Wie sind die Familien Pilz und Zeisl verwandt? Der gemeinsame Vorfahre lag vermutlich auf der Generation von <strong>Theresias Eltern oder Grosseltern</strong> (~1700–1735). Die statistische MRCA-Berechnung von GEDmatch (4,3 Generationen) ist bei kleinen Segmenten mit grosser Streuung behaftet und unterschätzt in aschkenasischen Populationen den tatsächlichen Abstand systematisch. Die DNA-Linie zu Zeisl lief über Theresias jüdisch gebliebene Geschwister (und deren Nachkommen) im böhmischen Heiratsnetzwerk weiter.
+                <strong>Das Kernrätsel:</strong> Wie sind die Familien Pilz und Zeisl verwandt? Der gemeinsame Vorfahre lag vermutlich auf der Generation von <strong>Theresias Eltern oder Grosseltern</strong> (~1700–1735). Die statistische MRCA-Berechnung von GEDmatch (4,3 Generationen) ist bei kleinen Segmenten mit grosser Streuung behaftet und unterschätzt in aschkenasischen Populationen den tatsächlichen Abstand systematisch. Wie die DNA-Linie über das jüdische Heiratsnetzwerk weiterlief, ist in Kapitel 2 erläutert.
             </div>
         </section>
 
@@ -721,7 +726,7 @@
                 </ul>
             </div>
 
-            <p>Der gemeinsame Vorfahre mit der Familie Zeisl liegt vermutlich nicht bei Theresia selbst, sondern <strong>eine oder mehrere Generationen früher — bei ihren Eltern oder Grosseltern</strong>. Theresia selbst schied durch die Konversion 1768 aus dem jüdischen Heiratsnetzwerk aus; die DNA-Linie zu Zeisl lief deshalb über ihre jüdisch gebliebenen Geschwister (und deren Nachkommen) weiter.</p>
+            <p>Der gemeinsame Vorfahre mit der Familie Zeisl liegt vermutlich nicht bei Theresia selbst, sondern <strong>eine oder mehrere Generationen früher — bei ihren Eltern oder Grosseltern</strong>. Theresia selbst schied durch die Konversion 1768 aus dem jüdischen Heiratsnetzwerk aus; die DNA-Linie zu Zeisl lief deshalb über jüdisch gebliebene Seitenlinien aus der gleichen Vorfahrengeneration weiter.</p>
 
             <div class="fact-box" style="border-left: 4px solid #2a5d8f; margin-top: 1.5rem;">
                 <strong>Neu, Mai 2026 — Veselíčko-Konvergenz und Hypothese A′:</strong>
@@ -1202,6 +1207,7 @@
                 <button class="match-filter" data-filter="linie-a">Linie A</button>
                 <button class="match-filter" data-filter="linie-b">Linie B</button>
                 <button class="match-filter" data-filter="linie-c">Linie C</button>
+                <button class="match-filter" data-filter="linie-c-strich">Cluster C′</button>
             </div>
 
             <div class="matches-container" id="matches-container">
@@ -1355,7 +1361,7 @@
                     <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1880 Bolechow — ermordet 1942</span>
                 </div>
                 <div class="match-card-meta">Auschwitz</div>
-                <div class="match-card-note" style="display: block; margin-top: 0.5rem;">Ediths Vater (Walters Großvater mütterlicherseits). Vater von Katharina Löwenhek.</div>
+                <div class="match-card-note" style="display: block; margin-top: 0.5rem;">Ediths Vater (Walters Großvater mütterlicherseits). Ehemann von Katharina Löwenhek.</div>
             </div>
 
             <div class="match-card" style="border-left-color: #d32f2f; background: var(--error-bg);">
@@ -1364,7 +1370,7 @@
                     <span style="font-size: 0.9rem; color: #d32f2f; font-weight: 600;">*1891 Wien — ermordet 1943</span>
                 </div>
                 <div class="match-card-meta">Auschwitz</div>
-                <div class="match-card-note" style="display: block; margin-top: 0.5rem;">Ediths Mutter (Walters Großmutter mütterlicherseits). Tochter von Oskar Osias Aberbach. Starb ein Jahr nach ihrem Mann.</div>
+                <div class="match-card-note" style="display: block; margin-top: 0.5rem;">Ediths Mutter (Walters Großmutter mütterlicherseits). Ehefrau von Oskar Osias Aberbach. Starb ein Jahr nach ihrem Mann.</div>
             </div>
 
             <div class="fact-box error">
@@ -1779,6 +1785,7 @@
                 chr: 'Chr 14 (FTDNA) / Chr 13 (GEDmatch) — Plattform-Konflikt',
                 status: 'kontaktiert',
                 triangulation: false,
+                linie: 'C-strich',
                 note: 'Match-Träger Herbert E. Fisher (†); seine Tochter Susan F. B. verwaltet die Kits posthum (kein eigener Test). Wolfgang↔Herbert: 11,09 cM auf FTDNA (Chr 14, Segment 92,66–97,59 Mb, Direktquelle 12.5.2026) bzw. 10,3 cM im GEDmatch One-to-One 6.4.2026 (dort Chr 13, gleiches Segment — Plattform-Konflikt offen). Zeisl↔Herbert 56 cM auf 6 Segmenten (One-to-One 13.4.2026), dabei ein Chr-9-Segment bei 136,8M–138,0M (ausserhalb der Chr-9-Kleinsegmentgruppe). Nicht Teil der Chr-9-Gruppe. Vodička-Linie über Herberts Mutter Minnie Vodička, nach Familientradition (Jiří Fiedler, vermittelt durch Susan) zurück auf Samuel Vodička ~1710 in Veselíčko u Milevska. Susan empfiehlt Randy Schoenberg als Spezialist für die Zeisl-Linie. Erste Antwort 13.4.2026; Vodička-Material drei Mails am 10.5.2026 (Tom Weiss in CC); Klarstellung der Kit-Konstellation 12.5.2026.'
             },
             {
@@ -1788,6 +1795,7 @@
                 chr: '—',
                 status: 'offen',
                 triangulation: false,
+                linie: 'C-strich',
                 note: 'Onkel von Susan F. B., Halbbruder/Doppelcousin Herbert E. Fishers: gemeinsamer Vater Louis Fisher, Mütter Minnie und Elsie Vodička waren Schwestern — beide Kits tragen damit doppelte Vodička-Genetik. Lester (†) hat einen eigenen FTDNA-Kit; ob er mich matcht, ist noch ungeprüft. Susan verwaltet den Kit posthum. Klarstellung der Konstellation 12.5.2026 (Wortlaut Susan: „Both my uncle Lester and my father Herbert have DNA on FTDNA and both have died since those sample were entered. My father and his brother had mother\'s who were sisters. They had the same father.“). Vodička-Linie über Lesters Mutter Elsie Vodička, gleicher Veselíčko-Hintergrund wie Herbert.'
             },
             {
@@ -1849,7 +1857,8 @@
                     (filter === 'chr9' && match.triangulation) ||
                     (filter === 'linie-a' && match.linie === 'A') ||
                     (filter === 'linie-b' && match.linie === 'B') ||
-                    (filter === 'linie-c' && match.linie === 'C');
+                    (filter === 'linie-c' && match.linie === 'C') ||
+                    (filter === 'linie-c-strich' && match.linie === 'C-strich');
 
                 if (!include) return;
 
@@ -1866,6 +1875,7 @@
                             ${match.linie === 'A' ? '<span class="badge linie-a">Linie A</span>' : ''}
                             ${match.linie === 'B' ? '<span class="badge linie-b">Linie B</span>' : ''}
                             ${match.linie === 'C' ? '<span class="badge linie-c">Linie C</span>' : ''}
+                            ${match.linie === 'C-strich' ? '<span class="badge linie-c-strich">Cluster C′</span>' : ''}
                             ${match.linie === 'G' ? '<span class="badge gross9">Grosssegment Chr 9</span>' : ''}
                         </div>
                     </div>
