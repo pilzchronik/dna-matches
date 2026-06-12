@@ -561,3 +561,82 @@ footer p {
         min-width: 120px;
     }
 }
+
+/* AKTIVE SEITE IN DER NAV */
+nav a.nav-aktiv {
+    background: var(--accent);
+    color: white;
+}
+
+/* NAVIGATIONSKACHELN (Hub) */
+.seiten-kacheln {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.seiten-kachel {
+    display: block;
+    padding: 1.25rem;
+    background: var(--light-blue);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.2s;
+}
+
+.seiten-kachel:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.seiten-kachel strong {
+    display: block;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+}
+
+.seiten-kachel span {
+    font-size: 0.88rem;
+    color: #555;
+}
+
+/* GLOSSAR TOOLTIPS (Mechanik aus index_alt.html) */
+.glossar-term {
+    border-bottom: 1px dotted var(--accent, #2a5d8f);
+    cursor: help;
+    position: relative;
+}
+.glossar-term:hover::after,
+.glossar-term:focus::after {
+    content: attr(data-definition);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    width: max-content;
+    max-width: 320px;
+    z-index: 200;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    pointer-events: none;
+}
+.glossar-term:hover::before,
+.glossar-term:focus::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    border: 6px solid transparent;
+    border-top-color: #333;
+    z-index: 201;
+    pointer-events: none;
+}

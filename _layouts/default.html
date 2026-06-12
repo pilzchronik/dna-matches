@@ -6,9 +6,19 @@
     <meta name="description" content="{{ page.description }}">
     <title>{{ page.title }}</title>
 
-    <link rel="alternate" hreflang="de" href="{{ site.url }}{{ site.baseurl }}/" />
-    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/en/" />
+    <link rel="alternate" hreflang="de" href="{{ site.url }}{{ site.baseurl }}{{ page.de_url }}" />
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}{{ page.en_url }}" />
 
+{% if page.lang == 'de' %}    <script>
+        if (!sessionStorage.getItem('lang_redirected')) {
+            sessionStorage.setItem('lang_redirected', 'true');
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.toLowerCase().includes('en')) {
+                window.location.href = '{{ page.en_url | relative_url }}';
+            }
+        }
+    </script>
+{% endif %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
     {% if page.extra_head %}
@@ -16,16 +26,25 @@
     {% endif %}
 </head>
 <body>
+{% include header.html %}
 
+    <main>
 {{ content }}
+        <p style="margin-top: 2.5rem; font-size: 0.9em; color: #777; border-top: 1px solid #eee; padding-top: 1rem;">
+            {% if page.lang == 'en' %}<em>Note: This page is part of a broader research project. Further materials on the Pilz Chronicle are available at <a href="https://pilzchronik.github.io/bonusseite/">pilzchronik.github.io/bonusseite</a> (German only).</em>{% else %}<em>Hinweis: Diese Seite ist Teil eines weiterreichenden Forschungsprojekts; weiterführende Materialien zur Pilz-Chronik finden sich unter <a href="https://pilzchronik.github.io/bonusseite/">pilzchronik.github.io/bonusseite</a>.</em>{% endif %}
+        </p>
+    </main>
+
+{% include footer.html %}
 
     <script>
-        // SMOOTH SCROLL (shared)
-        document.querySelectorAll('nav a').forEach(anchor => {
+        // SMOOTH SCROLL (nur seiteninterne Anker)
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                if (this.classList.contains('inactive-lang') || this.classList.contains('active-lang')) return;
+                const href = this.getAttribute('href');
+                if (href === '#' || href.length < 2) return;
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                 }

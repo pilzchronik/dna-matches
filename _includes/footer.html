@@ -1,0 +1,11 @@
+    <footer>
+    {% if page.lang == 'en' %}
+        <p><strong>DNA Matches Pilz</strong> — Genealogical Research Documentation</p>
+        <p style="font-size: 0.85rem; margin-top: 1rem;">Sources: FamilyTreeDNA, GEDmatch, Geni.com, FamilySearch, Holocaust.cz, novemberpogrom1938.at, Exilarte</p>
+        <p style="font-size: 0.85rem; margin-top: 1rem;"><a href="{{ '/en/contact.html' | relative_url }}" style="color: var(--accent);">Contact &amp; Imprint · Privacy</a></p>
+    {% else %}
+        <p><strong>DNA-Matches Pilz</strong> — Genealogische Forschungsdokumentation</p>
+        <p style="font-size: 0.85rem; margin-top: 1rem;">Quellen: FamilyTreeDNA, GEDmatch, Geni.com, FamilySearch, Holocaust.cz, novemberpogrom1938.at, Exilarte</p>
+        <p style="font-size: 0.85rem; margin-top: 1rem;"><a href="{{ '/kontakt.html' | relative_url }}" style="color: var(--accent);">Kontakt &amp; Impressum · Datenschutz</a></p>
+    {% endif %}
+    </footer>
