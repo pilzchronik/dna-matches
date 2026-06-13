@@ -304,7 +304,7 @@ en_url: /en/
                     </div>
                     <div class="match-card-meta">${match.kit} · ${match.cm} cM · ${match.chr}</div>
                     <div class="match-card-note">${match.note}</div>
-                `;
+                `.replace(/>\s+</g, '><').trim();
                 card.addEventListener('click', function() {
                     this.classList.toggle('expanded');
                 });

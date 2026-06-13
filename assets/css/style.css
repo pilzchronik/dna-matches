@@ -284,7 +284,8 @@ button.active {
 .match-card-header {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 0.4rem;
 }
 
@@ -299,6 +300,7 @@ button.active {
     gap: 0.5rem;
     flex-wrap: wrap;
     justify-content: flex-end;
+    flex: 0 0 auto;
 }
 
 .badge {
