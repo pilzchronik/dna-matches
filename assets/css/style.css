@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 17px;
+}
+
 :root {
     --accent: #2a5d8f;
     --warm: #c66a1e;
@@ -17,7 +21,7 @@ body {
     font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
     color: var(--text);
     background: white;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* STICKY HEADER */
@@ -114,7 +118,8 @@ h3 {
 }
 
 p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
+    line-height: 1.75;
     text-align: justify;
 }
 
@@ -125,7 +130,7 @@ p {
     padding: 1.25rem;
     margin: 1.5rem 0;
     background: rgba(42, 93, 143, 0.06);
-    line-height: 1.5;
+    line-height: 1.65;
 }
 
 .fact-box.warm {
