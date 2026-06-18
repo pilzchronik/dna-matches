@@ -8,13 +8,19 @@ url: "https://pilzchronik.github.io"
 # Kein Theme – eigenes Layout in _layouts/default.html
 # (Das Design bleibt exakt wie bisher)
 
+author: Wolfgang Pilz
+logo: /assets/images/autor.jpg   # vorläufig; sobald ein dediziertes Teaser-Bild existiert, ersetzen
+# google_site_verification: "CODE_AUS_SEARCH_CONSOLE"   # erst eintragen, wenn der Code aus der Search Console vorliegt
+
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
   - "*.bak"
+  - "*.prev"
   - .gitignore
   - vendor

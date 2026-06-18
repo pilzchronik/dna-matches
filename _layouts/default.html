@@ -3,22 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ page.description }}">
-    <title>{{ page.title }}</title>
-
+    {% seo %}
     <link rel="alternate" hreflang="de" href="{{ site.url }}{{ site.baseurl }}{{ page.de_url }}" />
     <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}{{ page.en_url }}" />
-
-{% if page.lang == 'de' %}    <script>
-        if (!sessionStorage.getItem('lang_redirected')) {
-            sessionStorage.setItem('lang_redirected', 'true');
-            const userLang = navigator.language || navigator.userLanguage;
-            if (userLang.toLowerCase().includes('en')) {
-                window.location.href = '{{ page.en_url | relative_url }}';
-            }
-        }
-    </script>
-{% endif %}
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.baseurl }}{{ page.de_url }}" />
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
     {% if page.extra_head %}
