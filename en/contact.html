@@ -88,8 +88,8 @@
         6020 Innsbruck<br>
         Austria<br>
         E-mail:
-        <a href="mailto:&#112;&#105;&#108;&#122;&#64;&#103;&#109;&#120;&#46;&#97;&#116;"
-           id="kontakt-mail">&#112;&#105;&#108;&#122;&#64;&#103;&#109;&#120;&#46;&#97;&#116;</a>
+        <a href="#"
+           id="kontakt-mail">pilz (at) gmx.at</a>
     </div>
 
     <h2>Imprint</h2>
@@ -174,13 +174,12 @@
 </footer>
 
 <script>
+    // E-Mail-Adresse erst im Browser zusammensetzen, damit sie nicht im Quelltext steht
     (function() {
         var a = document.getElementById('kontakt-mail');
         if (!a) return;
-        a.addEventListener('click', function(e) {
-            var user = 'pilz', domain = 'gmx.at';
-            this.setAttribute('href', 'mailto:' + user + '@' + domain);
-        });
+        var user = 'pilz', domain = 'gmx.at';
+        a.href = 'mailto:' + user + '@' + domain;
     })();
 </script>
 
