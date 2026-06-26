@@ -17,6 +17,9 @@
 {% include header.html %}
 
     <main>
+{% if page.stand_vom %}
+        <p class="seiten-stand" style="font-size:0.85rem; color:#777; margin:0 0 1.5rem;">{% if page.lang == 'en' %}As of{% else %}Stand{% endif %}: {{ page.stand_vom }}</p>
+{% endif %}
 {{ content }}
         <p style="margin-top: 1.25rem; font-size: 0.9em; color: #777; border-top: 1px solid #eee; padding-top: 1rem;">
             {% if page.lang == 'en' %}<em>Note: This page is part of a broader research project. Further materials on the Pilz Chronicle are available at <a href="https://pilzchronik.github.io/">pilzchronik.github.io</a> (German only).</em>{% else %}<em>Hinweis: Diese Seite ist Teil eines weiterreichenden Forschungsprojekts; weiterführende Materialien zur Pilz-Chronik finden sich unter <a href="https://pilzchronik.github.io/">pilzchronik.github.io</a>.</em>{% endif %}

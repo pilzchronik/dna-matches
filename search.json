@@ -1,0 +1,4 @@
+---
+layout: null
+---
+[{% assign idxpages = site.html_pages | where_exp: "p", "p.title != nil" | where_exp: "p", "p.nav_id != 'suche'" %}{% for p in idxpages %}{"url":{{ p.url | relative_url | jsonify }},"title":{{ p.title | jsonify }},"lang":{{ p.lang | default: 'de' | jsonify }},"desc":{{ p.description | default: '' | jsonify }},"text":{{ p.content | strip_html | strip_newlines | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
