@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wolfgang Pilz and Walter Steven Zeisl — DNA connection</title>
+<style>
+  /* House style of the dna-matches diagrams – self-contained, does NOT inherit site CSS.
+     Line logic: solid = documented · dashed = hypothetical/unknown. */
+  :root{
+    --bg:#eef3f2;--card:#ffffff;--ink:#1f3b39;--ink-soft:#4a5c5c;--muted:#8b9a9a;
+    --teal:#0e9f8e;--teal-deep:#0a6c60;
+    --coral:#e0734e;--coral-deep:#b8502e;
+    --cobalt:#2f7fd0;--cobalt-deep:#1f5fa3;
+    --amber:#e0a52a;--amber-deep:#9a6a00;--amber-tint:#fdf6e7;
+    --grey:#9aa6ac;--grey-deep:#6f7a80;--hair:#e3eae9;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Inter","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;padding:24px 16px;
+  }
+  .frame{
+    max-width:1120px;margin:0 auto;background:var(--card);
+    border:1px solid var(--hair);border-radius:18px;
+    box-shadow:0 10px 30px rgba(20,60,55,.08);padding:18px 14px 8px;
+  }
+  .chart-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  svg.chart{display:block;width:100%;min-width:960px;max-width:1080px;height:auto;margin:0 auto}
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+  .title{font-size:22px;font-weight:800;fill:var(--ink);letter-spacing:.2px}
+  .subtitle{font-size:13px;font-weight:500;fill:var(--muted)}
+  .colhead{font-size:13px;font-weight:800;text-anchor:middle}
+  .nm{font-size:12.5px;font-weight:700;fill:var(--ink)}
+  .det{font-size:10.5px;font-weight:500;fill:var(--ink-soft)}
+  .note{font-size:10px;font-style:italic;font-weight:400;fill:var(--muted)}
+  .sib-h{font-size:11px;font-weight:800;fill:var(--amber-deep)}
+  .sib{font-size:10.5px;font-weight:600;fill:var(--ink-soft)}
+  .dnal1{font-size:12.5px;font-weight:800;fill:var(--teal-deep)}
+  .dna{font-size:10.5px;font-weight:500;fill:var(--ink-soft)}
+  .jhead{font-size:10.5px;font-weight:800;fill:var(--grey-deep)}
+  .jnote{font-size:9.5px;font-weight:500;fill:var(--ink-soft)}
+  .leg{font-size:11.5px;font-weight:500;fill:var(--ink-soft)}
+  .cap{font-size:10px;font-weight:400;fill:var(--muted)}
+  .hyplbl{font-size:10px;font-style:italic;font-weight:700;fill:var(--grey-deep)}
+
+  .card{fill:var(--card);stroke:var(--hair);stroke-width:1}
+  .accent{stroke-width:4;stroke-linecap:round}
+  .edge{fill:none;stroke-width:2.2}
+  .hyp{fill:none;stroke:var(--grey);stroke-width:1.8;stroke-dasharray:6 4}
+
+  .zone .card{transition:stroke .18s ease, stroke-width .18s ease}
+  .zone:hover .card{stroke-width:1.6}
+  .z-coral:hover .card{stroke:var(--coral)}
+  .z-teal:hover .card{stroke:var(--teal)}
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="chart-wrap">
+      <svg class="chart" viewBox="0 0 1080 985" role="img" aria-labelledby="t d">
+        <title id="t">Wolfgang Pilz and Walter Steven Zeisl — DNA connection (with sibling hypothesis)</title>
+        <desc id="d">Hypothetical ancestry: on the left Wolfgang's documented line, on the right Walter's
+        documented line, both solid (documented). Dashed = hypothetical/unknown. The common ancestor is
+        not documented; DNA match 36.57 cM, of which 29.1 cM contiguous on chromosome 9.</desc>
+
+        <rect x="0" y="0" width="1080" height="985" fill="#ffffff"/>
+
+        <text class="title" x="40" y="40">Wolfgang Pilz and Walter Steven Zeisl — DNA connection (with sibling hypothesis)</text>
+        <text class="subtitle" x="40" y="60">hypothetical (fictional) ancestry — no documentary proof of the common ancestor</text>
+
+        <!-- Column heads -->
+        <text class="colhead" x="235" y="200" fill="var(--coral-deep)">Wolfgang's documented line</text>
+        <text class="colhead" x="845" y="402" fill="var(--teal-deep)">Walter's documented line</text>
+
+        <!-- ===================== Sibling hypothesis (dashed hypothesis box) ===================== -->
+        <rect x="556" y="96" width="484" height="96" rx="10" fill="var(--amber-tint)" stroke="var(--amber)" stroke-width="1.4" stroke-dasharray="7 5"/>
+        <text class="sib-h" x="572" y="118">⚠ Sibling hypothesis — open, not proven</text>
+        <text class="sib"   x="572" y="140">Markus Rudolph · consent 1758, Veselíčko</text>
+        <text class="sib"   x="572" y="160">Samuel Rudolph · consent 1771, Mühlhausen</text>
+        <text class="note"  x="572" y="180">presumed siblings of Pessel</text>
+        <text class="note"  x="556" y="210">only if their father = the Familiant Moses of Mühlhausen</text>
+
+        <!-- dashed connections (hypothetical) -->
+        <path class="hyp" d="M400,238 L556,150"/>
+        <text class="hyplbl" x="452" y="210">hypothetical</text>
+        <path class="hyp" d="M800,192 L845,408"/>
+        <text class="hyplbl" x="808" y="320">unknown generations</text>
+
+        <!-- ===================== LEFT COLUMN — Wolfgang (solid) ===================== -->
+        <g class="zone z-coral">
+          <line class="edge" x1="235" y1="270" x2="235" y2="282" stroke="var(--coral)"/>
+          <line class="edge" x1="235" y1="346" x2="235" y2="358" stroke="var(--coral)"/>
+          <line class="edge" x1="235" y1="402" x2="235" y2="414" stroke="var(--coral)"/>
+          <line class="edge" x1="235" y1="458" x2="235" y2="470" stroke="var(--coral)"/>
+          <line class="edge" x1="235" y1="514" x2="235" y2="526" stroke="var(--coral)"/>
+          <line class="edge" x1="235" y1="570" x2="235" y2="582" stroke="var(--coral)"/>
+          <line class="edge" x1="235" y1="626" x2="235" y2="638" stroke="var(--coral)"/>
+
+          <rect class="card" x="70" y="210" width="330" height="60" rx="9"/>
+          <line class="accent" x1="73" y1="220" x2="73" y2="260" stroke="var(--coral)"/>
+          <text class="nm"  x="86" y="228">Joseph Rudolph (Jewish Mosche)</text>
+          <text class="det" x="86" y="245">∞ Anna Woporzaná · parents of Pessel</text>
+          <text class="det" x="86" y="261">consistory act APA I-1449 (1768)</text>
+
+          <rect class="card" x="70" y="282" width="330" height="64" rx="9"/>
+          <line class="accent" x1="73" y1="292" x2="73" y2="336" stroke="var(--coral)"/>
+          <text class="nm"  x="86" y="300">Theresia (Pessel bat Mosche)</text>
+          <text class="det" x="86" y="317">* ~1749 · baptized 1768 · ∞ Philipp Bechinie</text>
+          <text class="note" x="86" y="333">Correction: previously wrongly „~1735" (confused with Philipp)</text>
+
+          <rect class="card" x="70" y="358" width="330" height="44" rx="9"/>
+          <line class="accent" x1="73" y1="368" x2="73" y2="392" stroke="var(--coral)"/>
+          <text class="nm"  x="86" y="378">Josef Bechinie</text>
+          <text class="det" x="86" y="394">1776–1865</text>
+
+          <rect class="card" x="70" y="414" width="330" height="44" rx="9"/>
+          <line class="accent" x1="73" y1="424" x2="73" y2="448" stroke="var(--coral)"/>
+          <text class="nm"  x="86" y="434">Marie Bechinie</text>
+          <text class="det" x="86" y="450">1813–1894</text>
+
+          <rect class="card" x="70" y="470" width="330" height="44" rx="9"/>
+          <line class="accent" x1="73" y1="480" x2="73" y2="504" stroke="var(--coral)"/>
+          <text class="nm"  x="86" y="490">Vinzenz Pilz</text>
+          <text class="det" x="86" y="506">1830–1883</text>
+
+          <rect class="card" x="70" y="526" width="330" height="44" rx="9"/>
+          <line class="accent" x1="73" y1="536" x2="73" y2="560" stroke="var(--coral)"/>
+          <text class="nm"  x="86" y="546">Alois Johann Pilz</text>
+          <text class="det" x="86" y="562">1876–1950</text>
+
+          <rect class="card" x="70" y="582" width="330" height="44" rx="9"/>
+          <line class="accent" x1="73" y1="592" x2="73" y2="616" stroke="var(--coral)"/>
+          <text class="nm"  x="86" y="602">Alois Anton Pilz</text>
+          <text class="det" x="86" y="618">1909–1968</text>
+
+          <rect class="card" x="70" y="638" width="330" height="48" rx="9"/>
+          <line class="accent" x1="73" y1="648" x2="73" y2="678" stroke="var(--coral)"/>
+          <text class="nm"  x="86" y="658"><tspan fill="var(--coral)" font-weight="800">●</tspan> Wolfgang Pilz</text>
+          <text class="det" x="86" y="674">* 1948</text>
+        </g>
+
+        <!-- ===================== RIGHT COLUMN — Walter (solid) ===================== -->
+        <g class="zone z-teal">
+          <line class="edge" x1="845" y1="458" x2="845" y2="470" stroke="var(--teal)"/>
+          <line class="edge" x1="845" y1="514" x2="845" y2="526" stroke="var(--teal)"/>
+          <line class="edge" x1="845" y1="570" x2="845" y2="582" stroke="var(--teal)"/>
+          <line class="edge" x1="845" y1="626" x2="845" y2="638" stroke="var(--teal)"/>
+
+          <rect class="card" x="680" y="414" width="330" height="44" rx="9"/>
+          <line class="accent" x1="683" y1="424" x2="683" y2="448" stroke="var(--teal)"/>
+          <text class="nm"  x="696" y="434">Joachim Zeisel</text>
+          <text class="det" x="696" y="450">∞ Franziska Beer (* 1802)</text>
+
+          <rect class="card" x="680" y="470" width="330" height="44" rx="9"/>
+          <line class="accent" x1="683" y1="480" x2="683" y2="504" stroke="var(--teal)"/>
+          <text class="nm"  x="696" y="490">Emanuel Moritz Zeisl</text>
+          <text class="det" x="696" y="506">* 1840 · Rozsochy</text>
+
+          <rect class="card" x="680" y="526" width="330" height="44" rx="9"/>
+          <line class="accent" x1="683" y1="536" x2="683" y2="560" stroke="var(--teal)"/>
+          <text class="nm"  x="696" y="546">Siegmund Zeisl</text>
+          <text class="det" x="696" y="562">* 1871</text>
+
+          <rect class="card" x="680" y="582" width="330" height="44" rx="9"/>
+          <line class="accent" x1="683" y1="592" x2="683" y2="616" stroke="var(--teal)"/>
+          <text class="nm"  x="696" y="602">Wilhelm Zeisl</text>
+          <text class="det" x="696" y="618">* 1907 · Vienna</text>
+
+          <rect class="card" x="680" y="638" width="330" height="48" rx="9"/>
+          <line class="accent" x1="683" y1="648" x2="683" y2="678" stroke="var(--teal)"/>
+          <text class="nm"  x="696" y="658"><tspan fill="var(--teal)" font-weight="800">▲</tspan> Walter Steven Zeisl</text>
+          <text class="det" x="696" y="674">* 1949 · Los Angeles</text>
+        </g>
+
+        <!-- ===================== DNA-match box (across, below) ===================== -->
+        <path class="hyp" d="M235,686 L235,708"/>
+        <path class="hyp" d="M845,686 L845,708"/>
+        <rect x="70" y="708" width="940" height="100" rx="10" fill="#eafaf7" stroke="var(--teal-deep)" stroke-width="1.4"/>
+        <text class="dnal1" x="86" y="730">DNA match: 36.57 cM, of which 29.1 cM contiguous on chromosome 9 (GEDmatch).</text>
+        <text class="dna" x="86" y="749">Possible link: if Pessel's father was the Familiant Moses of Mühlhausen, then Markus and Samuel would be her brothers — then the</text>
+        <text class="dna" x="86" y="765">side branches that stayed Jewish would have names. Against: Familiant register — parents unknown; cadastre — Veselíčko 1748–57 no Jews.</text>
+        <text class="dna" x="86" y="784">Status: plausible, but not documentary. Common ancestor with Zeisl: the parents (via a sibling) or an earlier generation.</text>
+
+        <!-- ===================== Legend + sources line ===================== -->
+        <g class="leg">
+          <line x1="72" y1="830" x2="110" y2="830" stroke="var(--teal)" stroke-width="2.4"/>
+          <text x="118" y="834">solid = documented by records</text>
+          <line x1="430" y1="830" x2="468" y2="830" stroke="var(--grey)" stroke-width="2" stroke-dasharray="6 4"/>
+          <text x="476" y="834">dashed = hypothetical / unknown</text>
+        </g>
+        <text class="cap" x="72" y="852">Sources: Pessel/parents — consistory act APA I-1449 (1768) + parish registers; Markus/Samuel — marriage consents 1758/1771 (S/E); Zeisl — Geni; cM GEDmatch 19 Apr 2026.</text>
+
+        <!-- ===================== Research status June 2026 (two note boxes) ===================== -->
+        <rect x="70" y="868" width="464" height="104" rx="10" fill="#f6f8f8" stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="6 4"/>
+        <text class="jhead" x="86" y="888">June 2026 · DNA bridge points east — <tspan fill="var(--amber-deep)">open, not proven</tspan></text>
+        <text class="jnote" x="86" y="906">The DNA match petctdoc has a complete documentary tree over 4–5</text>
+        <text class="jnote" x="86" y="920">generations in the „Pale of Settlement" (Belarus: Minsk/Grodno; Ukraine:</text>
+        <text class="jnote" x="86" y="934">Talne/Uman) — with no Bohemian link. It therefore supports no documented</text>
+        <text class="jnote" x="86" y="948">Bohemian bridge; the common origin probably lies deeper than the records reach.</text>
+
+        <rect x="550" y="868" width="460" height="104" rx="10" fill="#f6f8f8" stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="6 4"/>
+        <text class="jhead" x="566" y="888">June 2026 · Bohemian Zeisl branch Podkováň — <tspan fill="var(--amber-deep)">open, not proven</tspan></text>
+        <text class="jnote" x="566" y="906">Herbert E. Fisher (Walter's strongest match, 56 cM) himself descends, via</text>
+        <text class="jnote" x="566" y="920">his Fischer line, from a Bohemian Zeisl family from Podkováň (Unter Kowan,</text>
+        <text class="jnote" x="566" y="934">Okres Mladá Boleslav). This gives the Bohemian trail a place but proves no</text>
+        <text class="jnote" x="566" y="948">common ancestor — Walter's documented line sits in Rozsochy/Moravia. Both</text>
+        <text class="jnote" x="566" y="962">places stand open side by side.</text>
+      </svg>
+    </div>
+    <p class="sr">Text alternative: Two parallel documented ancestral lines. Left, Wolfgang's line: Joseph
+       Rudolph (Jewish Mosche) ∞ Anna Woporzaná (parents of Pessel, consistory act APA I-1449, 1768) →
+       Theresia (Pessel bat Mosche, * ~1749, baptized 1768, ∞ Philipp Bechinie) → Josef Bechinie (1776–1865)
+       → Marie Bechinie (1813–1894) → Vinzenz Pilz (1830–1883) → Alois Johann Pilz (1876–1950) → Alois Anton
+       Pilz (1909–1968) → Wolfgang Pilz (* 1948). Right, Walter's line (unknown generations above Joachim):
+       Joachim Zeisel ∞ Franziska Beer (* 1802) → Emanuel Moritz Zeisl (* 1840, Rozsochy) → Siegmund Zeisl
+       (* 1871) → Wilhelm Zeisl (* 1907, Vienna) → Walter Steven Zeisl (* 1949, Los Angeles). Sibling
+       hypothesis (open, not proven): Markus Rudolph (consent 1758, Veselíčko) and Samuel Rudolph (consent
+       1771, Mühlhausen) would be Pessel's brothers, only if their father was the Familiant Moses of
+       Mühlhausen. DNA match 36.57 cM, of which 29.1 cM contiguous on chromosome 9; plausible, not
+       documentary. June 2026: the match petctdoc has a documentary tree in the Pale of Settlement with no
+       Bohemian link; Herbert E. Fisher descends from a Bohemian Zeisl family from Podkováň — both open,
+       not proven.</p>
+  </div>
+</body>
+</html>

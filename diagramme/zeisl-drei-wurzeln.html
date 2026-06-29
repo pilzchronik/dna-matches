@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zeisl — drei Wurzeln, eine offene Brücke</title>
+<style>
+  /* Haus-Stil der dna-matches-Diagramme – eigenständig, erbt NICHT die Site-CSS.
+     Linien-Logik: durchgezogen = dokumentiert · gestrichelt = DNA/Hypothese.
+     Form codiert die Wurzel: ● Wolfgang/Pessel · ▲ Zeisl-Mähren · ■ Zeisl-Böhmen/Fisher. */
+  :root{
+    --bg:#eef3f2;--card:#ffffff;--ink:#1f3b39;--ink-soft:#4a5c5c;--muted:#8b9a9a;
+    --teal:#0e9f8e;--teal-deep:#0a6c60;
+    --violet:#6d5bd0;--coral:#e0734e;--coral-deep:#b8502e;
+    --cobalt:#2f7fd0;--cobalt-deep:#1f5fa3;
+    --amber:#e0a52a;--amber-deep:#9a6a00;--amber-tint:#fdf6e7;
+    --grey:#9aa6ac;--grey-deep:#6f7a80;--hair:#e3eae9;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Inter","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;padding:24px 16px;
+  }
+  .frame{
+    max-width:1260px;margin:0 auto;background:var(--card);
+    border:1px solid var(--hair);border-radius:18px;
+    box-shadow:0 10px 30px rgba(20,60,55,.08);padding:18px 14px 8px;
+  }
+  .chart-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  svg.chart{display:block;width:100%;min-width:980px;max-width:1220px;height:auto;margin:0 auto}
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+  .title{font-size:24px;font-weight:800;fill:var(--ink);letter-spacing:.2px}
+  .colhead{font-size:12.5px;font-weight:800;text-anchor:middle}
+  .nm{font-size:12.5px;font-weight:700;fill:var(--ink)}
+  .det{font-size:10.5px;font-weight:500;fill:var(--ink-soft)}
+  .note{font-size:10.5px;font-style:italic;font-weight:400;fill:var(--muted)}
+  .badge{font-size:10px;font-weight:800;fill:var(--amber-deep)}
+  .gap{font-size:10px;font-style:italic;font-weight:500;fill:var(--muted);text-anchor:middle}
+  .qmark{font-size:15px;font-weight:800;fill:var(--grey-deep);text-anchor:middle}
+  .strit{font-size:10px;font-weight:800;fill:var(--amber-deep)}
+  .axis{font-size:10px;font-weight:700;fill:var(--muted);letter-spacing:.5px}
+  .notice{font-size:13px;font-weight:700;fill:var(--ink-soft)}
+  .bridgelbl{font-size:12px;font-weight:700;fill:var(--teal-deep)}
+  .leg{font-size:11.5px;font-weight:500;fill:var(--ink-soft)}
+  .cap{font-size:11px;font-weight:400;fill:var(--muted)}
+
+  .card{fill:var(--card);stroke:var(--hair);stroke-width:1}
+  .accent{stroke-width:4;stroke-linecap:round}
+  .edge{fill:none;stroke-width:2.2}
+  .hyp{fill:none;stroke:var(--grey);stroke-width:1.8;stroke-dasharray:5 4}
+  .bridge{fill:none;stroke:var(--teal-deep);stroke-width:4.5;stroke-dasharray:9 6;stroke-linecap:round}
+
+  .zone .card{transition:stroke .18s ease, stroke-width .18s ease}
+  .zone:hover .card{stroke-width:1.6}
+  .z-coral:hover .card{stroke:var(--coral)}
+  .z-teal:hover .card{stroke:var(--teal)}
+  .z-cobalt:hover .card{stroke:var(--cobalt)}
+  .z-grey:hover .card{stroke:var(--grey-deep)}
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="chart-wrap">
+      <svg class="chart" viewBox="0 0 1220 880" role="img" aria-labelledby="svgtitle svgdesc">
+        <title id="svgtitle">Zeisl — drei Wurzeln, eine offene Brücke</title>
+        <desc id="svgdesc">Genealogisches Diagramm mit drei getrennten Zeisl-Wurzeln und Wolfgangs Linie.
+        Durchgezogene Linien = dokumentiert; gestrichelte Linien = DNA-Verbindung oder unbelegte Hypothese.
+        Wolfgang und Walter Steven Zeisl sind nur über DNA (29,1 cM) verbunden, nicht über Urkunden.</desc>
+
+        <rect x="0" y="0" width="1220" height="880" fill="#ffffff"/>
+
+        <text class="title" x="40" y="44">Zeisl — drei Wurzeln, eine offene Brücke</text>
+
+        <!-- Hinweis-Band (präzisiert) -->
+        <rect x="30" y="62" width="1160" height="34" rx="8" fill="var(--amber-tint)" stroke="var(--amber)" stroke-width="1"/>
+        <text class="notice" x="46" y="84">Gleicher Name bedeutet nicht unbedingt einen gemeinsamen Vorfahren — möglich, aber nicht gesichert. (Jüdische Familiennamen wurden erst ab 1787 vergeben, oft örtlich.)</text>
+
+        <!-- Zeitachse (dezent: nur Richtung) -->
+        <line x1="26" y1="150" x2="26" y2="652" stroke="var(--hair)" stroke-width="1.5"/>
+        <path d="M22,646 L26,656 L30,646 Z" fill="var(--muted)"/>
+        <text class="axis" x="20" y="150" transform="rotate(-90 20 150)" text-anchor="end">ÄLTER</text>
+        <text class="axis" x="20" y="652" transform="rotate(-90 20 652)" text-anchor="start">JÜNGER</text>
+
+        <!-- Spaltenköpfe -->
+        <text class="colhead" x="182"  y="122" fill="var(--coral-deep)">● Wolfgang (Proband)</text>
+        <text class="colhead" x="468"  y="122" fill="var(--teal-deep)">▲ Wurzel 1 · Walter Zeisl (Mähren)</text>
+        <text class="colhead" x="788"  y="122" fill="var(--cobalt-deep)">■ Wurzel 2 · Fisher (Mittelböhmen)</text>
+        <text class="colhead" x="1074" y="122" fill="var(--grey-deep)">■ Wurzel 3 · Veit / Sovínky</text>
+        <line x1="1074" y1="132" x2="1074" y2="286" stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="2 3"/>
+
+        <!-- ===================== SPALTE B — Wurzel 1 (Walter) ===================== -->
+        <g class="zone z-teal">
+          <line class="edge" x1="468" y1="176" x2="468" y2="210" stroke="var(--teal)"/>
+          <line class="edge" x1="468" y1="256" x2="468" y2="290" stroke="var(--teal)"/>
+          <line class="edge" x1="468" y1="340" x2="468" y2="382" stroke="var(--teal)"/>
+          <line class="edge" x1="468" y1="432" x2="468" y2="606" stroke="var(--teal)"/>
+
+          <g opacity="0.55">
+            <rect class="card" x="344" y="130" width="248" height="46" rx="9"/>
+            <line class="accent" x1="347" y1="140" x2="347" y2="166" stroke="var(--teal)"/>
+            <text class="nm"  x="360" y="150">Tzvi Hirsch Zeisel</text>
+            <text class="det" x="360" y="166">~1711 · Lomnice, Mähren</text>
+
+            <rect class="card" x="344" y="210" width="248" height="46" rx="9"/>
+            <line class="accent" x1="347" y1="220" x2="347" y2="246" stroke="var(--teal)"/>
+            <text class="nm"  x="360" y="230">Moses Zeisel</text>
+            <text class="det" x="360" y="246">~1750 · Lomnice</text>
+
+            <rect class="card" x="344" y="290" width="248" height="50" rx="9"/>
+            <line class="accent" x1="347" y1="300" x2="347" y2="330" stroke="var(--teal)"/>
+            <text class="nm"  x="360" y="310">Joachim (Chaim) Zeisel</text>
+            <text class="det" x="360" y="326">*1800 · Vierzighuben (b. Svitavy/Zwittau)</text>
+          </g>
+
+          <!-- „Stand strittig"-Klammer -->
+          <path d="M600,134 L608,134 L608,338 L600,338" fill="none" stroke="var(--amber)" stroke-width="1.6"/>
+          <text class="strit" x="616" y="226">⚠ Stand</text>
+          <text class="strit" x="616" y="239">strittig</text>
+
+          <rect class="card" x="344" y="382" width="248" height="50" rx="9"/>
+          <line class="accent" x1="347" y1="392" x2="347" y2="422" stroke="var(--teal)"/>
+          <text class="nm"  x="360" y="402">Emanuel Moritz Zeisl</text>
+          <text class="det" x="360" y="418">*1840 · Rozsochy (böhm.-mähr. Bergland)</text>
+
+          <rect x="344" y="442" width="256" height="92" fill="#ffffff"/>
+          <text class="note" x="356" y="455">Obere Generationen nur Sekundärquelle (Geni/</text>
+          <text class="note" x="356" y="468">Schönberg) — Stand strittig, zwei Lesarten:</text>
+          <text class="note" x="356" y="483">• hier: Tzvi Hirsch/Moses (Lomnice) ← Joachim</text>
+          <text class="note" x="356" y="496">• SSOT/Master-Synthese: Joachim (Rozsochy) ←</text>
+          <text class="note" x="356" y="509">   Naftali Beer *1782 (Mährisch Rothmühl)</text>
+          <text class="note" x="356" y="526">Untergen. ab Emanuel Moritz (*1840): Walters GEDCOM.</text>
+          <rect x="419" y="556" width="98" height="16" fill="#ffffff"/>
+          <text class="gap" x="468" y="568">⋮ weitere Generationen</text>
+
+          <rect class="card" x="344" y="606" width="248" height="60" rx="9"/>
+          <line class="accent" x1="347" y1="616" x2="347" y2="656" stroke="var(--teal)"/>
+          <text class="nm"  x="360" y="626"><tspan fill="var(--teal)" font-weight="800">▲</tspan> Walter Steven Zeisl</text>
+          <text class="det" x="360" y="642">*1949</text>
+          <text class="badge" x="360" y="658" fill="var(--teal-deep)">DNA-Hauptmatch Wolfgangs</text>
+        </g>
+
+        <!-- ===================== SPALTE C — Wurzel 2 (Fisher) ===================== -->
+        <g class="zone z-cobalt">
+          <line class="edge" x1="788" y1="176" x2="788" y2="210" stroke="var(--cobalt)"/>
+          <line class="edge" x1="788" y1="260" x2="788" y2="294" stroke="var(--cobalt)"/>
+          <line class="edge" x1="788" y1="356" x2="788" y2="396" stroke="var(--cobalt)"/>
+          <line class="edge" x1="788" y1="442" x2="788" y2="606" stroke="var(--cobalt)"/>
+
+          <rect class="card" x="664" y="130" width="248" height="46" rx="9"/>
+          <line class="accent" x1="667" y1="140" x2="667" y2="166" stroke="var(--cobalt)"/>
+          <text class="nm"  x="680" y="150">Samuel &amp; Veronika Zeisl</text>
+          <text class="det" x="680" y="166">Mittelböhmen</text>
+
+          <rect class="card" x="664" y="210" width="248" height="50" rx="9"/>
+          <line class="accent" x1="667" y1="220" x2="667" y2="250" stroke="var(--cobalt)"/>
+          <text class="nm"  x="680" y="230">Veit Friedman Zeisl</text>
+          <text class="det" x="680" y="246">†1834 · ∞ Ludmilla Pick</text>
+
+          <rect class="card" x="664" y="294" width="248" height="62" rx="9"/>
+          <line class="accent" x1="667" y1="304" x2="667" y2="346" stroke="var(--cobalt)"/>
+          <text class="nm"  x="680" y="314">Sara Rosalia Zeisl</text>
+          <text class="det" x="680" y="330">*~1778 · Unter Kowan (Podkováň)</text>
+          <text class="det" x="680" y="346">∞ Jakob Alexander Fischer (~1762–1812)</text>
+
+          <rect class="card" x="664" y="396" width="248" height="46" rx="9"/>
+          <line class="accent" x1="667" y1="406" x2="667" y2="432" stroke="var(--cobalt)"/>
+          <text class="nm"  x="680" y="416">Joachim Fischer</text>
+          <text class="det" x="680" y="432">*1807</text>
+
+          <rect x="664" y="458" width="248" height="18" fill="#ffffff"/>
+          <text class="note" x="676" y="471">dokumentiert (Familienstammbaum/GEDCOM)</text>
+          <rect x="739" y="556" width="98" height="16" fill="#ffffff"/>
+          <text class="gap" x="788" y="568">⋮ weitere Generationen</text>
+
+          <rect class="card" x="664" y="606" width="248" height="60" rx="9"/>
+          <line class="accent" x1="667" y1="616" x2="667" y2="656" stroke="var(--cobalt)"/>
+          <text class="nm"  x="680" y="626"><tspan fill="var(--cobalt)" font-weight="800">■</tspan> Herbert E. Fisher</text>
+          <text class="det" x="680" y="642">1917–2014</text>
+          <text class="badge" x="680" y="658" fill="var(--cobalt-deep)">Match von Walter Zeisl · 56 cM</text>
+        </g>
+
+        <!-- ===================== SPALTE D — Wurzel 3 (Veit/Sovínky) ===================== -->
+        <g class="zone z-grey">
+          <rect class="card" x="936" y="288" width="276" height="100" rx="9" fill="#fbfcfc"/>
+          <line class="accent" x1="939" y1="298" x2="939" y2="378" stroke="var(--grey)"/>
+          <text class="nm"  x="952" y="310"><tspan fill="var(--grey-deep)" font-weight="800">■</tspan> Veit Zeisel</text>
+          <text class="det" x="952" y="326">Sovínky, Okres Mladá Boleslav</text>
+          <text class="det" x="952" y="344">Ehefrau widersprüchlich überliefert:</text>
+          <text class="det" x="952" y="358">Rebeka · Rachel Fröhlich · Rosalia Rudolf</text>
+          <text class="note" x="952" y="374">(3 Quellen, 4 Deutungen) — Zuordnung offen</text>
+        </g>
+
+        <!-- Konvergenz Wurzel 2 ↔ 3 (gestrichelt, „?") -->
+        <line class="hyp" x1="912" y1="325" x2="936" y2="325"/>
+        <text class="qmark" x="924" y="318">?</text>
+        <text class="note" x="936" y="406">Podkováň ↔ Sovínky ~6 km (beide</text>
+        <text class="note" x="936" y="419">Okres Mladá Boleslav); zwei Männer</text>
+        <text class="note" x="936" y="432">namens „Veit Zeisel" — möglicher</text>
+        <text class="note" x="936" y="445">Zusammenhang, unbewiesen.</text>
+
+        <!-- ===================== SPALTE A — Wolfgang ===================== -->
+        <g class="zone z-coral">
+          <!-- Myslkovice-Fähnchen (zentriert, gestrichelt = vermutet) -->
+          <rect x="56" y="186" width="252" height="42" rx="8" fill="#fff" stroke="var(--coral)" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text class="note" x="182" y="202" text-anchor="middle">Herkunft Myslkovice (Miskowitz, Bez. Tábor)?</text>
+          <text class="note" x="182" y="216" text-anchor="middle">— vermutet, nicht belegt</text>
+          <line class="hyp" x1="182" y1="228" x2="182" y2="250" stroke="var(--coral)"/>
+
+          <line class="edge" x1="182" y1="370" x2="182" y2="394" stroke="var(--coral)"/>
+          <line class="edge" x1="182" y1="442" x2="182" y2="606" stroke="var(--coral)"/>
+
+          <!-- Pessel/Theresia = EIN Knoten · einzige Primärquelle (präzisiert) -->
+          <rect class="card" x="44" y="250" width="276" height="120" rx="9" fill="var(--amber-tint)" stroke="var(--amber)" stroke-width="1.4"/>
+          <line class="accent" x1="47" y1="260" x2="47" y2="360" stroke="var(--amber)"/>
+          <text class="badge" x="60" y="268">★ PRIMÄRQUELLE · Konsistorialakt 1768</text>
+          <text class="nm"  x="60" y="286"><tspan fill="var(--coral)" font-weight="800">●</tspan> Pessel bat Moshe = „Theresia"</text>
+          <text class="det" x="60" y="302">*~1749 · ∞ 1769 Philipp Bechinie</text>
+          <text class="det" x="60" y="318">Taufe 30.10.1768 · Taufregister Amschelberg</text>
+          <text class="note" x="60" y="334">Konsistorialakt = Vorbedingung, nicht Taufbeleg</text>
+          <text class="note" x="60" y="348">(Taufregister-Scan noch offen)</text>
+          <text class="note" x="60" y="362" font-size="10">Taufname strittig: Theresia/Apollonia/Rudolphiana</text>
+
+          <rect class="card" x="44" y="394" width="276" height="48" rx="9"/>
+          <line class="accent" x1="47" y1="404" x2="47" y2="432" stroke="var(--coral)"/>
+          <text class="nm"  x="60" y="414">Josef Bechinie</text>
+          <text class="det" x="60" y="430">*1776 · ∞ Marianna Handl</text>
+
+          <rect x="133" y="556" width="98" height="16" fill="#ffffff"/>
+          <text class="gap" x="182" y="568">⋮ Bechinie-Linie</text>
+
+          <rect class="card" x="44" y="606" width="276" height="60" rx="9"/>
+          <line class="accent" x1="47" y1="616" x2="47" y2="656" stroke="var(--coral)"/>
+          <text class="nm"  x="60" y="626"><tspan fill="var(--coral)" font-weight="800">●</tspan> Wolfgang Pilz</text>
+          <text class="det" x="60" y="642">Proband · klassische Genealogie</text>
+        </g>
+
+        <!-- ===================== ZENTRALE DNA-BRÜCKE ===================== -->
+        <path class="bridge" d="M215,666 Q340,720 460,666"/>
+        <rect x="48" y="724" width="600" height="64" rx="10" fill="#eafaf7" stroke="var(--teal-deep)" stroke-width="1.2" stroke-dasharray="7 5"/>
+        <text class="bridgelbl" x="64" y="744">DNA-Brücke: 29,1 cM (größtes Einzelsegment, Chr 9) · gesamt 36,57 cM</text>
+        <text class="bridgelbl" x="64" y="762" fill="var(--ink-soft)" font-weight="600">über zwei Chr-9-Segmente — kein dokumentierter gemeinsamer Vorfahr.</text>
+        <text class="bridgelbl" x="64" y="778" fill="var(--ink-soft)" font-weight="600">Genetisch gesichert, Anknüpfungspunkt im Stammbaum offen.</text>
+
+        <!-- ===================== Legende ===================== -->
+        <g class="leg">
+          <line x1="700" y1="730" x2="738" y2="730" stroke="var(--teal)" stroke-width="2.4"/>
+          <text x="746" y="734">durchgezogen = dokumentiert</text>
+          <line x1="700" y1="751" x2="738" y2="751" stroke="var(--grey)" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="746" y="755">gestrichelt = DNA / Hypothese</text>
+          <text x="978" y="734" fill="var(--amber-deep)" font-weight="800">★</text>
+          <text x="994" y="734">Primärquelle (einziger Knoten)</text>
+          <rect x="977" y="745" width="13" height="12" rx="3" fill="#ffffff" stroke="var(--hair)" opacity="0.55"/>
+          <text x="994" y="755">gedimmt = Sekundärquelle / „etwa"</text>
+          <text x="700" y="778" fill="var(--coral)" font-weight="800">●</text>
+          <text x="712" y="778" fill="var(--ink-soft)">Wolfgang/Pessel</text>
+          <text x="836" y="778" fill="var(--teal)" font-weight="800">▲</text>
+          <text x="848" y="778" fill="var(--ink-soft)">Zeisl-Mähren</text>
+          <text x="956" y="778" fill="var(--cobalt)" font-weight="800">■</text>
+          <text x="968" y="778" fill="var(--ink-soft)">Zeisl-Böhmen / Fisher</text>
+        </g>
+
+        <!-- ===================== Caption ===================== -->
+        <text class="cap" x="48" y="812">Forschungsstand 2026. Durchgezogen = urkundlich/genealogisch dokumentiert. Gestrichelt = DNA-Verbindung bzw. unbelegte Hypothese.</text>
+        <text class="cap" x="48" y="826">Keine Primärquelle verbindet die drei Wurzeln oder überbrückt zu Wolfgang.</text>
+      </svg>
+    </div>
+    <p class="sr">Textalternative: Drei getrennte Zeisl-Wurzeln. Wurzel 1 (Mähren, Walter Steven Zeisl, *1949,
+       Wolfgangs DNA-Hauptmatch): dokumentiert ab Emanuel Moritz Zeisl (*1840, Rozsochy); obere Generationen
+       (Tzvi Hirsch/Moses, Lomnice ← Joachim, bzw. alternativ Joachim/Rozsochy ← Naftali Beer *1782) sind
+       Sekundärquelle und strittig. Wurzel 2 (Mittelböhmen, Fisher-Linie): Samuel &amp; Veronika Zeisl →
+       Veit Friedman Zeisl → Sara Rosalia Zeisl (Unter Kowan/Podkováň) ∞ Jakob Alexander Fischer → Joachim
+       Fischer → Herbert E. Fisher (1917–2014, Match von Walter Zeisl, 56 cM); dokumentiert. Wurzel 3: Veit
+       Zeisel von Sovínky, Ehefrau widersprüchlich überliefert, Zuordnung offen; gestrichelte „?"-Verbindung
+       zu Wurzel 2 (Podkováň ↔ Sovínky ~6 km), unbewiesen. Wolfgangs Linie: Pessel bat Moshe = getaufte
+       „Theresia" (~1749, Taufe 30.10.1768 Amschelberg; Konsistorialakt 1768 belegt Elternschaft, ist aber
+       nur Vorbedingung, nicht der Taufbeleg) → Josef Bechinie (*1776) → … → Wolfgang Pilz. Wolfgang und
+       Walter sind nur über DNA verbunden (29,1 cM größtes Einzelsegment, gesamt 36,57 cM auf Chromosom 9),
+       ohne dokumentierten gemeinsamen Vorfahren. Gleicher Name bedeutet nicht unbedingt einen gemeinsamen
+       Vorfahren.</p>
+  </div>
+</body>
+</html>
